@@ -1,5 +1,6 @@
 *
 !*.yaml
+!*.yml
 !scenes
 !config
 !.gitignore
