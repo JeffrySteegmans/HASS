@@ -64,7 +64,7 @@ homekit:
 
 input_boolean: !include config/input_boolean.yaml
 sabnzbd: !include config/sabnzbd.yaml
-#camera: !include config/cameras.yaml
+camera: !include config/cameras.yaml
 telegram_bot: !include config/telegram_bot.yaml
 zone: !include config/zones.yaml
 media_player: !include config/media_players.yaml

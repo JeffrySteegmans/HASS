@@ -1,3 +1,9 @@
+- platform: generic
+  name: Oprit pierre
+  still_image_url: !secret camera_pierre_oprit_still_image_url
+- platform: generic
+  name: Tuinhuis pierre
+  still_image_url: !secret camera_pierre_tuinhuis_still_image_url
 #- platform: uvc
 #  nvr: pierrevanoijen.synology.me
 #  key: !secret camera_pierre_api_key

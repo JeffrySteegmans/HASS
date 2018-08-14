@@ -3,6 +3,7 @@
   host: !secret webostv_living_ip
   name: TV Living
 - platform: plex
-  entity_namespace: 'plex'
+  entity_namespace: plex
   include_non_clients: true
   scan_interval: 5
+  use_episode_art: true

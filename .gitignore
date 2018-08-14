@@ -3,6 +3,7 @@
 !*.yml
 !scenes
 !config
+!www
 !.gitignore
 !README.md
 secrets.yaml
