@@ -62,24 +62,6 @@ cloud:
 
 homekit:
 
-#component
-#- platform: command_line
-#  name: influxdb_container
-#  command: 'docker inspect influxdb:latest|jq .[].Created'
-#  scan_interval: 3600
-#- platform: command_line
-#  name: influxdb_repositories
-#  command: 'curl -L -s https://registry.hub.docker.com/v2/repositories/library/influxdb/tags|jq .results[0].last_updated'
-#  scan_interval: 3600
-#- platform: command_line
-#  name: grafana_container
-#  command: 'docker inspect grafana/grafana:latest|jq .[].Created'
-#  scan_interval: 3600
-#- platform: command_line
-#  name: grafana_repositories
-#  command: 'curl -L -s https://registry.hub.docker.com/v2/repositories/grafana/grafana/tags|jq .results[0].last_updated'
-#  scan_interval: 3600
-
 input_boolean: !include config/input_boolean.yaml
 sabnzbd: !include config/sabnzbd.yaml
 #camera: !include config/cameras.yaml
@@ -95,9 +77,3 @@ sensor: !include config/sensors.yaml
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
-#cast: !include config/cast.yaml
-
-#sensor.bureau:
-#  google_assistant: true
-#  google_assistant_type: climate
-#  google_assistant_name: bureau
