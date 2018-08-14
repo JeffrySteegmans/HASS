@@ -4,6 +4,6 @@
 !scenes
 !config
 !.gitignore
-!README
+!README.md
 secrets.yaml
 known_devices.yaml
