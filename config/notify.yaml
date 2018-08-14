@@ -1,0 +1,3 @@
+- platform: telegram
+  name: telegram
+  chat_id: !secret notify_telegram_chat_id

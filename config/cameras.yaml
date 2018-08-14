@@ -1,0 +1,4 @@
+#- platform: uvc
+#  nvr: pierrevanoijen.synology.me
+#  key: !secret camera_pierre_api_key
+#  password: !secret camera_pierre_password

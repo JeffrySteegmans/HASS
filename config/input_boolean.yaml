@@ -1,0 +1,8 @@
+notify_serre_temp:
+  name: Temperature notification
+  initial: 'off'
+  icon: mdi:cellphone-message
+notify_serre_soil:
+  name: Soil notification
+  initial: 'off'
+  icon: mdi:cellphone-message

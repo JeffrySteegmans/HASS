@@ -1,0 +1,9 @@
+- platform: unifi
+  host: !secret devicetracker_host
+  username: !secret devicetracker_username
+  password: !secret devicetracker_password
+  site_id: !secret devicetracker_siteid
+  ssid_filter: !secret devicetracker_filter
+  detection_time: 600
+  track_new_devices: false
+  verify_ssl: false

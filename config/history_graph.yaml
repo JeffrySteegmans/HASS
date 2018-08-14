@@ -1,0 +1,21 @@
+temp:
+  name: Temperatuur
+  entities:
+    - sensor.bureau
+    - sensor.elen_temperature_2
+    - sensor.Serre_temp
+  hours_to_show: 24
+  refresh: 300
+rain:
+  name: Regen
+  entities:
+    - sensor.elen_precipitation_2
+    - sensor.elen_precipitation_forecast_average
+  hours_to_show: 24
+  refresh: 300
+sun:
+  name: Zonnestraling
+  entities:
+    - sensor.elen_irradiance
+  hours_to_show: 24
+  refresh: 300

@@ -1,0 +1,70 @@
+- platform: buienradar
+  name: !secret buienradar_name
+  latitude: !secret buienradar_latitude
+  longitude: !secret buienradar_longitude
+  monitored_conditions:
+    - precipitation
+    - temperature
+    - precipitation_forecast_average
+    - irradiance
+- platform: mqtt
+  state_topic: "temperatuur/value/2861641279995A6E"
+  name: "bureau"
+  unit_of_measurement: "°C"
+  value_template: "{{ value | round(1) }}"
+- platform: mqtt
+  state_topic: "serre/temp/dallas"
+  name: "Serre temp"
+  unit_of_measurement: "°C"
+  value_template: "{{ value | round(1) }}"
+- platform: mqtt
+  state_topic: "serre/humidity/dht11"
+  name: "Serre humidity"
+  unit_of_measurement: "%"
+  value_template: "{{ value | round(0) }}"
+- platform: mqtt
+  state_topic: "serre/soil/yl69"
+  name: "Serre soil"
+  unit_of_measurement: "%"
+  value_template: "{{ value | round(0) }}"
+- platform: moon
+- platform: fitbit
+  unit_system: metric
+  monitored_resources:
+    - "activities/steps"
+    - "body/bmi"
+    - "body/fat"
+    - "body/weight"
+    - "devices/battery"
+    - "sleep/efficiency"
+    - "sleep/timeInBed"
+- platform: haveibeenpwned
+  email: 
+    - !secret email_jeffry
+    - !secret email_katja
+- platform: pi_hole
+  host: 192.168.0.2:8082
+  monitored_conditions:
+    - ads_blocked_today
+    - ads_percentage_today
+    - dns_queries_today
+    - domains_being_blocked
+    - queries_cached
+    - queries_forwarded
+    - unique_clients
+    - unique_domains
+- platform: sonarr
+  api_key: !secret sonarr_api_key
+  host: 192.168.0.2
+  monitored_conditions:
+    - upcoming
+    - wanted
+  days: 2
+- platform: synologydsm
+  host: 192.168.0.2
+  username: !secret synology_username
+  password: !secret synology_password
+  monitored_conditions:
+    - cpu_total_load
+    - memory_real_usage
+    - network_up

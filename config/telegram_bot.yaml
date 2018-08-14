@@ -1,0 +1,4 @@
+- platform: webhooks
+  api_key : !secret telegram_api_key
+  parse_mode: html
+  allowed_chat_ids: !secret telegram_allowed_chat_ids

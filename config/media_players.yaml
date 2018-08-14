@@ -1,0 +1,8 @@
+- platform: webostv
+  mac: 14:c9:13:85:af:5f
+  host: 192.168.0.60
+  name: TV Living
+- platform: plex
+  entity_namespace: 'plex'
+  include_non_clients: true
+  scan_interval: 5

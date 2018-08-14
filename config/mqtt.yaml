@@ -1,0 +1,10 @@
+broker: 192.168.0.2
+port: 1883
+username: jeffry
+password: $1u30t$
+birth_message:
+  topic: 'state/hass'
+  payload: 'online'
+will_message:
+  topic: 'state/hass'
+  payload: 'offline'
