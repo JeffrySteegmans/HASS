@@ -1,0 +1,135 @@
+default_view:
+  view: yes
+  icon: mdi:view-dashboard
+  name: Dashboard
+  entities:
+    - group.TempSensors
+    - group.SerreSensors
+    - group.Tracking
+    - group.DeviceState
+    - group.sabnzbd_group
+    - group.fitbit
+    - group.haveibeenpawned
+    - group.pihole
+    - group.sonarr
+
+Mediaplayers_view:
+  view: yes
+  icon: mdi:television
+  name: 'Media players'
+  entities:
+    - media_player.tv_living
+    - media_player.chrome_2
+    - media_player.ccliving
+    
+Temperatuur_view:
+  view: yes
+  icon: mdi:weather-partlycloudy
+  name: Weer
+  entities:
+    - group.TempSensors
+    - history_graph.Temperatuur
+    - history_graph.Regen
+    - history_graph.Zonnestraling
+    
+#Security_view:
+#  view: yes
+#  icon: mdi:cctv
+#  name: Security
+#  entities:
+#    - camera.oprit
+#    - camera.tuinhuis
+    
+    
+#########################
+#   Hidden              #
+#########################
+ 
+TempSensors:
+  view: no
+  name: Weer
+  entities:
+    - sensor.bureau
+    - sensor.elen_temperature_2
+    - sensor.elen_precipitation_2
+    - sensor.elen_precipitation_forecast_average
+    - sensor.elen_irradiance
+
+SerreSensors:
+  view: no
+  name: Serre
+  entities:
+    - sensor.Serre_temp
+    - sensor.Serre_humidity
+    - sensor.Serre_soil
+    
+Tracking:
+  view: no
+  name: Aanwezigheid
+  entities:
+    - device_tracker.iphone_jeffry
+    - device_tracker.iphone_katja
+    - device_tracker.galaxys8
+    - device_tracker.huawei_gt3
+    - device_tracker.galaxys8_pierre
+    
+DeviceState:
+  view: no
+  name: Connectie status
+  entities:
+    - binary_sensor.nodered_docker
+    - binary_sensor.nodered_castleblack
+    - binary_sensor.nodemcu_serre
+ 
+sabnzbd_group:
+  view: no
+  name: SABnzbd
+  entities:
+    - sensor.sabnzbd_status
+    - sensor.sabnzbd_speed
+    - sensor.sabnzbd_daily_total
+    - sensor.sabnzbd_weekly_total
+    - sensor.sabnzbd_monthly_total
+    - sensor.sabnzbd_total
+    - sensor.sabnzbd_left
+    - sensor.sabnzbd_queue_count
+    
+fitbit:
+  view: no
+  name: Fitbit Jeffry
+  entities:
+    - sensor.alta_hr_battery
+    - sensor.aria_battery
+    - sensor.bmi
+    - sensor.body_fat
+    - sensor.sleep_efficiency
+    - sensor.sleep_time_in_bed
+    - sensor.steps
+    - sensor.tracker_steps
+    - sensor.weight
+    
+haveibeenpawned:
+  view: no
+  name: HaveIBeenPawned
+  entities:
+    - sensor.breaches_jeffrysteegmansgmailcom
+    - sensor.breaches_katjavanoijengmailcom
+    
+pihole:
+  view: no
+  name: Pi-hole
+  entities:
+    - sensor.pihole_ads_blocked_today
+    
+sonarr:
+  view: no
+  name: Sonarr
+  entities:
+    - sensor.sonarr_upcoming
+    - sensor.sonarr_wanted
+ 
+synology:
+  view: no
+  name: Synology
+  entities:
+    - sensor.synologydsm_cpu_total_load

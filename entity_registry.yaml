@@ -1,0 +1,95 @@
+media_player.ccliving:
+  config_entry_id: e21ce10c3c134efda1c87b6a79269172
+  name: Chromecast Living
+  platform: cast
+  unique_id: 46a0956d-f6a4-72e7-654f-be5fc428537d
+media_player.eetkamer:
+  config_entry_id: e21ce10c3c134efda1c87b6a79269172
+  name:
+  platform: cast
+  unique_id: 7f50a6e2-ded4-2d6c-3838-fcddc13f1152
+media_player.chrome:
+  config_entry_id:
+  name: PLEX
+  platform: plex
+  unique_id: d9kfscl72hapzpzudfsy7rdw
+sensor.iphone_jeffry_battery_state:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: state_iphone_jeffry
+sensor.iphone_jeffry_battery_level:
+  config_entry_id:
+  name: Batterij Jeffry
+  platform: ios
+  unique_id: level_iphone_jeffry
+sensor.elen_precipitation:
+  config_entry_id:
+  name: Regen
+  platform: buienradar
+  unique_id: 51.0683335.760030precipitation
+sensor.elen_temperature:
+  config_entry_id:
+  name: Temperatuur
+  platform: buienradar
+  unique_id: 51.0683335.760030temperature
+sensor.elen_temperature_2:
+  config_entry_id:
+  name: Buienradar (Elen)
+  platform: buienradar
+  unique_id: 51.0683335.761514temperature
+sensor.elen_precipitation_2:
+  config_entry_id:
+  name: Regen (Elen)
+  platform: buienradar
+  unique_id: 51.0683335.761514precipitation
+sensor.elen_precipitation_forecast_average:
+  config_entry_id:
+  name: Voorspelling regen (Elen)
+  platform: buienradar
+  unique_id: 51.0683335.761514precipitation_forecast_average
+sensor.elen_irradiance:
+  config_entry_id:
+  name: Instraling zon (buienradar)
+  platform: buienradar
+  unique_id: 51.0683335.761514irradiance
+media_player.ccslaapkamer:
+  config_entry_id:
+  name:
+  platform: cast
+  unique_id: 990939a6-b894-080a-6505-5ceeefd2d378
+media_player.plex_iphone_jeffry:
+  config_entry_id:
+  name:
+  platform: plex
+  unique_id: F060DD50-52B9-463F-9872-4CBDECB21BF0
+media_player.plex_unnamed_device:
+  config_entry_id:
+  name:
+  platform: plex
+  unique_id: 77nrain4h01qncdi
+media_player.ipad_van_femke:
+  config_entry_id:
+  name:
+  platform: plex
+  unique_id: 0D3B199D-C401-4549-B7C8-D0F11714CECF
+sensor.ipad_battery_state:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: state_ipad
+sensor.ipad_battery_level:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: level_ipad
+media_player.plex_chrome:
+  config_entry_id:
+  name: PLEX
+  platform: plex
+  unique_id: 144fakty24xiny0r2oddwpb9
+media_player.chrome_2:
+  config_entry_id:
+  name: PLEX
+  platform: plex
+  unique_id: zbk91loo29mvkkauo8nghspn

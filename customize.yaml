@@ -1,0 +1,6 @@
+sensor.serre_soil:
+  friendly_name: Grond vochtigheid
+sensor.serre_humidity:
+  friendly_name: Lucht vochtigheid
+sensor.serre_temp:
+  friendly_name: Temperatuur

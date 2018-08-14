@@ -1,0 +1,103 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: !secret name
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude
+  longitude: !secret longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: !secret elevation
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Brussels
+  # Customization file
+  customize: !include customize.yaml
+
+# Enables the frontend
+frontend:
+  javascript_version: auto
+
+# Enables configuration UI
+config:
+
+ios:
+
+http:
+  ip_ban_enabled: true
+  login_attempts_threshold: 3
+  #trusted_networks: !secret http_trusted_networks
+  api_password: !secret http_password
+  base_url: !secret http_baseurl
+
+updater:
+  reporting: no
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+  exclude:
+    domains:
+      - automation
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+# Text to speech
+tts:
+  - platform: google
+
+# Cloud
+cloud:
+
+homekit:
+
+#component
+#- platform: command_line
+#  name: influxdb_container
+#  command: 'docker inspect influxdb:latest|jq .[].Created'
+#  scan_interval: 3600
+#- platform: command_line
+#  name: influxdb_repositories
+#  command: 'curl -L -s https://registry.hub.docker.com/v2/repositories/library/influxdb/tags|jq .results[0].last_updated'
+#  scan_interval: 3600
+#- platform: command_line
+#  name: grafana_container
+#  command: 'docker inspect grafana/grafana:latest|jq .[].Created'
+#  scan_interval: 3600
+#- platform: command_line
+#  name: grafana_repositories
+#  command: 'curl -L -s https://registry.hub.docker.com/v2/repositories/grafana/grafana/tags|jq .results[0].last_updated'
+#  scan_interval: 3600
+
+input_boolean: !include config/input_boolean.yaml
+sabnzbd: !include config/sabnzbd.yaml
+#camera: !include config/cameras.yaml
+telegram_bot: !include config/telegram_bot.yaml
+zone: !include config/zones.yaml
+media_player: !include config/media_players.yaml
+binary_sensor: !include config/binary_sensor.yaml
+history_graph: !include config/history_graph.yaml
+device_tracker: !include config/device_tracker.yaml
+mqtt: !include config/mqtt.yaml
+influxdb: !include config/influxdb.yaml
+sensor: !include config/sensors.yaml
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+#cast: !include config/cast.yaml
+
+#sensor.bureau:
+#  google_assistant: true
+#  google_assistant_type: climate
+#  google_assistant_name: bureau
