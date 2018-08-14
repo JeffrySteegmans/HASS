@@ -1,6 +1,6 @@
 api_key: !secret sabnzbd_api_key
-host: 192.168.0.2
-port: 8090
+host: !secret sabnzbd_host
+port: !secret sabnzbd_port
 sensors:
   - current_status
   - speed

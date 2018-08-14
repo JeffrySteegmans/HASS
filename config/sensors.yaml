@@ -43,7 +43,7 @@
     - !secret email_jeffry
     - !secret email_katja
 - platform: pi_hole
-  host: 192.168.0.2:8082
+  host: !secret pihole_host
   monitored_conditions:
     - ads_blocked_today
     - ads_percentage_today
@@ -55,13 +55,13 @@
     - unique_domains
 - platform: sonarr
   api_key: !secret sonarr_api_key
-  host: 192.168.0.2
+  host: !secret sonarr_host
   monitored_conditions:
     - upcoming
     - wanted
   days: 2
 - platform: synologydsm
-  host: 192.168.0.2
+  host: !secret synology_host
   username: !secret synology_username
   password: !secret synology_password
   monitored_conditions:

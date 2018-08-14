@@ -1,6 +1,6 @@
 - platform: webostv
-  mac: 14:c9:13:85:af:5f
-  host: 192.168.0.60
+  mac: !secret webostv_living_mac
+  host: !secret webostv_living_ip
   name: TV Living
 - platform: plex
   entity_namespace: 'plex'
