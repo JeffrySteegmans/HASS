@@ -21,7 +21,7 @@ Mediaplayers_view:
     - media_player.tv_living
     - media_player.chrome_2
     - media_player.ccliving
-    
+
 Temperatuur_view:
   view: yes
   icon: mdi:weather-partlycloudy
@@ -31,20 +31,19 @@ Temperatuur_view:
     - history_graph.Temperatuur
     - history_graph.Regen
     - history_graph.Zonnestraling
-    
-#Security_view:
-#  view: yes
-#  icon: mdi:cctv
-#  name: Security
-#  entities:
-#    - camera.oprit
-#    - camera.tuinhuis
-    
-    
+
+Security_view:
+  view: yes
+  icon: mdi:cctv
+  name: Security
+  entities:
+    - camera.oprit
+    - camera.tuinhuis
+
 #########################
 #   Hidden              #
 #########################
- 
+
 TempSensors:
   view: no
   name: Weer
@@ -62,7 +61,7 @@ SerreSensors:
     - sensor.Serre_temp
     - sensor.Serre_humidity
     - sensor.Serre_soil
-    
+
 Tracking:
   view: no
   name: Aanwezigheid
@@ -72,7 +71,7 @@ Tracking:
     - device_tracker.galaxys8
     - device_tracker.huawei_gt3
     - device_tracker.galaxys8_pierre
-    
+
 DeviceState:
   view: no
   name: Connectie status
@@ -80,7 +79,7 @@ DeviceState:
     - binary_sensor.nodered_docker
     - binary_sensor.nodered_castleblack
     - binary_sensor.nodemcu_serre
- 
+
 sabnzbd_group:
   view: no
   name: SABnzbd
@@ -93,7 +92,7 @@ sabnzbd_group:
     - sensor.sabnzbd_total
     - sensor.sabnzbd_left
     - sensor.sabnzbd_queue_count
-    
+
 fitbit:
   view: no
   name: Fitbit Jeffry
@@ -107,27 +106,27 @@ fitbit:
     - sensor.steps
     - sensor.tracker_steps
     - sensor.weight
-    
+
 haveibeenpawned:
   view: no
   name: HaveIBeenPawned
   entities:
     - sensor.breaches_jeffrysteegmansgmailcom
     - sensor.breaches_katjavanoijengmailcom
-    
+
 pihole:
   view: no
   name: Pi-hole
   entities:
     - sensor.pihole_ads_blocked_today
-    
+
 sonarr:
   view: no
   name: Sonarr
   entities:
     - sensor.sonarr_upcoming
     - sensor.sonarr_wanted
- 
+
 synology:
   view: no
   name: Synology

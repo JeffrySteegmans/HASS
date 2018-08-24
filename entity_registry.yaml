@@ -35,17 +35,17 @@ sensor.elen_temperature:
   unique_id: 51.0683335.760030temperature
 sensor.elen_temperature_2:
   config_entry_id:
-  name: Buienradar (Elen)
+  name: Buienradar
   platform: buienradar
   unique_id: 51.0683335.761514temperature
 sensor.elen_precipitation_2:
   config_entry_id:
-  name: Regen (Elen)
+  name: Regen
   platform: buienradar
   unique_id: 51.0683335.761514precipitation
 sensor.elen_precipitation_forecast_average:
   config_entry_id:
-  name: Voorspelling regen (Elen)
+  name: Voorspelling regen
   platform: buienradar
   unique_id: 51.0683335.761514precipitation_forecast_average
 sensor.elen_irradiance:
@@ -54,7 +54,7 @@ sensor.elen_irradiance:
   platform: buienradar
   unique_id: 51.0683335.761514irradiance
 media_player.ccslaapkamer:
-  config_entry_id:
+  config_entry_id: e21ce10c3c134efda1c87b6a79269172
   name:
   platform: cast
   unique_id: 990939a6-b894-080a-6505-5ceeefd2d378

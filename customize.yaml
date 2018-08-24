@@ -3,4 +3,4 @@ sensor.serre_soil:
 sensor.serre_humidity:
   friendly_name: Lucht vochtigheid
 sensor.serre_temp:
-  friendly_name: Temperatuur
+  friendly_name: Serre

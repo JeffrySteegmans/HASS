@@ -71,3 +71,82 @@
   - data:
       entity_id: notify_serre_temp
     service: input_boolean.turn_off
+- id: '1535032148593'
+  alias: Test aanwezigheid
+  trigger:
+  - entity_id: device_tracker.galaxy_s8_kevin
+    from: not_home
+    platform: state
+    to: home
+  condition: []
+  action:
+  - data:
+      message: BEZOEK!
+    service: notify.ios_iphone_jeffry
+- id: '1535099169538'
+  alias: Pierre thuis
+  trigger:
+  - entity_id: device_tracker.galaxys8_pierre
+    from: not_home
+    platform: state
+    to: home
+  condition: []
+  action:
+  - data:
+      message: Pierre is thuis
+    service: notify.ios_iphone_jeffry
+- id: '1535099383621'
+  alias: Pierre water aan het geven
+  trigger:
+  - platform: template
+    value_template: '{{ is_state_attr(''device_tracker.galaxys8_pierre'', ''ap_mac'',
+      ''80:2a:a8:59:e0:2e'') }}'
+  condition: []
+  action:
+  - data:
+      message: Pierre is water aan het geven
+    service: notify.ios_iphone_jeffry
+- id: '1535099383622'
+  alias: Katja bureau
+  trigger:
+  - platform: template
+    value_template: '{{ is_state_attr(''device_tracker.iphone_katja'', ''ap_mac'',
+      ''fc:ec:da:10:a5:91'') }}'
+  condition: []
+  action:
+  - data:
+      message: Katja zit op de bureau
+    service: notify.ios_iphone_jeffry
+- id: '1535099383623'
+  alias: Katja living
+  trigger:
+  - platform: template
+    value_template: '{{ is_state_attr(''device_tracker.iphone_katja'', ''ap_mac'',
+      ''80:2a:a8:59:e0:8c'') }}'
+  condition: []
+  action:
+  - data:
+      message: Katja zit in de living
+    service: notify.ios_iphone_jeffry
+- id: '1535099383624'
+  alias: Katja boven
+  trigger:
+  - platform: template
+    value_template: '{{ is_state_attr(''device_tracker.iphone_katja'', ''ap_mac'',
+      ''fc:ec:da:10:8a:f7'') }}'
+  condition: []
+  action:
+  - data:
+      message: Katja is boven
+    service: notify.ios_iphone_jeffry
+- id: '1535099383625'
+  alias: Katja tuin
+  trigger:
+  - platform: template
+    value_template: '{{ is_state_attr(''device_tracker.iphone_katja'', ''ap_mac'',
+      ''80:2a:a8:59:e0:2e'') }}'
+  condition: []
+  action:
+  - data:
+      message: Katja is in de tuin
+    service: notify.ios_iphone_jeffry
