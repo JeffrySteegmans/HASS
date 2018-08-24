@@ -183,7 +183,7 @@ views:
           entity: sensor.weight
           title: Weight
           style:
-            left: 10%
+            left: 12%
             top: 8%
             color: white
             transform: none
