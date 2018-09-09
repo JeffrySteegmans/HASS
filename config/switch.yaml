@@ -1,0 +1,8 @@
+- platform: mqtt
+  name: "Licht TV living"
+  command_topic: "pstvliving/relay/state"
+  state_topic: "pstvliving/cmd"
+  availability_topic: "pstvliving/state"
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true
