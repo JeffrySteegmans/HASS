@@ -74,6 +74,7 @@ Tracking:
   name: Aanwezigheid
   entities:
     - device_tracker.iphone_jeffry
+    - device_tracker.iphone_van_katja
     - device_tracker.iphone_katja
     - device_tracker.galaxys8
     - device_tracker.huawei_gt3
