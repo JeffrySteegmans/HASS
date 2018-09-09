@@ -3,6 +3,7 @@ default_view:
   icon: mdi:view-dashboard
   name: Dashboard
   entities:
+    - group.Lights
     - group.TempSensors
     - group.SerreSensors
     - group.Tracking
@@ -44,6 +45,12 @@ Security_view:
 #   Hidden              #
 #########################
 
+Lights:
+  view: no
+  name: Lichten
+  entities:
+    - switch.licht_tv_living
+
 TempSensors:
   view: no
   name: Weer
@@ -79,6 +86,7 @@ DeviceState:
     - binary_sensor.nodered_docker
     - binary_sensor.nodered_castleblack
     - binary_sensor.nodemcu_serre
+    - binary_sensor.nodemcu_tv_verlichting
 
 sabnzbd_group:
   view: no

@@ -19,3 +19,10 @@
   payload_on: "On"
   payload_off: "Off"
   device_class: connectivity
+- platform: mqtt
+  name: "NodeMCU Tv Verlichting"
+  state_topic: "pstvliving/state"
+  qos: 0
+  payload_on: "online"
+  payload_off: "Offline"
+  device_class: connectivity
