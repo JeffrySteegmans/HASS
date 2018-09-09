@@ -106,47 +106,95 @@
   - data:
       message: Pierre is water aan het geven
     service: notify.ios_iphone_jeffry
-- id: '1535099383622'
-  alias: Katja bureau
+- id: '1536510294355'
+  alias: Licht aan bij valavond indien iemand thuis
   trigger:
-  - platform: template
-    value_template: '{{ is_state_attr(''device_tracker.iphone_katja'', ''ap_mac'',
-      ''fc:ec:da:10:a5:91'') }}'
-  condition: []
+  - event: sunset
+    offset: -00:15:00
+    platform: sun
+  condition:
+  - condition: state
+    entity_id: group.all_devices
+    state: home
   action:
   - data:
-      message: Katja zit op de bureau
+      entity_id: switch.licht_tv_living
+    service: switch.turn_on
+  - data:
+      message: Verlichting is aan
     service: notify.ios_iphone_jeffry
-- id: '1535099383623'
-  alias: Katja living
+- id: '1536510427914'
+  alias: Verlichting uit om 00h00
   trigger:
-  - platform: template
-    value_template: '{{ is_state_attr(''device_tracker.iphone_katja'', ''ap_mac'',
-      ''80:2a:a8:59:e0:8c'') }}'
-  condition: []
+  - at: 00:00
+    platform: time
+  condition:
+  - condition: state
+    entity_id: switch.licht_tv_living
+    state: 'ON'
   action:
   - data:
-      message: Katja zit in de living
+      entity_id: switch.licht_tv_living
+    service: switch.turn_off
+  - data:
+      Message: Verlichting uitgeschakeld om middernacht
     service: notify.ios_iphone_jeffry
-- id: '1535099383624'
-  alias: Katja boven
+- id: '1536510555331'
+  alias: Verlichting aan 's morgens
   trigger:
-  - platform: template
-    value_template: '{{ is_state_attr(''device_tracker.iphone_katja'', ''ap_mac'',
-      ''fc:ec:da:10:8a:f7'') }}'
-  condition: []
+  - at: 06:00
+    platform: time
+  condition:
+  - below: '3.5'
+    condition: numeric_state
+    entity_id: sun.sun
+    value_template: '{{ state.attributes.elevation }}'
   action:
   - data:
-      message: Katja is boven
+      entity_id: switch.licht_tv_living
+    service: switch.turn_on
+  - data:
+      Message: Verlichting aangeschakeld 's morgens
     service: notify.ios_iphone_jeffry
-- id: '1535099383625'
-  alias: Katja tuin
+- id: '1536510724699'
+  alias: Verlichting uit 's morgens
   trigger:
-  - platform: template
-    value_template: '{{ is_state_attr(''device_tracker.iphone_katja'', ''ap_mac'',
-      ''80:2a:a8:59:e0:2e'') }}'
+  - event: sunrise
+    offset: +00:15:00
+    platform: sun
+  condition:
+  - condition: state
+    entity_id: switch.licht_tv_living
+    state: 'ON'
+  action:
+  - alias: ''
+    data:
+      entity_id: switch.licht_tv_living
+    service: switch.turn_off
+  - data:
+      Message: Verlichting uitgeschakeld 's morgens
+    service: notify.ios_iphone_jeffry
+- id: '1533553411877'
+  alias: Waarschuwing bij verbreken NodeMCU TV verlichting
+  trigger:
+  - entity_id: binary_sensor.nodemcu_tv_verlichting
+    from: 'online'
+    platform: state
+    to: 'offline'
   condition: []
   action:
   - data:
-      message: Katja is in de tuin
+      message: Verbinding met NodeMCU TV Verlichting verbroken
+    service: notify.ios_iphone_jeffry
+- id: '1533553411878'
+  alias: Waarschuwing bij verbinden NodeMCU TV verlichting
+  trigger:
+  - entity_id: binary_sensor.nodemcu_tv_verlichting
+    from: 'offline'
+    platform: state
+    to: 'online'
+  condition: []
+  action:
+  - data:
+      message: NodeMCU TV Verlichting verbonden
     service: notify.ios_iphone_jeffry
