@@ -131,7 +131,10 @@
   condition:
   - condition: state
     entity_id: switch.licht_tv_living
-    state: 'ON'
+    state: 'on'
+  - condition: state
+    entity_id: media_player.tv_living
+    state: 'off'
   action:
   - data:
       entity_id: switch.licht_tv_living
@@ -142,7 +145,7 @@
 - id: '1536510555331'
   alias: Verlichting aan 's morgens
   trigger:
-  - at: 06:00
+  - at: 06:20
     platform: time
   condition:
   - below: '3.5'
@@ -165,7 +168,7 @@
   condition:
   - condition: state
     entity_id: switch.licht_tv_living
-    state: 'ON'
+    state: 'on'
   action:
   - alias: ''
     data:
@@ -197,4 +200,24 @@
   action:
   - data:
       message: NodeMCU TV Verlichting verbonden
+    service: notify.ios_iphone_jeffry
+- id: '2000000000000'
+  alias: Verlichting uit indien TV uit na 22h00
+  trigger:
+  - platform: state
+    entity_id: switch.licht_tv_living
+    from: 'on'
+    to: 'off'
+  condition: 
+  - condition: time
+    after: '22:00:00'
+  - condition: state
+    entity_id: switch.licht_tv_living
+    state: 'on'
+  action:
+  - data:
+      entity_id: switch.licht_tv_living
+    service: switch.turn_off
+  - data:
+      message: Verlichting uitgeschakeld omdat het na 22h00 is en de tv gaat uit
     service: notify.ios_iphone_jeffry
