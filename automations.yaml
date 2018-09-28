@@ -206,9 +206,9 @@
   trigger:
   - platform: state
     entity_id: switch.licht_tv_living
-    from: 'on'
+    from: playing
     to: 'off'
-  condition: 
+  condition:
   - condition: time
     after: '22:00:00'
   - condition: state
@@ -216,8 +216,26 @@
     state: 'on'
   action:
   - data:
+      message: Verlichting wordt achter 5 minuut uitgeschakeld
+    service: notify.ios_iphone_jeffry
+  - delay: 00:05:00
+  - data:
       entity_id: switch.licht_tv_living
     service: switch.turn_off
   - data:
       message: Verlichting uitgeschakeld omdat het na 22h00 is en de tv gaat uit
+    service: notify.ios_iphone_jeffry
+- id: '2000000000001'
+  alias: Verlichting aan indien iemand thuis komt na zonsondergang
+  trigger:
+  - entity_id: group.all_devices
+    platform: state
+    to: home
+  condition:
+  - after: sunset
+    after_offset: -00:30:00
+    condition: sun
+  action:
+  - data:
+      message: Verlichting aangeschakeld omdat iemand na 22h00 thuis komt
     service: notify.ios_iphone_jeffry
