@@ -205,8 +205,8 @@
   alias: Verlichting uit indien TV uit na 22h00
   trigger:
   - platform: state
-    entity_id: switch.licht_tv_living
-    from: playing
+    entity_id: media_player.tv_living
+    from: 'playing'
     to: 'off'
   condition:
   - condition: time
