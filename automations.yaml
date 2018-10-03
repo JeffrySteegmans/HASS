@@ -1,5 +1,5 @@
 - id: '1533553411857'
-  alias: Waarschuwing bij verbreken NodeMCU Serre
+  alias: NodeMCU Serre disconnected message
   trigger:
   - entity_id: binary_sensor.nodemcu_serre
     from: 'on'
@@ -11,7 +11,7 @@
       message: Verbinding met NodeMCU Serre verbroken
     service: notify.ios_iphone_jeffry
 - id: '1533553548849'
-  alias: Waarschuwing bij connecteren NodeMCU Serre
+  alias: NodeMCU Serre connected message
   trigger:
   - entity_id: binary_sensor.nodemcu_serre
     from: 'off'
@@ -23,7 +23,7 @@
       message: NodeMCU Serre verbonden
     service: notify.ios_iphone_jeffry
 - id: '1533553672666'
-  alias: Waarschuwing bij meer dan 45°C in de serre
+  alias: Over 45°C in greenhouse
   trigger:
   - above: '45'
     entity_id: sensor.serre_temp
@@ -235,6 +235,9 @@
   - after: sunset
     after_offset: -00:30:00
     condition: sun
+  - condition: state
+    entity_id: switch.licht_tv_living
+    state: 'off'
   action:
   - data:
       message: Verlichting aangeschakeld omdat iemand na 22h00 thuis komt
