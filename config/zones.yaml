@@ -28,3 +28,8 @@
   longitude: !secret zone_kerakris_longitude
   radius: 150
   icon: mdi:store
+- name: IPTE
+  latitude: !secret zone_ipte_latitude
+  longitude: !secret zone_ipte_longitude
+  radius: 250
+  icon: mdi:worker
