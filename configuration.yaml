@@ -57,18 +57,22 @@ tts:
 cloud:
 
 homekit:
+  filter:
+    include_domains:
+      - switch
 
-# google_assistant: 
-#   project_id: !secret google_assistant_project_id
-#   client_id: !secret google_assistant_client_id
-#   access_token: !secret google_assistant_access_token
-#   agent_user_id: jeffry
-#   api_key: !secret google_assistant_api_key
-#   entity_config:
-#     switch.licht_tv_living:
-#       name: Tv verlichting
-#       aliases:
-#         - tv light
+google_assistant: 
+  project_id: !secret google_assistant_project_id
+  client_id: !secret google_assistant_client_id
+  access_token: !secret google_assistant_access_token
+  agent_user_id: jeffry
+  api_key: !secret google_assistant_api_key
+  entity_config:
+    switch.licht_tv_living:
+      name: Tv verlichting
+      aliases:
+        - tv light
+
 mqtt: !include config/mqtt.yaml
 input_boolean: !include config/input_boolean.yaml
 sabnzbd: !include config/sabnzbd.yaml
