@@ -23,20 +23,16 @@ config:
 ios:
 
 http:
-  ip_ban_enabled: true
-  login_attempts_threshold: 3
-  #trusted_networks: !secret http_trusted_networks
   api_password: !secret http_password
   base_url: !secret http_baseurl
+  ip_ban_enabled: true
+  login_attempts_threshold: 3
 
 updater:
   reporting: no
 
 # Discover some devices automatically
 discovery:
-
-# Allows you to issue voice commands from the frontend in enabled browsers
-conversation:
 
 # Enables support for tracking state changes over time
 history:
@@ -62,34 +58,19 @@ cloud:
 
 homekit:
 
-google_assistant: 
-  project_id: !secret google_assistant_project_id
-  client_id: !secret google_assistant_client_id
-  access_token: !secret google_assistant_access_token
-  agent_user_id: jeffry
-  api_key: !secret google_assistant_api_key
-  exposed_domains:
-    - switch
-    - light
-    - group
-  entity_config:
-    switch.licht_tv_living:
-      name: Tv verlichting
-      aliases:
-        - tv light
+mqtt: !include config/mqtt.yaml
 input_boolean: !include config/input_boolean.yaml
 sabnzbd: !include config/sabnzbd.yaml
 camera: !include config/cameras.yaml
-telegram_bot: !include config/telegram_bot.yaml
 zone: !include config/zones.yaml
 media_player: !include config/media_players.yaml
 binary_sensor: !include config/binary_sensor.yaml
 history_graph: !include config/history_graph.yaml
 device_tracker: !include config/device_tracker.yaml
-mqtt: !include config/mqtt.yaml
-influxdb: !include config/influxdb.yaml
 sensor: !include config/sensors.yaml
 switch: !include config/switch.yaml
+influxdb: !include config/influxdb.yaml
+
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml

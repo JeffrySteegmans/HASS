@@ -1,0 +1,95 @@
+kookplaat:
+  hide_if_away: false
+  icon:
+  mac: 68:A4:0E:16:56:47
+  name: Kookplaat
+  picture:
+  track: false
+
+nodemcu_tvverlichting:
+  hide_if_away: false
+  icon:
+  mac: 5C:CF:7F:53:DA:4F
+  name: NodeMCU TV-verlichting
+  picture:
+  track: false
+
+nodemcu_develop:
+  hide_if_away: false
+  icon:
+  mac: 5C:CF:7F:53:8A:FC
+  name: NodeMCU Develop
+  picture:
+  track: false
+
+nintendo_switch:
+  hide_if_away: false
+  icon:
+  mac: DC:68:EB:BB:17:F1
+  name: Nintendo Switch
+  picture:
+  track: false
+
+ipad:
+  hide_if_away: false
+  icon:
+  mac: E4:E0:A6:5B:46:1B
+  name: iPad
+  picture:
+  track: false
+
+googlehomemini:
+  hide_if_away: false
+  icon:
+  mac: 48:D6:D5:EF:97:F7
+  name: Google-Home-Mini
+  picture:
+  track: false
+
+nodemcu_serre:
+  hide_if_away: false
+  icon:
+  mac: 5C:CF:7F:53:D4:24
+  name: NodeMCU Serre
+  picture:
+  track: false
+
+ipad_mini_kinderen:
+  hide_if_away: false
+  icon:
+  mac: F0:F6:1C:E0:2B:37
+  name: iPad mini Kinderen
+  picture:
+  track: false
+
+brother_printer:
+  hide_if_away: false
+  icon:
+  mac: C4:8E:8F:D6:6E:5C
+  name: Brother Printer
+  picture:
+  track: false
+
+kindle:
+  hide_if_away: false
+  icon:
+  mac: 84:D6:D0:87:30:BA
+  name: Kindle
+  picture:
+  track: false
+
+iphone_jeffry:
+  hide_if_away: false
+  icon:
+  mac: 40:98:AD:26:45:DD
+  name: Jeffry
+  picture: https://lh3.googleusercontent.com/-pu9xSPLxOAQ/WWz4UIz1oKI/AAAAAAAAnPY/jY6_VJauQygU6GGNmvYo4z-wJ_wUMR6mwCEwYBhgL/w105-h140-p/IMG-20170717-WA0005.jpg
+  track: true
+
+iphone_van_katja:
+  hide_if_away: false
+  icon:
+  mac: E0:5F:45:CF:FD:EF
+  name: Katja
+  picture: https://lh3.googleusercontent.com/-XMaAE-BR3O0/VZzqeGec5HI/AAAAAAAAAYo/-yTTYaFvXLAUThord8S3vH7c3rgnoThagCEwYBhgL/w139-h140-p/Gd-4ACIAbYwgE9ugtapMfojshvo5KKE7fmAoVXm2gVgccW8v_O849d2mhA7ktWA-J5zl82QszN3AAztMA9SKRUgNkFKauee-%253Ds0-d-e1-ft.jpg
+  track: true

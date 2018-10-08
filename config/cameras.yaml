@@ -4,7 +4,3 @@
 - platform: generic
   name: Tuinhuis
   still_image_url: !secret camera_pierre_tuinhuis_still_image_url
-#- platform: uvc
-#  nvr: pierrevanoijen.synology.me
-#  key: !secret camera_pierre_api_key
-#  password: !secret camera_pierre_password

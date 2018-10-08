@@ -30,59 +30,33 @@
   unit_of_measurement: "%"
   value_template: "{{ value | round(0) }}"
 - platform: moon
-- platform: fitbit
-  unit_system: metric
-  monitored_resources:
-    - "activities/steps"
-    - "body/bmi"
-    - "body/fat"
-    - "body/weight"
-    - "devices/battery"
-    - "sleep/efficiency"
-    - "sleep/timeInBed"
-- platform: haveibeenpwned
-  email: 
-    - !secret email_jeffry
-    - !secret email_katja
-- platform: pi_hole
-  host: !secret pihole_host
-  monitored_conditions:
-    - ads_blocked_today
-    - ads_percentage_today
-    - dns_queries_today
-    - domains_being_blocked
-    - queries_cached
-    - queries_forwarded
-    - unique_clients
-    - unique_domains
-- platform: sonarr
-  api_key: !secret sonarr_api_key
-  host: !secret sonarr_host
-  monitored_conditions:
-    - upcoming
-    - wanted
-  days: 2
-- platform: synologydsm
-  host: !secret synology_host
-  username: !secret synology_username
-  password: !secret synology_password
-  monitored_conditions:
-    - cpu_total_load
-    - memory_real_usage
-    - network_up
-- platform: template
-  sensors:
-    fitbit_steps:
-      friendly_name: 'Steps'
-      value_template: >
-        {{ states.sensor.steps.state | replace(",","") }}
-      unit_of_measurement: 'steps'
-    fitbit_calories:
-      friendly_name: 'Calories'
-      value_template: >
-        {{ states.sensor.calories.state | replace(",","") }}
-      unit_of_measurement: 'calories'
-    weight_loss:
-      friendly_name: 'Weight Loss'
-      value_template: "{{ '%.1f' | format(111.5 - (states.sensor.weight.state | float)) }}"
-      unit_of_measurement: 'kg'
+# - platform: haveibeenpwned
+#   email: 
+#     - !secret email_jeffry
+#     - !secret email_katja
+# - platform: pi_hole
+#   host: !secret pihole_host
+#   monitored_conditions:
+#     - ads_blocked_today
+#     - ads_percentage_today
+#     - dns_queries_today
+#     - domains_being_blocked
+#     - queries_cached
+#     - queries_forwarded
+#     - unique_clients
+#     - unique_domains
+# - platform: sonarr
+#   api_key: !secret sonarr_api_key
+#   host: !secret sonarr_host
+#   monitored_conditions:
+#     - upcoming
+#     - wanted
+#   days: 2
+# - platform: synologydsm
+#   host: !secret synology_host
+#   username: !secret synology_username
+#   password: !secret synology_password
+#   monitored_conditions:
+#     - cpu_total_load
+#     - memory_real_usage
+#     - network_up
