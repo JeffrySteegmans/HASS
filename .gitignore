@@ -6,3 +6,5 @@
 !www
 !.gitignore
 !README.md
+secrets.yaml
+ip_bans.yaml
