@@ -242,3 +242,14 @@
   - data:
       message: Verlichting aangeschakeld omdat iemand na 22h00 thuis komt
     service: notify.ios_iphone_jeffry
+- id: '2000000000002'
+  alias: bericht bij vertrek k
+  trigger:
+  - entity_id: device_tracker.iphone_van_katja
+    platform: state
+    from: Kevin
+  condition:
+  action:
+  - data:
+      message: Katja is vertrokken
+    service: notify.ios_iphone_jeffry
