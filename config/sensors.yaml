@@ -30,6 +30,44 @@
   unit_of_measurement: "%"
   value_template: "{{ value | round(0) }}"
 - platform: moon
+- platform: scrape
+  name: sbhavert
+  friendly_name: SB in Havert
+  resource: https://www.clever-tanken.de/tankstelle_details/45777
+  select: "#main-content-fuel-price-list > div:nth-of-type(1) > div.price-box > div > span.price-field > span"
+  unit_of_measurement: "€/l"
+  value_template: '{{ value | float }}'
+  scan_interval: 300 #Every 5 minutes 
+- platform: scrape
+  name: essoselfkant
+  friendly_name: ESSO in Selfkant
+  resource: https://www.clever-tanken.de/tankstelle_details/16935
+  select: "#main-content-fuel-price-list > div:nth-of-type(1) > div.price-box > div > span.price-field > span"
+  unit_of_measurement: "€/l"
+  value_template: '{{ value | float }}'
+  scan_interval: 300 #Every 5 minutes 
+- platform: scrape
+  name: shellselfkant
+  friendly_name: SHELL in Selfkant
+  resource: https://www.clever-tanken.de/tankstelle_details/145148
+  select: "#main-content-fuel-price-list > div:nth-of-type(1) > div.price-box > div > span.price-field > span"
+  unit_of_measurement: "€/l"
+  value_template: '{{ value | float }}'
+  scan_interval: 300 #Every 5 minutes 
+- platform: scrape
+  name: haanroosteren
+  resource: https://www.unitedconsumers.com/tanken/informatie/tankstation.asp?StationId=440
+  select: "#accordionPrices > div:nth-of-type(2) > div:nth-of-type(2) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2)"
+  value_template: "{{ value.split(' ')[1].replace(',', '.') | float }}"
+  unit_of_measurement: "€/l"
+  scan_interval: 300 #Every 5 minutes 
+- platform: scrape
+  name: gabrielsdilsen
+  resource: https://carbu.com/belgie//index.php/liste-stations-service/Diesel%20(B7)/Dilsen-Stokkem/3650/BE_li_653/113
+  select: "b#price_20204"
+  value_template: "{{ value.split(' ')[0].replace(',', '.') | float }}"
+  unit_of_measurement: "€/l"
+  scan_interval: 300 #Every 5 minutes 
 # - platform: haveibeenpwned
 #   email: 
 #     - !secret email_jeffry

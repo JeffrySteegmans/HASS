@@ -4,3 +4,18 @@ sensor.serre_humidity:
   friendly_name: Lucht vochtigheid
 sensor.serre_temp:
   friendly_name: Serre
+sensor.sbhavert:
+  friendly_name: SB in Havert
+  icon: mdi:gas-station
+sensor.essoselfkant:
+  friendly_name: ESSO in Selfkant
+  icon: mdi:gas-station
+sensor.shellselfkant:
+  friendly_name: SHELL in Selfkant
+  icon: mdi:gas-station
+sensor.haanroosteren:
+  friendly_name: HAAN in Roosteren
+  icon: mdi:gas-station
+sensor.gabrielsdilsen:
+  friendly_name: Gabriels in Dilsen
+  icon: mdi:gas-station

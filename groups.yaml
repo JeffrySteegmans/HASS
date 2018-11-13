@@ -9,6 +9,7 @@ default_view:
     - group.Tracking
     - group.DeviceState
     - group.sabnzbd_group
+    - group.naft
 
 Mediaplayers_view:
   view: yes
@@ -97,3 +98,13 @@ sabnzbd_group:
     - sensor.sabnzbd_total
     - sensor.sabnzbd_left
     - sensor.sabnzbd_queue_count
+
+naft:
+  view: no
+  name: Prijzen aan de pomp
+  entities:
+    - sensor.sbhavert
+    - sensor.essoselfkant
+    - sensor.shellselfkant
+    - sensor.haanroosteren
+    - sensor.gabrielsdilsen
