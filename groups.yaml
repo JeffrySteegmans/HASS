@@ -109,6 +109,8 @@ naft:
     - sensor.shellselfkant
     - sensor.haanroosteren
     - sensor.gabrielsdilsen
+    - sensor.tinqmauritslaan
+    - sensor.tinqjosklijnenlaan
 
 financial:
   view: no

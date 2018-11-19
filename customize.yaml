@@ -19,3 +19,9 @@ sensor.haanroosteren:
 sensor.gabrielsdilsen:
   friendly_name: Gabriels in Dilsen
   icon: mdi:gas-station
+sensor.tinqmauritslaan:
+  friendly_name: TINQ Mauritslaan in Geleen
+  icon: mdi:gas-station
+sensor.tinqjosklijnenlaan:
+  friendly_name: TINQ Jos Klijnenlaan in Geleen
+  icon: mdi:gas-station
