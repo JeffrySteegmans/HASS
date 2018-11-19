@@ -206,7 +206,7 @@
   trigger:
   - platform: state
     entity_id: media_player.tv_living
-    from: 'playing'
+    from: playing
     to: 'off'
   condition:
   - condition: time
@@ -251,5 +251,15 @@
   condition:
   action:
   - data:
-      message: Katja is vertrokken
+      message: vertrokken
     service: notify.ios_iphone_jeffry
+- id: '2000000000003'
+  alias: Bericht bij veranderen referte index C
+  trigger:
+  - entity_id: sensor.referteindexc
+    platform: state
+  action:
+  - service: notify.ios_iphone_jeffry
+    data_template:
+      message: >
+        Referte index C is aangepast naar {{ states("sensor.referteindexc")}}%
