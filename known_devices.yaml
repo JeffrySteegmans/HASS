@@ -93,3 +93,146 @@ iphone_van_katja:
   name: Katja
   picture: https://lh3.googleusercontent.com/-XMaAE-BR3O0/VZzqeGec5HI/AAAAAAAAAYo/-yTTYaFvXLAUThord8S3vH7c3rgnoThagCEwYBhgL/w139-h140-p/Gd-4ACIAbYwgE9ugtapMfojshvo5KKE7fmAoVXm2gVgccW8v_O849d2mhA7ktWA-J5zl82QszN3AAztMA9SKRUgNkFKauee-%253Ds0-d-e1-ft.jpg
   track: true
+one_plus_one:
+  hide_if_away: false
+  icon:
+  mac: C0:EE:FB:42:C2:D8
+  name: One plus One
+  picture:
+  track: false
+
+ccliving:
+  hide_if_away: false
+  icon:
+  mac: 54:60:09:18:92:B4
+  name: CC-Living
+  picture:
+  track: false
+
+laptopkatja:
+  hide_if_away: false
+  icon:
+  mac: 58:91:CF:0B:64:E0
+  name: LaptopKatja
+  picture:
+  track: false
+
+laptop_jeffry:
+  hide_if_away: false
+  icon:
+  mac: 94:B8:6D:76:FC:00
+  name: Laptop Jeffry
+  picture:
+  track: false
+
+aria2:
+  hide_if_away: false
+  icon:
+  mac: 18:00:DB:0B:09:71
+  name: Aria2
+  picture:
+  track: false
+
+galaxys8_pierre:
+  hide_if_away: false
+  icon:
+  mac: 8C:F5:A3:E9:98:E2
+  name: Galaxy-S8 (Pierre)
+  picture:
+  track: false
+
+chromecast:
+  hide_if_away: false
+  icon:
+  mac: 6C:AD:F8:F7:84:A8
+  name: Chromecast
+  picture:
+  track: false
+
+nintendo_3ds:
+  hide_if_away: false
+  icon:
+  mac: 40:D2:8A:8A:62:42
+  name: Nintendo 3DS
+  picture:
+  track: false
+
+galaxy_tab_4:
+  hide_if_away: false
+  icon:
+  mac: 68:48:98:4B:47:79
+  name: Galaxy Tab 4
+  picture:
+  track: false
+
+nintendo_3ds_2:
+  hide_if_away: false
+  icon:
+  mac: 98:B6:E9:C7:10:41
+  name: Nintendo 3DS
+  picture:
+  track: false
+
+58b0d42d47a0:
+  hide_if_away: false
+  icon:
+  mac: 58:B0:D4:2D:47:A0
+  name: 58b0d42d47a0
+  picture:
+  track: false
+
+68a40e232771:
+  hide_if_away: false
+  icon:
+  mac: 68:A4:0E:23:27:71
+  name: 68a40e232771
+  picture:
+  track: false
+
+chromecast_2:
+  hide_if_away: false
+  icon:
+  mac: 80:D2:1D:15:91:2B
+  name: Chromecast
+  picture:
+  track: false
+
+androidabc821f83e87b85f:
+  hide_if_away: false
+  icon:
+  mac: C0:EE:FB:9A:24:95
+  name: android-abc821f83e87b85f
+  picture:
+  track: false
+
+404e362145d4:
+  hide_if_away: false
+  icon:
+  mac: 40:4E:36:21:45:D4
+  name: 404e362145d4
+  picture:
+  track: false
+
+leemhoek:
+  hide_if_away: false
+  icon:
+  mac: 38:B1:DB:E4:CC:19
+  name: Leemhoek
+  picture:
+  track: false
+
+esp_53d51a:
+  hide_if_away: false
+  icon:
+  mac: 5C:CF:7F:53:D5:1A
+  name: ESP 53D51A
+  picture:
+  track: false
+
+galaxy_s8_kevin:
+  hide_if_away: false
+  icon:
+  mac: 30:07:4D:BE:F1:EC
+  name: Galaxy S8 (Kevin)
+  picture:
+  track: false

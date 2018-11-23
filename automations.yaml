@@ -240,8 +240,11 @@
     state: 'off'
   action:
   - data:
-      message: Verlichting aangeschakeld omdat iemand na 22h00 thuis komt
+      message: Verlichting aangeschakeld omdat iemand na zonsondergang thuis komt
     service: notify.ios_iphone_jeffry
+  - data:
+      entity_id: switch.licht_tv_living
+    service: switch.turn_on
 - id: '2000000000002'
   alias: bericht bij vertrek k
   trigger:
@@ -261,5 +264,4 @@
   action:
   - service: notify.ios_iphone_jeffry
     data_template:
-      message: >
-        Referte index C is aangepast naar {{ states("sensor.referteindexc")}}%
+      message: Referte index C is aangepast naar {{ states("sensor.referteindexc")}}%
