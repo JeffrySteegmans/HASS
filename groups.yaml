@@ -48,12 +48,16 @@ Lights:
   name: Lichten
   entities:
     - switch.licht_tv_living
+    - switch.licht_kippen
 
 TempSensors:
   view: no
   name: Weer
   entities:
     - sensor.bureau
+    - sensor.Serre_temp
+    - sensor.Kippen_buiten_temperatuur
+    - sensor.Kippen_water_temperatuur
     - sensor.elen_temperature_2
     - sensor.elen_precipitation_2
     - sensor.elen_precipitation_forecast_average
@@ -86,6 +90,7 @@ DeviceState:
     - binary_sensor.nodered_castleblack
     - binary_sensor.nodemcu_serre
     - binary_sensor.nodemcu_tv_verlichting
+    - binary_sensor.nodemcu_kippen
 
 sabnzbd_group:
   view: no

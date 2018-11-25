@@ -89,6 +89,16 @@
   value_template: "{{ value.replace('%', '').replace(',', '.') | float }}"
   unit_of_measurement: "%"
   scan_interval: 3600 #Every day
+- platform: mqtt
+  state_topic: "powerswitch/chicken/temperature/0"
+  name: "Kippen buiten temperatuur"
+  unit_of_measurement: "°C"
+  value_template: "{{ value | round(1) }}"
+- platform: mqtt
+  state_topic: "powerswitch/chicken/temperature/1"
+  name: "Kippen water temperatuur"
+  unit_of_measurement: "°C"
+  value_template: "{{ value | round(1) }}"
 # - platform: haveibeenpwned
 #   email: 
 #     - !secret email_jeffry

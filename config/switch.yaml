@@ -8,3 +8,13 @@
   state_on: "ON"
   state_off: "OFF"
   retain: true
+- platform: mqtt
+  name: "Licht Kippen"
+  command_topic: "powerswitch/chicken/relay/cmd"
+  state_topic: "powerswitch/chicken/relay/state"
+  availability_topic: "powerswitch/chicken/state"
+  payload_on: "ON"
+  payload_off: "OFF"
+  state_on: "ON"
+  state_off: "OFF"
+  retain: true

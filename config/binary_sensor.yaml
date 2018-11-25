@@ -26,3 +26,10 @@
   payload_on: "online"
   payload_off: "Offline"
   device_class: connectivity
+- platform: mqtt
+  name: "NodeMCU Kippen"
+  state_topic: "powerswitch/chicken/state"
+  qos: 0
+  payload_on: "online"
+  payload_off: "Offline"
+  device_class: connectivity
