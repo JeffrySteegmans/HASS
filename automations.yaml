@@ -216,9 +216,9 @@
     state: 'on'
   action:
   - data:
-      message: Verlichting wordt achter 5 minuut uitgeschakeld
+      message: Verlichting wordt achter 10 minuut uitgeschakeld
     service: notify.ios_iphone_jeffry
-  - delay: 00:05:00
+  - delay: 00:10:00
   - data:
       entity_id: switch.licht_tv_living
     service: switch.turn_off
