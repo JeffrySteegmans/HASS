@@ -7,7 +7,6 @@ default_view:
     - group.TempSensors
     - group.SerreSensors
     - group.Tracking
-    - group.DeviceState
     - group.sabnzbd_group
     - group.naft
     - group.financial
@@ -39,6 +38,14 @@ Security_view:
     - camera.oprit
     - camera.tuinhuis
 
+Power_view:
+  view: yes
+  icon: mdi:power-plug
+  name: Connection status
+  entities:
+    - group.nodemcu_state
+    - group.nodered_state
+
 #########################
 #   Hidden              #
 #########################
@@ -49,6 +56,10 @@ Lights:
   entities:
     - switch.licht_tv_living
     - switch.licht_kippen
+    - switch.licht_tuinhuis_tuin
+    - switch.licht_tuinhuis_buiten
+    - switch.licht_tuinhuis_binnen
+    - switch.licht_tuinhuis_reserve
 
 TempSensors:
   view: no
@@ -58,6 +69,8 @@ TempSensors:
     - sensor.Serre_temp
     - sensor.Kippen_buiten_temperatuur
     - sensor.Kippen_water_temperatuur
+    - sensor.tuinhuis_temperatuur_binnen
+    - sensor.tuinhuis_temperatuur_buiten
     - sensor.elen_temperature_2
     - sensor.elen_precipitation_2
     - sensor.elen_precipitation_forecast_average
@@ -82,15 +95,21 @@ Tracking:
     - device_tracker.huawei_gt3
     - device_tracker.galaxys8_pierre
 
-DeviceState:
+nodemcu_state:
   view: no
-  name: Connectie status
+  name: NodeMCU status
   entities:
-    - binary_sensor.nodered_docker
-    - binary_sensor.nodered_castleblack
     - binary_sensor.nodemcu_serre
     - binary_sensor.nodemcu_tv_verlichting
     - binary_sensor.nodemcu_kippen
+    - binary_sensor.nodemcu_shed
+
+nodered_state:
+  view: no
+  name: NodeRED status
+  entities:
+    - binary_sensor.nodered_docker
+    - binary_sensor.nodered_castleblack
 
 sabnzbd_group:
   view: no

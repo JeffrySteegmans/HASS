@@ -33,3 +33,10 @@
   payload_on: "online"
   payload_off: "Offline"
   device_class: connectivity
+- platform: mqtt
+  name: "NodeMCU Shed"
+  state_topic: "powerswitch/shed/state"
+  qos: 0
+  payload_on: "online"
+  payload_off: "offline"
+  device_class: connectivity
