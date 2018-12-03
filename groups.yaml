@@ -102,7 +102,7 @@ nodemcu_state:
     - binary_sensor.nodemcu_serre
     - binary_sensor.nodemcu_tv_verlichting
     - binary_sensor.nodemcu_kippen
-    - binary_sensor.nodemcu_shed
+    - binary_sensor.nodemcu_tuinhuis
 
 nodered_state:
   view: no
