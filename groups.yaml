@@ -10,6 +10,7 @@ default_view:
     - group.sabnzbd_group
     - group.naft
     - group.financial
+    - group.vaatwasser
 
 Mediaplayers_view:
   view: yes
@@ -141,3 +142,17 @@ financial:
   name: Financieel
   entities:
     - sensor.referteindexc
+
+vaatwasser:
+  view: no
+  name: Vaatwasser
+  entities:
+    - binary_sensor.vaatwasser_door
+    - sensor.vaatwasser_program_progress
+    - sensor.vaatwasser_remaining_program_time
+    - switch.vaatwasser
+    - switch.vaatwasser_program_auto1
+    - switch.vaatwasser_program_auto2
+    - switch.vaatwasser_program_auto3
+    - switch.vaatwasser_program_eco50
+    - switch.vaatwasser_program_quick45
