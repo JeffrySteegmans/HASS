@@ -109,6 +109,11 @@
   name: "Tuinhuis temperatuur buiten"
   unit_of_measurement: "°C"
   value_template: "{{ value | round(1) }}"
+- platform: waze_travel_time
+  origin: !secret waze_origin_woonwerk
+  destination: !secret waze_destination_woonwerk
+  region: 'EU'
+  name: 'Woon-Werk'
 # - platform: haveibeenpwned
 #   email: 
 #     - !secret email_jeffry

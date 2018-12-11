@@ -11,6 +11,7 @@ default_view:
     - group.naft
     - group.financial
     - group.vaatwasser
+    - sensor.woonwerk
 
 Mediaplayers_view:
   view: yes
