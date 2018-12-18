@@ -8,10 +8,9 @@ default_view:
     - group.SerreSensors
     - group.Tracking
     - group.sabnzbd_group
-    - group.naft
+    - group.diesel
     - group.financial
     - group.vaatwasser
-    - sensor.woonwerk
 
 Mediaplayers_view:
   view: yes
@@ -48,9 +47,23 @@ Power_view:
     - group.nodemcu_state
     - group.nodered_state
 
+Automation_settings_view:
+  view: yes
+  icon: mdi:settings
+  name: Automation settings
+  entities:
+    - group.automationtuinhuis
+
 #########################
 #   Hidden              #
 #########################
+
+Automationtuinhuis:
+  view: no
+  name: Automations tuinhuis
+  entities:
+    - automation.buitenlicht_tuinhuis_aan_indien_iemand_verbonden_met_ap_tuinhuis
+    - automation.buitenlicht_tuinhuis_uit_indien_iemand_verbroken_met_ap_tuinhuis
 
 Lights:
   view: no
@@ -126,17 +139,18 @@ sabnzbd_group:
     - sensor.sabnzbd_left
     - sensor.sabnzbd_queue_count
 
-naft:
+diesel:
   view: no
-  name: Prijzen aan de pomp
+  name: Dieselprijzen
   entities:
-    - sensor.sbhavert
-    - sensor.essoselfkant
-    - sensor.shellselfkant
-    - sensor.haanroosteren
-    - sensor.gabrielsdilsen
-    - sensor.tinqmauritslaan
-    - sensor.tinqjosklijnenlaan
+    - sensor.sbhavertdiesel
+    - sensor.essoselfkantdiesel
+    - sensor.shellselfkantdiesel
+    - sensor.haanroosterendiesel
+    - sensor.gabrielsdilsendiesel
+    - sensor.tinqmauritslaandiesel
+    - sensor.tinqjosklijnenlaandiesel
+    - sensor.totalelendiesel
 
 financial:
   view: no

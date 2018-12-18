@@ -31,7 +31,7 @@
   value_template: "{{ value | round(0) }}"
 - platform: moon
 - platform: scrape
-  name: sbhavert
+  name: sbhavertdiesel
   friendly_name: SB in Havert
   resource: https://www.clever-tanken.de/tankstelle_details/45777
   select: "#main-content-fuel-price-list > div:nth-of-type(1) > div.price-box > div > span.price-field > span"
@@ -39,7 +39,7 @@
   value_template: '{{ value | float }}'
   scan_interval: 300 #Every 5 minutes 
 - platform: scrape
-  name: essoselfkant
+  name: essoselfkantdiesel
   friendly_name: ESSO in Selfkant
   resource: https://www.clever-tanken.de/tankstelle_details/16935
   select: "#main-content-fuel-price-list > div:nth-of-type(1) > div.price-box > div > span.price-field > span"
@@ -47,7 +47,7 @@
   value_template: '{{ value | float }}'
   scan_interval: 300 #Every 5 minutes 
 - platform: scrape
-  name: shellselfkant
+  name: shellselfkantdiesel
   friendly_name: SHELL in Selfkant
   resource: https://www.clever-tanken.de/tankstelle_details/145148
   select: "#main-content-fuel-price-list > div:nth-of-type(1) > div.price-box > div > span.price-field > span"
@@ -55,31 +55,38 @@
   value_template: '{{ value | float }}'
   scan_interval: 300 #Every 5 minutes 
 - platform: scrape
-  name: haanroosteren
+  name: haanroosterendiesel
   resource: https://www.unitedconsumers.com/tanken/informatie/tankstation.asp?StationId=440
   select: "#accordionPrices > div:nth-of-type(2) > div:nth-of-type(2) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2)"
   value_template: "{{ value.split(' ')[1].replace(',', '.') | float }}"
   unit_of_measurement: "€/l"
   scan_interval: 300 #Every 5 minutes 
 - platform: scrape
-  name: gabrielsdilsen
+  name: gabrielsdilsendiesel
   resource: https://carbu.com/belgie//index.php/liste-stations-service/Diesel%20(B7)/Dilsen-Stokkem/3650/BE_li_653/113
   select: "b#price_20204"
   value_template: "{{ value.split(' ')[0].replace(',', '.') | float }}"
   unit_of_measurement: "€/l"
   scan_interval: 300 #Every 5 minutes 
 - platform: scrape
-  name: tinqmauritslaan
+  name: tinqmauritslaandiesel
   resource: http://www.tinq.nl/tankstation?id=299
   select: "#station-prijzen > tbody > tr:nth-of-type(2) > td.literprijs"
   value_template: "{{ value.split('\xa0')[1].replace(',', '.') | float }}"
   unit_of_measurement: "€/l"
   scan_interval: 300 #Every 5 minutes 
 - platform: scrape
-  name: tinqjosklijnenlaan
+  name: tinqjosklijnenlaandiesel
   resource: http://www.tinq.nl/tankstation?id=60
   select: "#station-prijzen > tbody > tr:nth-of-type(2) > td.literprijs"
   value_template: "{{ value.split('\xa0')[1].replace(',', '.') | float }}"
+  unit_of_measurement: "€/l"
+  scan_interval: 300 #Every 5 minutes 
+- platform: scrape
+  name: totalelendiesel
+  resource: https://carbu.com/belgie/index.php/station/total/dilsen-stokkem/3650/2984
+  select: ".carburants > div.row > div:nth-of-type(3)"
+  value_template: "{{ value.split(' ')[1].replace('(B7)\\n\\n\\n', '').replace(',', '.') | float }}"
   unit_of_measurement: "€/l"
   scan_interval: 300 #Every 5 minutes 
 - platform: scrape

@@ -1,5 +1,6 @@
+# Bericht bij verbreken NodeMCU Serre
 - id: '1533553411857'
-  alias: NodeMCU Serre disconnected message
+  alias: Bericht bij verbreken NodeMCU Serre
   trigger:
   - entity_id: binary_sensor.nodemcu_serre
     from: 'on'
@@ -10,8 +11,9 @@
   - data:
       message: Verbinding met NodeMCU Serre verbroken
     service: notify.ios_iphone_jeffry
+# Bericht bij verbinden NodeMCU Serre
 - id: '1533553548849'
-  alias: NodeMCU Serre connected message
+  alias: Bericht bij verbinden NodeMCU Serre
   trigger:
   - entity_id: binary_sensor.nodemcu_serre
     from: 'off'
@@ -22,8 +24,9 @@
   - data:
       message: NodeMCU Serre verbonden
     service: notify.ios_iphone_jeffry
+# Meer dan 45°C in de serre
 - id: '1533553672666'
-  alias: Over 45°C in greenhouse
+  alias: Meer dan 45°C in de serre
   trigger:
   - above: '45'
     entity_id: sensor.serre_temp
@@ -40,6 +43,7 @@
     data:
       entity_id: input_boolean.notify_serre_temp
     service: input_boolean.turn_on
+# Waarschuwing bij een grondvochtigheid van minder dan 50%
 - id: '1533553759096'
   alias: Waarschuwing bij een grondvochtigheid van minder dan 50%
   trigger:
@@ -58,6 +62,7 @@
     data:
       entity_id: input_boolean.notify_serre_soil
     service: input_boolean.turn_on
+# Automatisch serre input booleans op off zetten
 - id: '1533643226682'
   alias: Automatisch serre input booleans op off zetten
   trigger:
@@ -71,6 +76,7 @@
   - data:
       entity_id: notify_serre_temp
     service: input_boolean.turn_off
+# Bezoek
 - id: '1535032148593'
   alias: Test aanwezigheid
   trigger:
@@ -83,6 +89,7 @@
   - data:
       message: BEZOEK!
     service: notify.ios_iphone_jeffry
+# Bericht dat pierre thuis is
 - id: '1535099169538'
   alias: Pierre thuis
   trigger:
@@ -95,8 +102,9 @@
   - data:
       message: Pierre is thuis
     service: notify.ios_iphone_jeffry
+# Bericht dat Pierre water aan het geven is
 - id: '1535099383621'
-  alias: Pierre water aan het geven
+  alias: Bericht dat Pierre water aan het geven is
   trigger:
   - platform: template
     value_template: '{{ is_state_attr(''device_tracker.galaxys8_pierre'', ''ap_mac'',
@@ -106,6 +114,7 @@
   - data:
       message: Pierre is water aan het geven
     service: notify.ios_iphone_jeffry
+# Verlichting aan bij valavond indien iemand thuis
 - id: '1536510294355'
   alias: Verlichting aan bij valavond indien iemand thuis
   trigger:
@@ -121,8 +130,12 @@
       entity_id: switch.licht_tv_living
     service: switch.turn_on
   - data:
+      entity_id: switch.licht_tuinhuis_buiten
+    service: switch.turn_on
+  - data:
       message: Verlichting is aan
     service: notify.ios_iphone_jeffry
+# Alle verlichting uitschakelen om 00:00 indien TV ook uit
 - id: '1536510427914'
   alias: Verlichting uit om 00h00
   trigger:
@@ -130,18 +143,19 @@
     platform: time
   condition:
   - condition: state
-    entity_id: switch.licht_tv_living
+    entity_id:  group.lights
     state: 'on'
   - condition: state
     entity_id: media_player.tv_living
     state: 'off'
   action:
   - data:
-      entity_id: switch.licht_tv_living
+      entity_id:  group.lights
     service: switch.turn_off
   - data:
       message: Verlichting uitgeschakeld om middernacht
     service: notify.ios_iphone_jeffry
+# Verlichting aan 's morgens'
 - id: '1536510555331'
   alias: Verlichting aan 's morgens
   trigger:
@@ -157,8 +171,12 @@
       entity_id: switch.licht_tv_living
     service: switch.turn_on
   - data:
+      entity_id: switch.licht_tuinhuis_buiten
+    service: switch.turn_on
+  - data:
       message: Verlichting aangeschakeld 's morgens
     service: notify.ios_iphone_jeffry
+# Verlichting uit 's morgens
 - id: '1536510724699'
   alias: Verlichting uit 's morgens
   trigger:
@@ -167,18 +185,19 @@
     platform: sun
   condition:
   - condition: state
-    entity_id: switch.licht_tv_living
+    entity_id: group.lights
     state: 'on'
   action:
   - alias: ''
     data:
-      entity_id: switch.licht_tv_living
+      entity_id: group.lights
     service: switch.turn_off
   - data:
       message: Verlichting uitgeschakeld 's morgens
     service: notify.ios_iphone_jeffry
+# Bericht bij verbreken NodeMCU TV verlichting
 - id: '1533553411877'
-  alias: Waarschuwing bij verbreken NodeMCU TV verlichting
+  alias: Bericht bij verbreken NodeMCU TV verlichting
   trigger:
   - entity_id: binary_sensor.nodemcu_tv_verlichting
     from: online
@@ -189,6 +208,7 @@
   - data:
       message: Verbinding met NodeMCU TV Verlichting verbroken
     service: notify.ios_iphone_jeffry
+# Bericht bij verbinden NodeMCU TV verlichting
 - id: '1533553411878'
   alias: Waarschuwing bij verbinden NodeMCU TV verlichting
   trigger:
@@ -201,6 +221,33 @@
   - data:
       message: NodeMCU TV Verlichting verbonden
     service: notify.ios_iphone_jeffry
+# Bericht bij verbinden NodeMCU Tuinhuis
+- id: '1533553411879'
+  alias: Waarschuwing bij verbinden NodeMCU Tuinhuis
+  trigger:
+  - entity_id: binary_sensor.nodemcu_tuinhuis
+    from: offline
+    platform: state
+    to: online
+  condition: []
+  action:
+  - data:
+      message: NodeMCU Tuinhuis verbonden
+    service: notify.ios_iphone_jeffry
+# Bericht bij verbinden verloren NodeMCU Tuinhuis
+- id: '1533553411879'
+  alias: Waarschuwing bij NodeMCU Tuinhuis verbroken
+  trigger:
+  - entity_id: binary_sensor.nodemcu_tuinhuis
+    from: online
+    platform: state
+    to: offline
+  condition: []
+  action:
+  - data:
+      message: NodeMCU Tuinhuis verbroken
+    service: notify.ios_iphone_jeffry
+# Verlichting uit indien TV uit na 22h00
 - id: '2000000000000'
   alias: Verlichting uit indien TV uit na 22h00
   trigger:
@@ -212,7 +259,7 @@
   - condition: time
     after: '22:00:00'
   - condition: state
-    entity_id: switch.licht_tv_living
+    entity_id: group.lights
     state: 'on'
   action:
   - data:
@@ -220,11 +267,12 @@
     service: notify.ios_iphone_jeffry
   - delay: 00:10:00
   - data:
-      entity_id: switch.licht_tv_living
+      entity_id: group.lights
     service: switch.turn_off
   - data:
       message: Verlichting uitgeschakeld omdat het na 22h00 is en de tv gaat uit
     service: notify.ios_iphone_jeffry
+# Verlichting aan indien iemand thuis komt na zonsondergang
 - id: '2000000000001'
   alias: Verlichting aan indien iemand thuis komt na zonsondergang
   trigger:
@@ -240,13 +288,14 @@
     state: 'off'
   action:
   - data:
-      message: Verlichting aangeschakeld omdat iemand na zonsondergang thuis komt
-    service: notify.ios_iphone_jeffry
-  - data:
       entity_id: switch.licht_tv_living
     service: switch.turn_on
+  - data:
+      message: Verlichting aangeschakeld omdat iemand na zonsondergang thuis komt
+    service: notify.ios_iphone_jeffry
+# bericht bij vertrek
 - id: '2000000000002'
-  alias: bericht bij vertrek k
+  alias: bericht bij vertrek
   trigger:
   - entity_id: device_tracker.iphone_van_katja
     platform: state
@@ -256,6 +305,7 @@
   - data:
       message: vertrokken
     service: notify.ios_iphone_jeffry
+# Bericht bij veranderen referte index C
 - id: '2000000000003'
   alias: Bericht bij veranderen referte index C
   trigger:
@@ -265,3 +315,53 @@
   - service: notify.ios_iphone_jeffry
     data_template:
       message: Referte index C is aangepast naar {{ states("sensor.referteindexc")}}%
+# Buitenlicht tuinhuis aan indien iemand verbonden met AP tuinhuis
+- id: '2000000000004'
+  alias: Buitenlicht tuinhuis aan indien iemand verbonden met AP tuinhuis
+  trigger:
+  - platform: template
+    value_template: '{{ is_state_attr(''device_tracker.galaxys8_pierre'', ''ap_mac'',
+      ''80:2a:a8:59:e0:2e'') }}'
+  - platform: template
+    value_template: '{{ is_state_attr(''device_tracker.iphone_van_katja'', ''ap_mac'',
+      ''80:2a:a8:59:e0:2e'') }}'
+  - platform: template
+    value_template: '{{ is_state_attr(''device_tracker.iphone_jeffry'', ''ap_mac'',
+      ''80:2a:a8:59:e0:2e'') }}'
+  condition:
+  - below: '3.5'
+    condition: numeric_state
+    entity_id: sun.sun
+    value_template: '{{ state.attributes.elevation }}'
+  action:
+  - data:
+      entity_id: switch.licht_tuinhuis_buiten
+    service: switch.turn_on
+  - data:
+      message: Verlichting tuinhuis aan omdat iemand verbonden is met de AP tuinhuis
+    service: notify.ios_iphone_jeffry
+# Buitenlicht tuinhuis uit indien iemand verbroken met AP tuinhuis
+- id: '2000000000004'
+  alias: Buitenlicht tuinhuis uit indien iemand verbroken met AP tuinhuis
+  trigger:
+  - platform: template
+    value_template: '{{ not is_state_attr(''device_tracker.galaxys8_pierre'', ''ap_mac'',
+      ''80:2a:a8:59:e0:2e'') }}'
+  - platform: template
+    value_template: '{{ not is_state_attr(''device_tracker.iphone_van_katja'', ''ap_mac'',
+      ''80:2a:a8:59:e0:2e'') }}'
+  - platform: template
+    value_template: '{{ not is_state_attr(''device_tracker.iphone_jeffry'', ''ap_mac'',
+      ''80:2a:a8:59:e0:2e'') }}'
+  condition:
+  - below: '3.5'
+    condition: numeric_state
+    entity_id: sun.sun
+    value_template: '{{ state.attributes.elevation }}'
+  action:
+  - data:
+      entity_id: switch.licht_tuinhuis_buiten
+    service: switch.turn_off
+  - data:
+      message: Verlichting tuinhuis uit omdat iemand verbroken is met de AP tuinhuis
+    service: notify.ios_iphone_jeffry

@@ -4,24 +4,27 @@ sensor.serre_humidity:
   friendly_name: Lucht vochtigheid
 sensor.serre_temp:
   friendly_name: Serre
-sensor.sbhavert:
+sensor.sbhavertdiesel:
   friendly_name: SB in Havert
   icon: mdi:gas-station
-sensor.essoselfkant:
+sensor.essoselfkantdiesel:
   friendly_name: ESSO in Selfkant
   icon: mdi:gas-station
-sensor.shellselfkant:
+sensor.shellselfkantdiesel:
   friendly_name: SHELL in Selfkant
   icon: mdi:gas-station
-sensor.haanroosteren:
+sensor.haanroosterendiesel:
   friendly_name: HAAN in Roosteren
   icon: mdi:gas-station
-sensor.gabrielsdilsen:
+sensor.gabrielsdilsendiesel:
   friendly_name: Gabriels in Dilsen
   icon: mdi:gas-station
-sensor.tinqmauritslaan:
+sensor.tinqmauritslaandiesel:
   friendly_name: TINQ Mauritslaan in Geleen
   icon: mdi:gas-station
-sensor.tinqjosklijnenlaan:
+sensor.tinqjosklijnenlaandiesel:
   friendly_name: TINQ Jos Klijnenlaan in Geleen
+  icon: mdi:gas-station
+sensor.totalelendiesel:
+  friendly_name: Total Elen
   icon: mdi:gas-station
