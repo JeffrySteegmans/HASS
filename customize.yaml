@@ -28,3 +28,5 @@ sensor.tinqjosklijnenlaandiesel:
 sensor.totalelendiesel:
   friendly_name: Total Elen
   icon: mdi:gas-station
+group.diesel:
+  friendly_name: Diesel prijzen
