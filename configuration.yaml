@@ -99,6 +99,7 @@ homeconnect:
   client_id: !secret homeconnect_clientid
   client_secret: !secret homeconnect_clientsecret
 
+cast: !include config/cast.yaml
 mqtt: !include config/mqtt.yaml
 input_boolean: !include config/input_boolean.yaml
 sabnzbd: !include config/sabnzbd.yaml

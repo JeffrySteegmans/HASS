@@ -37,7 +37,7 @@ views:
             style: 'var(--label-badge-red)'
       - type: sensor
         name: Tuinhuis
-        icon: mdi:temperature-celsius
+        icon: mdi:thermometer
         graph: line
         unit: °C
         detail: 2
@@ -45,7 +45,7 @@ views:
         entity: sensor.tuinhuis_temperatuur_buiten
       - type: sensor
         name: Bureau
-        icon: mdi:temperature-celsius
+        icon: mdi:thermometer
         graph: line
         unit: °C
         detail: 2
@@ -53,7 +53,7 @@ views:
         entity: sensor.bureau
       - type: sensor
         name: Kippen
-        icon: mdi:temperature-celsius
+        icon: mdi:thermometer
         graph: line
         unit: °C
         detail: 2
@@ -61,22 +61,12 @@ views:
         entity: sensor.kippen_buiten_temperatuur
       - type: sensor
         name: Kippen water
-        icon: mdi:temperature-celsius
+        icon: mdi:thermometer
         graph: line
         unit: °C
         detail: 2
         hours_to_show: 24
         entity: sensor.kippen_water_temperatuur
-      # - type: glance
-      #   title: Temperatuur
-      #   columns: 3
-      #   entities:
-      #     - sensor.bureau
-      #     - sensor.elen_temperature_2
-      #     - sensor.tuinhuis_temperatuur_binnen
-      #     - sensor.tuinhuis_temperatuur_buiten
-      #     - sensor.kippen_buiten_temperatuur
-      #     - sensor.kippen_water_temperatuur
       - type: glance
         title: Serre
         entities:
@@ -201,6 +191,74 @@ views:
         entities:
           - binary_sensor.nodered_docker
           - binary_sensor.nodered_castleblack
+  - icon: mdi:gas-station
+    title: Brandstofprijzen
+    id: brandstofprijzen
+    cards:
+      - type: sensor
+        name: SB Havert (diesel)
+        icon: mdi:gas-station
+        graph: line
+        unit: €
+        detail: 2
+        hours_to_show: 48
+        entity: sensor.sbhavertdiesel
+      - type: sensor
+        name: ESSO Selfkant (diesel)
+        icon: mdi:gas-station
+        graph: line
+        unit: €
+        detail: 2
+        hours_to_show: 48
+        entity: sensor.essoselfkantdiesel
+      - type: sensor
+        name: SHELL Selfkant (diesel)
+        icon: mdi:gas-station
+        graph: line
+        unit: €
+        detail: 2
+        hours_to_show: 48
+        entity: sensor.shellselfkantdiesel
+      - type: sensor
+        name: HAAN Roosteren (diesel)
+        icon: mdi:gas-station
+        graph: line
+        unit: €
+        detail: 2
+        hours_to_show: 48
+        entity: sensor.haanroosterendiesel
+      - type: sensor
+        name: GABRIELS Dilsen (diesel)
+        icon: mdi:gas-station
+        graph: line
+        unit: €
+        detail: 2
+        hours_to_show: 48
+        entity: sensor.gabrielsdilsendiesel
+      - type: sensor
+        name: TINQ Mauritslaan (diesel)
+        icon: mdi:gas-station
+        graph: line
+        unit: €
+        detail: 2
+        hours_to_show: 48
+        entity: sensor.tinqmauritslaandiesel
+      - type: sensor
+        name: TINQ Josklijnenlaan (diesel)
+        icon: mdi:gas-station
+        graph: line
+        unit: €
+        detail: 2
+        hours_to_show: 48
+        entity: sensor.tinqjosklijnenlaandiesel
+      - type: sensor
+        name: TOTAL Elen (diesel)
+        icon: mdi:gas-station
+        graph: line
+        unit: €
+        detail: 2
+        hours_to_show: 48
+        entity: sensor.totalelendiesel
   # - icon: mdi:weather-partlycloudy
   #   id: weather
   #   title: Weer
