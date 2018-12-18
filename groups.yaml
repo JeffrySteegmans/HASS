@@ -69,12 +69,12 @@ Lights:
   view: no
   name: Lichten
   entities:
-    - switch.licht_tv_living
-    - switch.licht_kippen
-    - switch.licht_tuinhuis_tuin
-    - switch.licht_tuinhuis_buiten
-    - switch.licht_tuinhuis_binnen
-    - switch.licht_tuinhuis_reserve
+    - light.tuinhuis_buiten
+    - light.tv_living
+    - light.kippen
+    - light.tuinhuis_tuin
+    - light.tuinhuis_binnen
+    - light.tuinhuis_werkbank
 
 TempSensors:
   view: no

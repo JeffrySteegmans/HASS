@@ -30,3 +30,19 @@ sensor.totalelendiesel:
   icon: mdi:gas-station
 group.diesel:
   friendly_name: Diesel prijzen
+sensor.tuinhuis_temperatuur_binnen:
+  friendly_name: Tuinhuis binnen
+sensor.tuinhuis_temperatuur_buiten:
+  friendly_name: Tuinhuis buiten
+sensor.kippen_buiten_temperatuur:
+  friendly_name: Kippen buiten
+sensor.kippen_water_temperatuur:
+  friendly_name: Kippen water
+sensor.elen_temperature_2:
+  friendly_name: Temperatuur
+sensor.elen_precipitation_2:
+  friendly_name: Huidige regen
+sensor.elen_precipitation_forecast_average:
+  friendly_name: Voorspelde regen
+sensor.elen_irradiance:
+  friendly_name: Instraling zon

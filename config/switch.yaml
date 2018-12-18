@@ -1,60 +1,60 @@
-- platform: mqtt
-  name: "Licht TV living"
-  command_topic: "pstvliving/cmd"
-  state_topic: "pstvliving/relay/state"
-  availability_topic: "pstvliving/state"
-  payload_on: "ON"
-  payload_off: "OFF"
-  state_on: "ON"
-  state_off: "OFF"
-  retain: true
-- platform: mqtt
-  name: "Licht Kippen"
-  command_topic: "powerswitch/chicken/relay/cmd"
-  state_topic: "powerswitch/chicken/relay/state"
-  availability_topic: "powerswitch/chicken/state"
-  payload_on: "ON"
-  payload_off: "OFF"
-  state_on: "ON"
-  state_off: "OFF"
-  retain: true
-- platform: mqtt
-  name: "Licht tuinhuis tuin"
-  command_topic: "powerswitch/shed/relay/cmd/1"
-  state_topic: "powerswitch/shed/relay/state/1"
-  availability_topic: "powerswitch/shed/state"
-  payload_on: "ON"
-  payload_off: "OFF"
-  state_on: "ON"
-  state_off: "OFF"
-  retain: true
-- platform: mqtt
-  name: "Licht tuinhuis buiten"
-  command_topic: "powerswitch/shed/relay/cmd/2"
-  state_topic: "powerswitch/shed/relay/state/2"
-  availability_topic: "powerswitch/shed/state"
-  payload_on: "ON"
-  payload_off: "OFF"
-  state_on: "ON"
-  state_off: "OFF"
-  retain: true
-- platform: mqtt
-  name: "Licht tuinhuis binnen"
-  command_topic: "powerswitch/shed/relay/cmd/3"
-  state_topic: "powerswitch/shed/relay/state/3"
-  availability_topic: "powerswitch/shed/state"
-  payload_on: "ON"
-  payload_off: "OFF"
-  state_on: "ON"
-  state_off: "OFF"
-  retain: true
-- platform: mqtt
-  name: "Licht tuinhuis reserve"
-  command_topic: "powerswitch/shed/relay/cmd/4"
-  state_topic: "powerswitch/shed/relay/state/4"
-  availability_topic: "powerswitch/shed/state"
-  payload_on: "ON"
-  payload_off: "OFF"
-  state_on: "ON"
-  state_off: "OFF"
-  retain: true
+# - platform: mqtt
+#   name: "Licht TV living"
+#   command_topic: "pstvliving/cmd"
+#   state_topic: "pstvliving/relay/state"
+#   availability_topic: "pstvliving/state"
+#   payload_on: "ON"
+#   payload_off: "OFF"
+#   state_on: "ON"
+#   state_off: "OFF"
+#   retain: true
+# - platform: mqtt
+#   name: "Licht Kippen"
+#   command_topic: "powerswitch/chicken/relay/cmd"
+#   state_topic: "powerswitch/chicken/relay/state"
+#   availability_topic: "powerswitch/chicken/state"
+#   payload_on: "ON"
+#   payload_off: "OFF"
+#   state_on: "ON"
+#   state_off: "OFF"
+#   retain: true
+# - platform: mqtt
+#   name: "Licht tuinhuis tuin"
+#   command_topic: "powerswitch/shed/relay/cmd/1"
+#   state_topic: "powerswitch/shed/relay/state/1"
+#   availability_topic: "powerswitch/shed/state"
+#   payload_on: "ON"
+#   payload_off: "OFF"
+#   state_on: "ON"
+#   state_off: "OFF"
+#   retain: true
+# - platform: mqtt
+#   name: "Licht tuinhuis buiten"
+#   command_topic: "powerswitch/shed/relay/cmd/2"
+#   state_topic: "powerswitch/shed/relay/state/2"
+#   availability_topic: "powerswitch/shed/state"
+#   payload_on: "ON"
+#   payload_off: "OFF"
+#   state_on: "ON"
+#   state_off: "OFF"
+#   retain: true
+# - platform: mqtt
+#   name: "Licht tuinhuis binnen"
+#   command_topic: "powerswitch/shed/relay/cmd/3"
+#   state_topic: "powerswitch/shed/relay/state/3"
+#   availability_topic: "powerswitch/shed/state"
+#   payload_on: "ON"
+#   payload_off: "OFF"
+#   state_on: "ON"
+#   state_off: "OFF"
+#   retain: true
+# - platform: mqtt
+#   name: "Licht tuinhuis reserve"
+#   command_topic: "powerswitch/shed/relay/cmd/4"
+#   state_topic: "powerswitch/shed/relay/state/4"
+#   availability_topic: "powerswitch/shed/state"
+#   payload_on: "ON"
+#   payload_off: "OFF"
+#   state_on: "ON"
+#   state_off: "OFF"
+#   retain: true

@@ -35,6 +35,9 @@
   - condition: state
     entity_id: input_boolean.notify_serre_temp
     state: 'off'
+  - condition: numeric_state
+    entity_id: sensor.serre_temp
+    below: '85'
   action:
   - data:
       message: Het is warmer dan 45°C
@@ -127,11 +130,11 @@
     state: home
   action:
   - data:
-      entity_id: switch.licht_tv_living
-    service: switch.turn_on
+      entity_id: light.tv_living
+    service: light.turn_on
   - data:
-      entity_id: switch.licht_tuinhuis_buiten
-    service: switch.turn_on
+      entity_id: light.tuinhuis_buiten
+    service: light.turn_on
   - data:
       message: Verlichting is aan
     service: notify.ios_iphone_jeffry
@@ -143,15 +146,15 @@
     platform: time
   condition:
   - condition: state
-    entity_id:  group.lights
+    entity_id: group.lights
     state: 'on'
   - condition: state
     entity_id: media_player.tv_living
     state: 'off'
   action:
   - data:
-      entity_id:  group.lights
-    service: switch.turn_off
+      entity_id: group.lights
+    service: light.turn_off
   - data:
       message: Verlichting uitgeschakeld om middernacht
     service: notify.ios_iphone_jeffry
@@ -168,11 +171,11 @@
     value_template: '{{ state.attributes.elevation }}'
   action:
   - data:
-      entity_id: switch.licht_tv_living
-    service: switch.turn_on
+      entity_id: light.tv_living
+    service: light.turn_on
   - data:
-      entity_id: switch.licht_tuinhuis_buiten
-    service: switch.turn_on
+      entity_id: light.tuinhuis_buiten
+    service: light.turn_on
   - data:
       message: Verlichting aangeschakeld 's morgens
     service: notify.ios_iphone_jeffry
@@ -191,7 +194,7 @@
   - alias: ''
     data:
       entity_id: group.lights
-    service: switch.turn_off
+    service: light.turn_off
   - data:
       message: Verlichting uitgeschakeld 's morgens
     service: notify.ios_iphone_jeffry
@@ -268,7 +271,7 @@
   - delay: 00:10:00
   - data:
       entity_id: group.lights
-    service: switch.turn_off
+    service: light.turn_off
   - data:
       message: Verlichting uitgeschakeld omdat het na 22h00 is en de tv gaat uit
     service: notify.ios_iphone_jeffry
@@ -284,12 +287,15 @@
     after_offset: -00:30:00
     condition: sun
   - condition: state
-    entity_id: switch.licht_tv_living
+    entity_id: light.tv_living
     state: 'off'
   action:
   - data:
-      entity_id: switch.licht_tv_living
-    service: switch.turn_on
+      entity_id: light.tv_living
+    service: light.turn_on
+  - data:
+      entity_id: light.tuinhuis_buiten
+    service: light.turn_on
   - data:
       message: Verlichting aangeschakeld omdat iemand na zonsondergang thuis komt
     service: notify.ios_iphone_jeffry
@@ -335,8 +341,8 @@
     value_template: '{{ state.attributes.elevation }}'
   action:
   - data:
-      entity_id: switch.licht_tuinhuis_buiten
-    service: switch.turn_on
+      entity_id: light.tuinhuis_tuin
+    service: light.turn_on
   - data:
       message: Verlichting tuinhuis aan omdat iemand verbonden is met de AP tuinhuis
     service: notify.ios_iphone_jeffry
@@ -360,8 +366,8 @@
     value_template: '{{ state.attributes.elevation }}'
   action:
   - data:
-      entity_id: switch.licht_tuinhuis_buiten
-    service: switch.turn_off
+      entity_id: light.tuinhuis_tuin
+    service: light.turn_off
   - data:
       message: Verlichting tuinhuis uit omdat iemand verbroken is met de AP tuinhuis
     service: notify.ios_iphone_jeffry

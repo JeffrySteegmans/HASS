@@ -1,5 +1,7 @@
 resources:
-  - url: /local/circle-sensor-card.js?v=0
+  - url: /local/bignumber-card.js?v=1
+    type: js
+  - url: /local/surveillance-card.js?v=1
     type: module
 
 title: Langstraat 60
@@ -11,334 +13,252 @@ views:
     title: Dashboard
     id: dashboard
     cards:
+      - type: entities
+        title: verlichting
+        entities:
+          - light.tv_living
+          - light.kippen
+          - light.tuinhuis_binnen
+          - light.tuinhuis_buiten
+          - light.tuinhuis_tuin
+          - light.tuinhuis_werkbank
+      - type: custom:bignumber-card
+        title: Referte index C
+        entity: sensor.referteindexc
+        min: -3
+        max: 6.20
+        from: left
+        severity:
+          - value: -0.19
+            style: 'var(--label-badge-green)'
+          - value: 3.2
+            style: 'var(--label-badge-yellow)'
+          - value: 6.2
+            style: 'var(--label-badge-red)'
       - type: glance
-        title: Weer
+        title: Temperatuur
+        columns: 3
         entities:
           - sensor.bureau
           - sensor.elen_temperature_2
-          - sensor.elen_precipitation_2
-          - sensor.elen_precipitation_forecast_average
-          - sensor.elen_irradiance
+          - sensor.tuinhuis_temperatuur_binnen
+          - sensor.tuinhuis_temperatuur_buiten
+          - sensor.kippen_buiten_temperatuur
+          - sensor.kippen_water_temperatuur
       - type: glance
         title: Serre
         entities:
           - sensor.serre_temp
           - sensor.serre_humidity
           - sensor.serre_soil
-      - type: picture-elements
-        image: /local/lovelace/icons/fitbit.png
-        elements:
-        - type: custom:circle-sensor-card
-          entity: sensor.weight_loss
-          max: 20
-          min: 0
-          stroke_width: 15
-          gradient: true
-          fill: '#125054'
-          name: loss
-          units: ' '
-          font_style:
-            font-size: 1.1em
-            font-color: white
-            text-shadow: '2px 2px black'
-          style:
-            top: 5%
-            left: 80%
-            width: 4em
-            height: 4em
-            transform: none
-        - type: custom:circle-sensor-card
-          entity: sensor.fitbit_steps
-          max: 10000
-          min: 0
-          stroke_width: 15
-          gradient: true
-          fill: '#125054'
-          name: steps
-          units: ' '
-          font_style:
-            font-size: 1.1em
-            font-color: white
-            text-shadow: '2px 2px black'
-          color_stops:
-            1: '#09C7E8'
-            10000: '#0BDF0E'
-          style:
-            top: 70%
-            left: 5%
-            width: 4em
-            height: 4em
-            transform: none
-        - type: custom:circle-sensor-card
-          entity: sensor.floors
-          max: 10
-          min: 0
-          stroke_width: 15
-          gradient: true
-          fill: '#125054'
-          name: floors
-          units: ' '
-          font_style:
-            font-size: 1.1em
-            font-color: white
-            text-shadow: '2px 2px black'
-          color_stops:
-            1: '#09C7E8'
-            10: '#0BDF0E'
-          style:
-            top: 70%
-            left: 24%
-            width: 4em
-            height: 4em
-            transform: none
-        - type: custom:circle-sensor-card
-          entity: sensor.distance
-          max: 10
-          min: 0
-          stroke_width: 15
-          gradient: true
-          fill: '#125054'
-          name: miles
-          units: ' '
-          font_style:
-            font-size: 1.1em
-            font-color: white
-            text-shadow: '2px 2px black'
-          color_stops:
-            1: '#09C7E8'
-            10: '#0BDF0E'
-          style:
-            top: 70%
-            left: 43%
-            width: 4em
-            height: 4em
-            transform: none
-        - type: custom:circle-sensor-card
-          entity: sensor.fitbit_calories
-          max: 3000
-          min: 0
-          stroke_width: 15
-          gradient: true
-          fill: '#125054'
-          name: cals
-          shadow: true
-          units: ' '
-          font_style:
-            font-size: 1.1em
-            font-color: white
-            text-shadow: '2px 2px black'
-          color_stops:
-            1: '#09C7E8'
-            3000: '#0BDF0E'
-          style:
-            top: 70%
-            left: 62%
-            width: 4em
-            height: 4em
-            transform: none
-        - type: custom:circle-sensor-card
-          entity: sensor.fitbit_minutes_active
-          max: 30
-          min: 0
-          stroke_width: 15
-          gradient: true
-          fill: '#125054'
-          name: active
-          units: ' '
-          font_style:
-            font-size: 1.1em
-            font-color: white
-            text-shadow: '2px 2px black'
-          color_stops:
-            1: '#09C7E8'
-            30: '#0BDF0E'
-          style:
-            top: 70%
-            left: 80%
-            width: 4em
-            height: 4em
-            transform: none
-        - type: custom:hui-markdown-card
-          content: >
-            Jeffry
-          style:
-            top: 6%
-            left: 1%
-            font-size: 18px
-            color: white
-            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black
-            "--paper-card-background-color": none
-            "--paper-material-elevation-1_-_box-shadow": none
-            "--shadow-elevation-2dp_-_box-shadow": none
-            transform: translate(0%,-50%)
-        - type: state-icon
-          entity: sensor.weight
-          title: Weight
-          style:
-            left: 3%
-            top: 7%
-            "--iron-icon-fill-color": '#09C7E8'
-            transform: none
-        - type: state-label
-          entity: sensor.weight
-          title: Weight
-          style:
-            left: 12%
-            top: 8%
-            color: white
-            transform: none
-        - type: state-icon
-          entity: sensor.bmi
-          title: BMI
-          style:
-            left: 31%
-            top: 7%
-            "--iron-icon-fill-color": '#09C7E8'
-            transform: none
-        - type: state-label
-          entity: sensor.bmi
-          title: BMI
-          style:
-            left: 40%
-            top: 8%
-            color: white
-            transform: none
-        - type: state-icon
-          entity: sensor.body_fat
-          title: Body Fat
-          style:
-            left: 59%
-            top: 7%
-            "--iron-icon-fill-color": '#09C7E8'
-            transform: none
-        - type: state-label
-          entity: sensor.body_fat
-          title: Body Fat
-          style:
-            left: 67%
-            top: 8%
-            color: white
-            transform: none
-        - type: image
-          entity: sensor.ionic_battery
-          title: Ionic Battery
-          image: /local/lovelace/icons/battery_full.png
-          state_image:
-            "High": /local/lovelace/icons/battery_high.png
-            "Medium": /local/lovelace/icons/battery_medium.png
-            "Low": /local/lovelace/icons/battery_low.png
-          style:
-            left: 12%
-            top: 1%
-            transform: none
-            width: 24px
-            height: 24px
-        - type: state-icon
-          entity: sensor.resting_heart_rate
-          title: Resting HR
-          style:
-            left: 3%
-            top: 21%
-            "--iron-icon-fill-color": red
-            transform: none
-        - type: state-label
-          entity: sensor.resting_heart_rate
-          title: Resting HR
-          style:
-            left: 12%
-            top: 22%
-            color: white
-            transform: none
-  - icon: mdi:weather-partlycloudy
-    id: weather
-    title: Weer
-    cards:
       - type: glance
-        title: Weer
+        title: Buienradar
+        columns: 2
         entities:
-          - sensor.bureau
           - sensor.elen_temperature_2
           - sensor.elen_precipitation_2
           - sensor.elen_precipitation_forecast_average
           - sensor.elen_irradiance
-      - type: history-graph
-        title: Temperatuur
-        hours_to_show: 24
-        refresh_interval: 300
+      - type: glance
+        title: Diesel prijzen
+        columns: 3
         entities:
-          - sensor.bureau
-          - sensor.elen_temperature_2
-          - sensor.Serre_temp
-      - type: history-graph
-        title: Regen
-        hours_to_show: 24
-        refresh_interval: 300
+          - sensor.sbhavertdiesel
+          - sensor.essoselfkantdiesel
+          - sensor.shellselfkantdiesel
+          - sensor.haanroosterendiesel
+          - sensor.gabrielsdilsendiesel
+          - sensor.tinqmauritslaandiesel
+          - sensor.tinqjosklijnenlaandiesel
+          - sensor.totalelendiesel
+      - type: glance
+        title: Aanwezigheid
         entities:
-          - sensor.elen_precipitation_2
-          - sensor.elen_precipitation_forecast_average
-      - type: history-graph
-        title: Zon
-        hours_to_show: 24
-        refresh_interval: 300
+          - device_tracker.iphone_jeffry
+          - device_tracker.iphone_van_katja
+      - type: entities
+        title: Vaatwasser
         entities:
-          - sensor.elen_irradiance
+          - binary_sensor.vaatwasser_door
+          - sensor.vaatwasser_program_progress
+          - sensor.vaatwasser_remaining_program_time
+          - switch.vaatwasser
+          - switch.vaatwasser_program_auto1
+          - switch.vaatwasser_program_auto2
+          - switch.vaatwasser_program_auto3
+          - switch.vaatwasser_program_eco50
+          - switch.vaatwasser_program_quick45
   - icon: mdi:television
-    id: mediaplayers
     title: Media players
+    id: mediaplayers
     cards:
       - type: media-control
         entity: media_player.tv_living
       - type: media-control
         entity: media_player.ccliving
-  - icon: mdi:cctv
-    id: security
-    title: Security
+      - type: media-control
+        entity: media_player.cckinderen
+  - icon: mdi:weather-partlycloudy
+    title: Weer
+    id: weer
     cards:
-      - type: picture-entity
-        show_state: false
-        entity: camera.oprit
-      - type: picture-entity
-        show_state: false
-        entity: camera.tuinhuis
-  - icon: mdi:map
-    id: aanwezigheid
-    title: Aanwezigheid
-    cards:
-      - type: map
-        aspect_ratio: 100%
+      - type: glance
+        title: Weer
+        columns: 3
         entities:
-          - device_tracker.iphone_jeffry
-          - device_tracker.iphone_katja
-          - device_tracker.galaxys8
-          - device_tracker.huawei_gt3
-          - device_tracker.galaxys8_pierre
-  - icon: mdi:test-tube
-    id: playground
-    title: Speeltuin
+          - sensor.bureau
+          - sensor.elen_temperature_2
+          - sensor.tuinhuis_temperatuur_binnen
+          - sensor.tuinhuis_temperatuur_buiten
+          - sensor.kippen_buiten_temperatuur
+          - sensor.kippen_water_temperatuur
+          - sensor.serre_temp
+          - sensor.serre_humidity
+          - sensor.serre_soil
+          - sensor.elen_precipitation_2
+          - sensor.elen_precipitation_forecast_average
+          - sensor.elen_irradiance
+      - type: history-graph
+        title: Binnen temperatuur
+        entities:
+          - sensor.bureau
+      - type: history-graph
+        title: Buiten temperatuur
+        entities:
+          - sensor.elen_temperature_2
+          - sensor.tuinhuis_temperatuur_binnen
+          - sensor.tuinhuis_temperatuur_buiten
+          - sensor.kippen_buiten_temperatuur
+          - sensor.kippen_water_temperatuur
+          - sensor.serre_temp
+      - type: history-graph
+        title: Regen
+        entities:
+          - sensor.elen_precipitation_2
+          - sensor.elen_precipitation_forecast_average
+      - type: history-graph
+        title: Zon
+        entities:
+          - sensor.elen_irradiance
+  - icon: mdi:cctv
+    title: CCTV
+    id: cctv
+    panel: true
+    cards:
+      - type: custom:surveillance-card
+        thumb_interval: 15
+        update_interval: 2
+        cameras:
+          - entity: camera.oprit
+          - entity: camera.tuinhuis
+  - icon: mdi:power-plug
+    title: Status
+    id: status
     cards:
       - type: entities
-        title: Serre
+        title: NodeMCU
+        show_header_toggle: false
         entities:
-          - type: custom:circle-sensor-card
-            show_card: false
-            name: Luchtvochtigheid
-            entity: sensor.serre_humidity
-            min: 0
-            max: 100
-            units: ' %'
-            stroke_width: 10
-            font_style:
-              font-size: 1.5em
-          - type: custom:circle-sensor-card
-            show_card: false
-            name: Temperatuur
-            entity: sensor.serre_temp
-            min: 0
-            max: 100
-            units: ' °C'
-            stroke_width: 10
-            font_style:
-              font-size: 1.5em
+          - binary_sensor.nodemcu_serre
+          - binary_sensor.nodemcu_tv_verlichting
+          - binary_sensor.nodemcu_kippen
+          - binary_sensor.nodemcu_tuinhuis
+      - type: entities
+        title: NodeRED
+        show_header_toggle: false
+        entities:
+          - binary_sensor.nodered_docker
+          - binary_sensor.nodered_castleblack
+  # - icon: mdi:weather-partlycloudy
+  #   id: weather
+  #   title: Weer
+  #   cards:
+  #     - type: glance
+  #       title: Weer
+  #       entities:
+  #         - sensor.bureau
+  #         - sensor.elen_temperature_2
+  #         - sensor.elen_precipitation_2
+  #         - sensor.elen_precipitation_forecast_average
+  #         - sensor.elen_irradiance
+  #     - type: history-graph
+  #       title: Temperatuur
+  #       hours_to_show: 24
+  #       refresh_interval: 300
+  #       entities:
+  #         - sensor.bureau
+  #         - sensor.elen_temperature_2
+  #         - sensor.Serre_temp
+  #     - type: history-graph
+  #       title: Regen
+  #       hours_to_show: 24
+  #       refresh_interval: 300
+  #       entities:
+  #         - sensor.elen_precipitation_2
+  #         - sensor.elen_precipitation_forecast_average
+  #     - type: history-graph
+  #       title: Zon
+  #       hours_to_show: 24
+  #       refresh_interval: 300
+  #       entities:
+  #         - sensor.elen_irradiance
+  # - icon: mdi:television
+  #   id: mediaplayers
+  #   title: Media players
+  #   cards:
+  #     - type: media-control
+  #       entity: media_player.tv_living
+  #     - type: media-control
+  #       entity: media_player.ccliving
+  # - icon: mdi:cctv
+  #   id: security
+  #   title: Security
+  #   cards:
+  #     - type: picture-entity
+  #       show_state: false
+  #       entity: camera.oprit
+  #     - type: picture-entity
+  #       show_state: false
+  #       entity: camera.tuinhuis
+  # - icon: mdi:map
+  #   id: aanwezigheid
+  #   title: Aanwezigheid
+  #   cards:
+  #     - type: map
+  #       aspect_ratio: 100%
+  #       entities:
+  #         - device_tracker.iphone_jeffry
+  #         - device_tracker.iphone_katja
+  #         - device_tracker.galaxys8
+  #         - device_tracker.huawei_gt3
+  #         - device_tracker.galaxys8_pierre
+  # - icon: mdi:test-tube
+  #   id: playground
+  #   title: Speeltuin
+  #   cards:
+  #     - type: entities
+  #       title: Serre
+  #       entities:
+  #         - type: custom:circle-sensor-card
+  #           show_card: false
+  #           name: Luchtvochtigheid
+  #           entity: sensor.serre_humidity
+  #           min: 0
+  #           max: 100
+  #           units: ' %'
+  #           stroke_width: 10
+  #           font_style:
+  #             font-size: 1.5em
+  #         - type: custom:circle-sensor-card
+  #           show_card: false
+  #           name: Temperatuur
+  #           entity: sensor.serre_temp
+  #           min: 0
+  #           max: 100
+  #           units: ' °C'
+  #           stroke_width: 10
+  #           font_style:
+  #             font-size: 1.5em
   #   # View tab title.
   # - title: Example
   #   # Optional unique id for direct access /lovelace/${id}

@@ -22,6 +22,9 @@ config:
 
 ios:
 
+lovelace:
+  mode: yaml
+
 http:
   api_password: !secret http_password
   base_url: !secret http_baseurl
@@ -75,15 +78,22 @@ homekit:
   filter:
     include_domains:
       - switch
+      - light
 
 google_assistant: 
   project_id: !secret google_assistant_project_id
   api_key: !secret google_assistant_api_key
   entity_config:
-    switch.licht_tv_living:
+    light.tv_living:
       name: Tv verlichting
       aliases:
         - tv light
+        - tv verlichting
+        - kerstboom
+    light.kippen:
+      name: Licht kippen
+      aliases:
+        - kippen verlichting
 
 homeconnect:
   client_id: !secret homeconnect_clientid
@@ -101,6 +111,7 @@ device_tracker: !include config/device_tracker.yaml
 sensor: !include config/sensors.yaml
 switch: !include config/switch.yaml
 influxdb: !include config/influxdb.yaml
+light: !include config/light.yaml
 
 group: !include groups.yaml
 automation: !include automations.yaml
