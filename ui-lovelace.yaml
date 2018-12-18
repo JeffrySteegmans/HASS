@@ -7,10 +7,8 @@ resources:
 title: Langstraat 60
 
 views:
-    # Specify a tab icon if you want the view tab to be an icon.
-  - icon: mdi:home-assistant
-    # Title of the view. Will be used as the tooltip for tab icon
-    title: Dashboard
+  - title: Dashboard
+    icon: mdi:home-assistant
     id: dashboard
     cards:
       - type: entities
@@ -110,8 +108,8 @@ views:
           - switch.vaatwasser_program_auto3
           - switch.vaatwasser_program_eco50
           - switch.vaatwasser_program_quick45
-  - icon: mdi:television
-    title: Media players
+  - title: Media players
+    icon: mdi:television
     id: mediaplayers
     cards:
       - type: media-control
@@ -120,8 +118,8 @@ views:
         entity: media_player.ccliving
       - type: media-control
         entity: media_player.cckinderen
-  - icon: mdi:weather-partlycloudy
-    title: Weer
+  - title: Weer
+    icon: mdi:weather-partlycloudy
     id: weer
     cards:
       - type: glance
@@ -162,8 +160,8 @@ views:
         title: Zon
         entities:
           - sensor.elen_irradiance
-  - icon: mdi:cctv
-    title: CCTV
+  - title: CCTV
+    icon: mdi:cctv
     id: cctv
     panel: true
     cards:
@@ -173,8 +171,8 @@ views:
         cameras:
           - entity: camera.oprit
           - entity: camera.tuinhuis
-  - icon: mdi:power-plug
-    title: Status
+  - title: Status
+    icon: mdi:power-plug
     id: status
     cards:
       - type: entities
@@ -191,8 +189,8 @@ views:
         entities:
           - binary_sensor.nodered_docker
           - binary_sensor.nodered_castleblack
-  - icon: mdi:gas-station
-    title: Brandstofprijzen
+  - title: Brandstofprijzen
+    icon: mdi:gas-station
     id: brandstofprijzen
     cards:
       - type: sensor
@@ -259,118 +257,41 @@ views:
         detail: 2
         hours_to_show: 48
         entity: sensor.totalelendiesel
-  # - icon: mdi:weather-partlycloudy
-  #   id: weather
-  #   title: Weer
-  #   cards:
-  #     - type: glance
-  #       title: Weer
-  #       entities:
-  #         - sensor.bureau
-  #         - sensor.elen_temperature_2
-  #         - sensor.elen_precipitation_2
-  #         - sensor.elen_precipitation_forecast_average
-  #         - sensor.elen_irradiance
-  #     - type: history-graph
-  #       title: Temperatuur
-  #       hours_to_show: 24
-  #       refresh_interval: 300
-  #       entities:
-  #         - sensor.bureau
-  #         - sensor.elen_temperature_2
-  #         - sensor.Serre_temp
-  #     - type: history-graph
-  #       title: Regen
-  #       hours_to_show: 24
-  #       refresh_interval: 300
-  #       entities:
-  #         - sensor.elen_precipitation_2
-  #         - sensor.elen_precipitation_forecast_average
-  #     - type: history-graph
-  #       title: Zon
-  #       hours_to_show: 24
-  #       refresh_interval: 300
-  #       entities:
-  #         - sensor.elen_irradiance
-  # - icon: mdi:television
-  #   id: mediaplayers
-  #   title: Media players
-  #   cards:
-  #     - type: media-control
-  #       entity: media_player.tv_living
-  #     - type: media-control
-  #       entity: media_player.ccliving
-  # - icon: mdi:cctv
-  #   id: security
-  #   title: Security
-  #   cards:
-  #     - type: picture-entity
-  #       show_state: false
-  #       entity: camera.oprit
-  #     - type: picture-entity
-  #       show_state: false
-  #       entity: camera.tuinhuis
-  # - icon: mdi:map
-  #   id: aanwezigheid
-  #   title: Aanwezigheid
-  #   cards:
-  #     - type: map
-  #       aspect_ratio: 100%
-  #       entities:
-  #         - device_tracker.iphone_jeffry
-  #         - device_tracker.iphone_katja
-  #         - device_tracker.galaxys8
-  #         - device_tracker.huawei_gt3
-  #         - device_tracker.galaxys8_pierre
-  # - icon: mdi:test-tube
-  #   id: playground
-  #   title: Speeltuin
-  #   cards:
-  #     - type: entities
-  #       title: Serre
-  #       entities:
-  #         - type: custom:circle-sensor-card
-  #           show_card: false
-  #           name: Luchtvochtigheid
-  #           entity: sensor.serre_humidity
-  #           min: 0
-  #           max: 100
-  #           units: ' %'
-  #           stroke_width: 10
-  #           font_style:
-  #             font-size: 1.5em
-  #         - type: custom:circle-sensor-card
-  #           show_card: false
-  #           name: Temperatuur
-  #           entity: sensor.serre_temp
-  #           min: 0
-  #           max: 100
-  #           units: ' °C'
-  #           stroke_width: 10
-  #           font_style:
-  #             font-size: 1.5em
-  #   # View tab title.
-  # - title: Example
-  #   # Optional unique id for direct access /lovelace/${id}
-  #   id: example
-  #   # Optional background (overwrites the global background).
-  #   background: radial-gradient(crimson, skyblue)
-  #   # Each view can have a different theme applied. Theme should be defined in the frontend.
-  #   theme: dark-mode
-  #   # The cards to show on this view.
-  #   cards:
-  #       # The filter card will filter entities for their state
-  #     - type: entity-filter
-  #       entities:
-  #         - device_tracker.paulus
-  #         - device_tracker.anne_there
-  #       state_filter:
-  #         - 'home'
-  #       card:
-  #         type: glance
-  #         title: People that are home
-
-  #       # The picture entity card will represent an entity with a picture
-  #     - type: picture-entity
-  #       image: https://www.home-assistant.io/images/default-social.png
-  #       entity: light.bed_light
+  - title: Instellingen
+    icon: mdi:home-automation
+    cards:
+      - type: entities
+        title: Tuinhuis
+        show_header_toggle: false
+        entities:
+          - automation.buitenlicht_tuinhuis_aan_indien_iemand_verbonden_met_ap_tuinhuis
+          - automation.buitenlicht_tuinhuis_uit_indien_iemand_verbroken_met_ap_tuinhuis
+      - type: entities
+        title: Verlichting
+        show_header_toggle: false
+        entities:
+          - automation.buitenlicht_tuinhuis_aan_indien_iemand_verbonden_met_ap_tuinhuis
+          - automation.buitenlicht_tuinhuis_uit_indien_iemand_verbroken_met_ap_tuinhuis
+          - automation.verlichting_aan_bij_valavond_indien_iemand_thuis
+          - automation.verlichting_aan_indien_iemand_thuis_komt_na_zonsondergang
+          - automation.verlichting_aan_s_morgens
+          - automation.verlichting_uit_indien_tv_uit_na_22h00
+          - automation.verlichting_uit_om_00h00
+          - automation.verlichting_uit_s_morgens
+      - type: entities
+        title: Connectie status berichten
+        show_header_toggle: false
+        entities:
+          - automation.bericht_bij_verbinden_nodemcu_serre
+          - automation.bericht_bij_verbreken_nodemcu_serre
+          - automation.bericht_bij_verbreken_nodemcu_tv_verlichting
+          - automation.waarschuwing_bij_nodemcu_tuinhuis_verbroken
+          - automation.waarschuwing_bij_verbinden_nodemcu_tuinhuis
+          - automation.waarschuwing_bij_verbinden_nodemcu_tv_verlichting
+          - automation.waarschuwing_bij_verbinden_nodemcu_kippen
+          - automation.waarschuwing_bij_nodemcu_kippen_verbroken
+      - type: entities
+        title: Temperatuur berichten
+        show_header_toggle: false
+        entities:
+          - automation.waarschuwing_indien_water_van_de_kippen_onder_05c_gaat

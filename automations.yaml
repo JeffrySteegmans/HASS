@@ -383,3 +383,39 @@
   - data:
       message: Temperatuur van het water van de kippen is beneden 0.5°C
     service: notify.ios_iphone_jeffry
+# Bericht wanneer er een update is
+- id: '2000000000007'
+  alias: 'Bericht wanneer er een update is'
+  trigger:
+    platform: state
+    entity_id: updater.updater
+  action:
+    service: notify.notify
+    data:
+      message: 'Er is een update voor Home-assistant beschikbaar.'
+# Bericht bij verbinden NodeMCU Kippen
+- id: '2000000000008'
+  alias: Waarschuwing bij verbinden NodeMCU Kippen
+  trigger:
+  - entity_id: binary_sensor.nodemcu_kippen
+    from: offline
+    platform: state
+    to: online
+  condition: []
+  action:
+  - data:
+      message: NodeMCU Kippen verbonden
+    service: notify.ios_iphone_jeffry
+# Bericht bij verbinden verloren NodeMCU Tuinhuis
+- id: '2000000000009'
+  alias: Waarschuwing bij NodeMCU Kippen verbroken
+  trigger:
+  - entity_id: binary_sensor.nodemcu_Kippen
+    from: online
+    platform: state
+    to: offline
+  condition: []
+  action:
+  - data:
+      message: NodeMCU Kippen verbroken
+    service: notify.ios_iphone_jeffry
