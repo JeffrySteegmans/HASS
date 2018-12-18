@@ -347,7 +347,7 @@
       message: Verlichting tuinhuis aan omdat iemand verbonden is met de AP tuinhuis
     service: notify.ios_iphone_jeffry
 # Buitenlicht tuinhuis uit indien iemand verbroken met AP tuinhuis
-- id: '2000000000004'
+- id: '2000000000005'
   alias: Buitenlicht tuinhuis uit indien iemand verbroken met AP tuinhuis
   trigger:
   - platform: template
@@ -370,4 +370,16 @@
     service: light.turn_off
   - data:
       message: Verlichting tuinhuis uit omdat iemand verbroken is met de AP tuinhuis
+    service: notify.ios_iphone_jeffry
+# Waarschuwing indien water van de kippen onder 0.5°C gaat
+- id: '2000000000006'
+  alias: Waarschuwing indien water van de kippen onder 0.5°C gaat
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.kippen_water_temperatuur
+    below: '0.5'
+  condition: []
+  action:
+  - data:
+      message: Temperatuur van het water van de kippen is beneden 0.5°C
     service: notify.ios_iphone_jeffry
