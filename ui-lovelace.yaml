@@ -295,3 +295,28 @@ views:
         show_header_toggle: false
         entities:
           - automation.waarschuwing_indien_water_van_de_kippen_onder_05c_gaat
+  - title: Docker
+    icon: mdi:docker
+    cards:
+      - type: entities
+        title: Synology
+        show_header_toggle: false
+        entities:
+          - switch.hadockermon_grafana
+          - switch.hadockermon_ha_dockermon
+          - switch.hadockermon_homeassistant
+          - switch.hadockermon_homeassistant_test
+          - switch.hadockermon_influxdb
+          - switch.hadockermon_mqtt
+          - switch.hadockermon_nextcloud
+          - switch.hadockermon_nodered
+          - switch.hadockermon_phpmyadmin
+          - switch.hadockermon_pihole
+          - switch.hadockermon_sabnzbd
+          - switch.hadockermon_sickrage
+          - switch.hadockermon_sonarr
+          - switch.hadockermon_spotweb
+          - switch.hadockermon_spotweb_db
+          - switch.hadockermon_transmission
+          - switch.hadockermon_unifi
+          - switch.hadockermon_watchtower

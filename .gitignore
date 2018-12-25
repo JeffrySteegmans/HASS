@@ -3,6 +3,7 @@
 !*.yml
 !scenes
 !config
+!custom_components
 !www
 !.gitignore
 !README.md
