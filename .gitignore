@@ -3,9 +3,9 @@
 !*.yml
 !scenes
 !config
-!custom_components
 !www
 !.gitignore
+!custom_components
 !README.md
 secrets.yaml
 ip_bans.yaml
