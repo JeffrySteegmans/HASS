@@ -20,6 +20,7 @@ views:
           - light.tuinhuis_buiten
           - light.tuinhuis_tuin
           - light.tuinhuis_werkbank
+          - light.tent
       - type: custom:bignumber-card
         title: Referte index C
         entity: sensor.referteindexc
@@ -42,6 +43,14 @@ views:
         hours_to_show: 24
         entity: sensor.tuinhuis_temperatuur_buiten
       - type: sensor
+        name: Tent
+        icon: mdi:thermometer
+        graph: line
+        unit: °C
+        detail: 2
+        hours_to_show: 24
+        entity: sensor.tent_buiten_temperatuur
+      - type: sensor
         name: Bureau
         icon: mdi:thermometer
         graph: line
@@ -50,14 +59,6 @@ views:
         hours_to_show: 24
         entity: sensor.bureau
       - type: sensor
-        name: Kippen
-        icon: mdi:thermometer
-        graph: line
-        unit: °C
-        detail: 2
-        hours_to_show: 24
-        entity: sensor.kippen_buiten_temperatuur
-      - type: sensor
         name: Kippen water
         icon: mdi:thermometer
         graph: line
@@ -65,6 +66,14 @@ views:
         detail: 2
         hours_to_show: 24
         entity: sensor.kippen_water_temperatuur
+      - type: sensor
+        name: Tent wattage
+        icon: mdi:thermometer
+        graph: line
+        unit: Watt
+        detail: 2
+        hours_to_show: 24
+        entity: sensor.tent_watt
       - type: glance
         title: Serre
         entities:

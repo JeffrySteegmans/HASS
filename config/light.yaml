@@ -52,3 +52,12 @@
   payload_off: "OFF"
   retain: true
   qos: 0
+- platform: mqtt
+  name: "Tent"
+  command_topic: "powerswitch/tent/relay/cmd/1"
+  state_topic: "powerswitch/tent/relay/state/1"
+  availability_topic: "powerswitch/tent/state"
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true
+  qos: 0

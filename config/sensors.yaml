@@ -116,6 +116,16 @@
   name: "Tuinhuis temperatuur buiten"
   unit_of_measurement: "°C"
   value_template: "{{ value | round(1) }}"
+- platform: mqtt
+  state_topic: "powerswitch/tent/temperature/0"
+  name: "Tent buiten temperatuur"
+  unit_of_measurement: "°C"
+  value_template: "{{ value | round(1) }}"
+- platform: mqtt
+  state_topic: "powerswitch/tent/watt"
+  name: "Tent watt"
+  unit_of_measurement: "W"
+  value_template: "{{ value | round(0) }}"
 - platform: waze_travel_time
   origin: !secret waze_origin_woonwerk
   destination: !secret waze_destination_woonwerk
