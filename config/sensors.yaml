@@ -117,13 +117,13 @@
   unit_of_measurement: "°C"
   value_template: "{{ value | round(1) }}"
 - platform: mqtt
-  state_topic: "powerswitch/tent/temperature/0"
-  name: "Tent buiten temperatuur"
+  state_topic: "powerswitch/livingbol/temperature/0"
+  name: "Living temperatuur"
   unit_of_measurement: "°C"
   value_template: "{{ value | round(1) }}"
 - platform: mqtt
-  state_topic: "powerswitch/tent/watt"
-  name: "Tent watt"
+  state_topic: "powerswitch/livingbol/watt"
+  name: "Bol living watt"
   unit_of_measurement: "W"
   value_template: "{{ value | round(0) }}"
 - platform: waze_travel_time

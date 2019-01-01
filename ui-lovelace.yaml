@@ -15,12 +15,12 @@ views:
         title: verlichting
         entities:
           - light.tv_living
+          - light.bol_living
+          - light.tuinhuis_buiten
           - light.kippen
           - light.tuinhuis_binnen
-          - light.tuinhuis_buiten
           - light.tuinhuis_tuin
           - light.tuinhuis_werkbank
-          - light.tent
       - type: custom:bignumber-card
         title: Referte index C
         entity: sensor.referteindexc
@@ -43,13 +43,13 @@ views:
         hours_to_show: 24
         entity: sensor.tuinhuis_temperatuur_buiten
       - type: sensor
-        name: Tent
+        name: Temperatuur living
         icon: mdi:thermometer
         graph: line
         unit: °C
         detail: 2
         hours_to_show: 24
-        entity: sensor.tent_buiten_temperatuur
+        entity: sensor.living_temperatuur
       - type: sensor
         name: Bureau
         icon: mdi:thermometer
@@ -66,14 +66,6 @@ views:
         detail: 2
         hours_to_show: 24
         entity: sensor.kippen_water_temperatuur
-      - type: sensor
-        name: Tent wattage
-        icon: mdi:thermometer
-        graph: line
-        unit: Watt
-        detail: 2
-        hours_to_show: 24
-        entity: sensor.tent_watt
       - type: glance
         title: Serre
         entities:
@@ -127,6 +119,18 @@ views:
         entity: media_player.ccliving
       - type: media-control
         entity: media_player.cckinderen
+  - title: Verbruik
+    icon: mdi:power-socket-eu
+    id: verbruik
+    cards:
+      - type: sensor
+        name: Huidig verbruik bol living 
+        icon: mdi:flash
+        graph: line
+        unit: Watt
+        detail: 2
+        hours_to_show: 24
+        entity: sensor.bol_living_watt
   - title: Weer
     icon: mdi:weather-partlycloudy
     id: weer
@@ -151,6 +155,7 @@ views:
         title: Binnen temperatuur
         entities:
           - sensor.bureau
+          - sensor.living_temperatuur
       - type: history-graph
         title: Buiten temperatuur
         entities:
@@ -192,6 +197,7 @@ views:
           - binary_sensor.nodemcu_tv_verlichting
           - binary_sensor.nodemcu_kippen
           - binary_sensor.nodemcu_tuinhuis
+          - binary_sensor.nodemcu_living_bol
       - type: entities
         title: NodeRED
         show_header_toggle: false

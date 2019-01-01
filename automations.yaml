@@ -136,6 +136,9 @@
       entity_id: light.tuinhuis_buiten
     service: light.turn_on
   - data:
+      entity_id: light.bol_living
+    service: light.turn_on
+  - data:
       message: Verlichting is aan
     service: notify.ios_iphone_jeffry
 # Alle verlichting uitschakelen om 00:00 indien TV ook uit
@@ -175,6 +178,9 @@
     service: light.turn_on
   - data:
       entity_id: light.tuinhuis_buiten
+    service: light.turn_on
+  - data:
+      entity_id: light.bol_living
     service: light.turn_on
   - data:
       message: Verlichting aangeschakeld 's morgens
@@ -295,6 +301,9 @@
     service: light.turn_on
   - data:
       entity_id: light.tuinhuis_buiten
+    service: light.turn_on
+  - data:
+      entity_id: light.bol_living
     service: light.turn_on
   - data:
       message: Verlichting aangeschakeld omdat iemand na zonsondergang thuis komt
@@ -418,4 +427,30 @@
   action:
   - data:
       message: NodeMCU Kippen verbroken
+    service: notify.ios_iphone_jeffry
+# Bericht bij verbinding verbroken NodeMCU Living_bol
+- id: '2000000000010'
+  alias: Bericht bij verbinding verbroken NodeMCU Living_bol
+  trigger:
+  - entity_id: binary_sensor.nodemcu_living_bol
+    from: online
+    platform: state
+    to: offline
+  condition: []
+  action:
+  - data:
+      message: NodeMCU Living bol verbroken
+    service: notify.ios_iphone_jeffry
+# Bericht bij verbinden NodeMCU Living_bol
+- id: '2000000000011'
+  alias: Waarschuwing bij verbinden NodeMCU Living_bol
+  trigger:
+  - entity_id: binary_sensor.nodemcu_living_bol
+    from: offline
+    platform: state
+    to: online
+  condition: []
+  action:
+  - data:
+      message: NodeMCU Living bol verbonden
     service: notify.ios_iphone_jeffry
