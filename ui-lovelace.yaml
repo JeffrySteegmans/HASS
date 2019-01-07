@@ -135,6 +135,12 @@ views:
     icon: mdi:weather-partlycloudy
     id: weer
     cards:
+      
+      - type: history-graph
+        title: Binnen temperatuur
+        entities:
+          - sensor.bureau
+          - sensor.living_temperatuur
       - type: glance
         title: Weer
         columns: 3
@@ -151,11 +157,6 @@ views:
           - sensor.elen_precipitation_2
           - sensor.elen_precipitation_forecast_average
           - sensor.elen_irradiance
-      - type: history-graph
-        title: Binnen temperatuur
-        entities:
-          - sensor.bureau
-          - sensor.living_temperatuur
       - type: history-graph
         title: Buiten temperatuur
         entities:
