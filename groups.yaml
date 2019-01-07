@@ -75,6 +75,7 @@ Lights:
     - light.tuinhuis_tuin
     - light.tuinhuis_binnen
     - light.tuinhuis_werkbank
+    - light.bol_living
 
 TempSensors:
   view: no
