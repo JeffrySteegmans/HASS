@@ -272,7 +272,7 @@ views:
         detail: 2
         hours_to_show: 48
         entity: sensor.totalelendiesel
-  - title: Instellingen
+  - title: Automations
     icon: mdi:home-automation
     cards:
       - type: entities
@@ -305,11 +305,29 @@ views:
           - automation.waarschuwing_bij_verbinden_nodemcu_tv_verlichting
           - automation.waarschuwing_bij_verbinden_nodemcu_kippen
           - automation.waarschuwing_bij_nodemcu_kippen_verbroken
+          - automation.bericht_bij_verbinding_verbroken_nodemcu_living_bol
+          - automation.waarschuwing_bij_verbinden_nodemcu_living_bol
       - type: entities
         title: Temperatuur berichten
         show_header_toggle: false
         entities:
-          - automation.waarschuwing_indien_water_van_de_kippen_onder_05c_gaat
+          - automation.waarschuwing_indien_water_van_de_kippen_onder_0_5_graden_gaat
+      - type: entities
+        title: Tuinhuis connectie met AP
+        show_header_toggle: false
+        entities:
+          - automation.buitenlicht_tuinhuis_aan_indien_iemand_verbonden_met_ap_tuinhuis
+          - automation.buitenlicht_tuinhuis_uit_indien_iemand_verbroken_met_ap_tuinhuis
+          - automation.bericht_katja_verbroken_met_ap_tuinhuis
+          - automation.bericht_jeffry_verbroken_met_ap_tuinhuis
+          - automation.bericht_pierre_verbroken_met_ap_tuinhuis
+      - type: entities
+        title: Tracking
+        show_header_toggle: false
+        entities:
+          - automation.bericht_bij_vertrek
+          - automation.bericht_bij_aankomst
+          - automation.test_aanwezigheid
   - title: Docker
     icon: mdi:docker
     cards:
