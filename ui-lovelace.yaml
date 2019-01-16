@@ -3,6 +3,8 @@ resources:
     type: js
   - url: /local/surveillance-card.js?v=1
     type: module
+  - url: /local/mini-graph-card-bundle.js?v=0.1.0
+    type: module
 
 title: Langstraat 60
 
@@ -34,37 +36,57 @@ views:
             style: 'var(--label-badge-yellow)'
           - value: 6.2
             style: 'var(--label-badge-red)'
-      - type: sensor
+      - type: custom:mini-graph-card
         name: Tuinhuis
         icon: mdi:thermometer
-        graph: line
         unit: °C
         detail: 2
         hours_to_show: 24
+        line_color: '#167f01'
+        line_value_below: 0
+        line_color_below: '#0000ff'
+        line_value_above: 30
+        line_color_above: '#ff0000'
+        labels: true
         entity: sensor.tuinhuis_temperatuur_buiten
-      - type: sensor
+      - type: custom:mini-graph-card
         name: Temperatuur living
         icon: mdi:thermometer
-        graph: line
         unit: °C
         detail: 2
         hours_to_show: 24
+        line_color: '#167f01'
+        line_value_below: 20
+        line_color_below: '#0000ff'
+        line_value_above: 25
+        line_color_above: '#ff0000'
+        labels: true
         entity: sensor.living_temperatuur
-      - type: sensor
+      - type: custom:mini-graph-card
         name: Bureau
         icon: mdi:thermometer
-        graph: line
         unit: °C
         detail: 2
         hours_to_show: 24
+        line_color: '#167f01'
+        line_value_below: 20
+        line_color_below: '#0000ff'
+        line_value_above: 25
+        line_color_above: '#ff0000'
+        labels: true
         entity: sensor.bureau
-      - type: sensor
+      - type: custom:mini-graph-card
         name: Kippen water
         icon: mdi:thermometer
-        graph: line
         unit: °C
         detail: 2
         hours_to_show: 24
+        line_color: '#167f01'
+        line_value_below: 0
+        line_color_below: '#0000ff'
+        line_value_above: 30
+        line_color_above: '#ff0000'
+        labels: true
         entity: sensor.kippen_water_temperatuur
       - type: glance
         title: Serre
