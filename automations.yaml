@@ -275,7 +275,10 @@
     service: notify.ios_iphone_jeffry
   - delay: 00:10:00
   - data:
-      entity_id: group.lights
+      entity_id: light.tv_living
+    service: light.turn_off
+  - data:
+      entity_id: light.bol_living
     service: light.turn_off
   - data:
       message: Verlichting uitgeschakeld omdat het na 22h00 is en de tv gaat uit
