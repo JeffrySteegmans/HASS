@@ -462,7 +462,7 @@
       ''80:2a:a8:59:e0:2e'') }}'
   action:
   - data:
-      message: Verlichting tuinhuis uit omdat iemand verbroken is met de AP tuinhuis
+      message: Verlichting tuinhuis uit omdat Katja verbroken is met de AP tuinhuis
     service: notify.ios_iphone_jeffry
 # Jeffry verbroken met AP tuinhuis
 - id: '20000000000013'
@@ -473,7 +473,7 @@
       ''80:2a:a8:59:e0:2e'') }}'
   action:
   - data:
-      message: Verlichting tuinhuis uit omdat iemand verbroken is met de AP tuinhuis
+      message: Verlichting tuinhuis uit omdat Jeffry verbroken is met de AP tuinhuis
     service: notify.ios_iphone_jeffry
 # Pierre verbroken met AP tuinhuis
 - id: '20000000000014'
@@ -484,7 +484,7 @@
       ''80:2a:a8:59:e0:2e'') }}'
   action:
   - data:
-      message: Verlichting tuinhuis uit omdat iemand verbroken is met de AP tuinhuis
+      message: Verlichting tuinhuis uit omdat pierre verbroken is met de AP tuinhuis
     service: notify.ios_iphone_jeffry
 # bericht bij aankomst
 - id: '2000000000015'

@@ -1,7 +1,10 @@
 - platform: webostv
-  mac: !secret webostv_living_mac
   host: !secret webostv_living_ip
   name: TV Living
+  turn_on_action:
+    service: wake_on_lan.send_magic_packet
+    data:
+      mac: !secret webostv_living_mac
 - platform: plex
   entity_namespace: plex
   include_non_clients: true

@@ -21,12 +21,12 @@
 - name: Kevin
   latitude: !secret zone_kevin_latitude
   longitude: !secret zone_kevin_longitude
-  radius: 100
+  radius: 50
   icon: mdi:account
 - name: Kerakris
   latitude: !secret zone_kerakris_latitude
   longitude: !secret zone_kerakris_longitude
-  radius: 100
+  radius: 50
   icon: mdi:store
 - name: IPTE
   latitude: !secret zone_ipte_latitude

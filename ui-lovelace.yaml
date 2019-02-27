@@ -102,35 +102,35 @@ views:
           - sensor.elen_precipitation_2
           - sensor.elen_precipitation_forecast_average
           - sensor.elen_irradiance
-      - type: glance
-        title: Diesel prijzen
-        columns: 3
-        entities:
-          - sensor.sbhavertdiesel
-          - sensor.essoselfkantdiesel
-          - sensor.shellselfkantdiesel
-          - sensor.haanroosterendiesel
-          - sensor.gabrielsdilsendiesel
-          - sensor.tinqmauritslaandiesel
-          - sensor.tinqjosklijnenlaandiesel
-          - sensor.totalelendiesel
+      # - type: glance
+      #   title: Diesel prijzen
+      #   columns: 3
+      #   entities:
+      #     - sensor.sbhavertdiesel
+      #     - sensor.essoselfkantdiesel
+      #     - sensor.shellselfkantdiesel
+      #     - sensor.haanroosterendiesel
+      #     - sensor.gabrielsdilsendiesel
+      #     - sensor.tinqmauritslaandiesel
+      #     - sensor.tinqjosklijnenlaandiesel
+      #     - sensor.totalelendiesel
       - type: glance
         title: Aanwezigheid
         entities:
           - device_tracker.iphone_jeffry
           - device_tracker.iphone_van_katja
-      - type: entities
-        title: Vaatwasser
-        entities:
-          - binary_sensor.vaatwasser_door
-          - sensor.vaatwasser_program_progress
-          - sensor.vaatwasser_remaining_program_time
-          - switch.vaatwasser
-          - switch.vaatwasser_program_auto1
-          - switch.vaatwasser_program_auto2
-          - switch.vaatwasser_program_auto3
-          - switch.vaatwasser_program_eco50
-          - switch.vaatwasser_program_quick45
+      # - type: entities
+      #   title: Vaatwasser
+      #   entities:
+      #     - binary_sensor.vaatwasser_door
+      #     - sensor.vaatwasser_program_progress
+      #     - sensor.vaatwasser_remaining_program_time
+      #     - switch.vaatwasser
+      #     - switch.vaatwasser_program_auto1
+      #     - switch.vaatwasser_program_auto2
+      #     - switch.vaatwasser_program_auto3
+      #     - switch.vaatwasser_program_eco50
+      #     - switch.vaatwasser_program_quick45
   - title: Media players
     icon: mdi:television
     id: mediaplayers
@@ -226,74 +226,74 @@ views:
         entities:
           - binary_sensor.nodered_docker
           - binary_sensor.nodered_castleblack
-  - title: Brandstofprijzen
-    icon: mdi:gas-station
-    id: brandstofprijzen
-    cards:
-      - type: sensor
-        name: SB Havert (diesel)
-        icon: mdi:gas-station
-        graph: line
-        unit: €
-        detail: 2
-        hours_to_show: 48
-        entity: sensor.sbhavertdiesel
-      - type: sensor
-        name: ESSO Selfkant (diesel)
-        icon: mdi:gas-station
-        graph: line
-        unit: €
-        detail: 2
-        hours_to_show: 48
-        entity: sensor.essoselfkantdiesel
-      - type: sensor
-        name: SHELL Selfkant (diesel)
-        icon: mdi:gas-station
-        graph: line
-        unit: €
-        detail: 2
-        hours_to_show: 48
-        entity: sensor.shellselfkantdiesel
-      - type: sensor
-        name: HAAN Roosteren (diesel)
-        icon: mdi:gas-station
-        graph: line
-        unit: €
-        detail: 2
-        hours_to_show: 48
-        entity: sensor.haanroosterendiesel
-      - type: sensor
-        name: GABRIELS Dilsen (diesel)
-        icon: mdi:gas-station
-        graph: line
-        unit: €
-        detail: 2
-        hours_to_show: 48
-        entity: sensor.gabrielsdilsendiesel
-      - type: sensor
-        name: TINQ Mauritslaan (diesel)
-        icon: mdi:gas-station
-        graph: line
-        unit: €
-        detail: 2
-        hours_to_show: 48
-        entity: sensor.tinqmauritslaandiesel
-      - type: sensor
-        name: TINQ Josklijnenlaan (diesel)
-        icon: mdi:gas-station
-        graph: line
-        unit: €
-        detail: 2
-        hours_to_show: 48
-        entity: sensor.tinqjosklijnenlaandiesel
-      - type: sensor
-        name: TOTAL Elen (diesel)
-        icon: mdi:gas-station
-        graph: line
-        unit: €
-        detail: 2
-        hours_to_show: 48
-        entity: sensor.totalelendiesel
+  # - title: Brandstofprijzen
+  #   icon: mdi:gas-station
+  #   id: brandstofprijzen
+  #   cards:
+  #     - type: sensor
+  #       name: SB Havert (diesel)
+  #       icon: mdi:gas-station
+  #       graph: line
+  #       unit: €
+  #       detail: 2
+  #       hours_to_show: 48
+  #       entity: sensor.sbhavertdiesel
+  #     - type: sensor
+  #       name: ESSO Selfkant (diesel)
+  #       icon: mdi:gas-station
+  #       graph: line
+  #       unit: €
+  #       detail: 2
+  #       hours_to_show: 48
+  #       entity: sensor.essoselfkantdiesel
+  #     - type: sensor
+  #       name: SHELL Selfkant (diesel)
+  #       icon: mdi:gas-station
+  #       graph: line
+  #       unit: €
+  #       detail: 2
+  #       hours_to_show: 48
+  #       entity: sensor.shellselfkantdiesel
+  #     - type: sensor
+  #       name: HAAN Roosteren (diesel)
+  #       icon: mdi:gas-station
+  #       graph: line
+  #       unit: €
+  #       detail: 2
+  #       hours_to_show: 48
+  #       entity: sensor.haanroosterendiesel
+  #     - type: sensor
+  #       name: GABRIELS Dilsen (diesel)
+  #       icon: mdi:gas-station
+  #       graph: line
+  #       unit: €
+  #       detail: 2
+  #       hours_to_show: 48
+  #       entity: sensor.gabrielsdilsendiesel
+  #     - type: sensor
+  #       name: TINQ Mauritslaan (diesel)
+  #       icon: mdi:gas-station
+  #       graph: line
+  #       unit: €
+  #       detail: 2
+  #       hours_to_show: 48
+  #       entity: sensor.tinqmauritslaandiesel
+  #     - type: sensor
+  #       name: TINQ Josklijnenlaan (diesel)
+  #       icon: mdi:gas-station
+  #       graph: line
+  #       unit: €
+  #       detail: 2
+  #       hours_to_show: 48
+  #       entity: sensor.tinqjosklijnenlaandiesel
+  #     - type: sensor
+  #       name: TOTAL Elen (diesel)
+  #       icon: mdi:gas-station
+  #       graph: line
+  #       unit: €
+  #       detail: 2
+  #       hours_to_show: 48
+  #       entity: sensor.totalelendiesel
   - title: Automations
     icon: mdi:home-automation
     cards:
@@ -359,14 +359,12 @@ views:
         entities:
           - switch.hadockermon_grafana
           - switch.hadockermon_ha_dockermon
-          - switch.hadockermon_homeassistant
-          - switch.hadockermon_homeassistant_test
+          - switch.hadockermon_home_assistant
           - switch.hadockermon_influxdb
           - switch.hadockermon_mqtt
           - switch.hadockermon_nextcloud
           - switch.hadockermon_nodered
           - switch.hadockermon_phpmyadmin
-          - switch.hadockermon_pihole
           - switch.hadockermon_sabnzbd
           - switch.hadockermon_sickrage
           - switch.hadockermon_sonarr
