@@ -30,6 +30,30 @@
   unit_of_measurement: "%"
   value_template: "{{ value | round(0) }}"
 - platform: moon
+- platform: darksky
+  api_key: !secret darksky_api
+  scan_interval:
+    minutes: 5
+  forecast:
+    - 0
+  language: nl
+  monitored_conditions:
+    - summary
+    - icon
+    - temperature
+    - wind_speed
+    - wind_gust
+    - temperature_high
+- platform: template
+  sensors:
+    darksky:
+      friendly_name: "Weersvoorspelling darksky"
+      value_template: >-
+        {% set voorspelling = states.sensor.dark_sky_summary_0.state %}
+        {% set temp = states.sensor.dark_sky_daytime_high_temperature_0.state %}
+        {% set wind = states.sensor.dark_sky_wind_speed_0.state %}
+        {% set gust = states.sensor.dark_sky_wind_gust_0.state %}
+        "{{voorspelling}} Maximaal {{temp | round}}°C. Wind van {{wind | round}} tot {{gust | round}} km/u."
 # - platform: scrape
 #   name: sbhavertdiesel
 #   friendly_name: SB in Havert
