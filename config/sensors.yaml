@@ -113,13 +113,13 @@
 #   value_template: "{{ value.split(' ')[1].replace('(B7)\\n\\n\\n', '').replace(',', '.') | float }}"
 #   unit_of_measurement: "€/l"
 #   scan_interval: 300 #Every 5 minutes 
-# - platform: scrape
-#   name: referteindexc
-#   resource: https://www.spaargids.be/sparen/referte-index-c.html?years=4
-#   select: "#main > div.callout-print > div.row.row-nomargin.margin-bottom-1rem > div:nth-of-type(1) > div > h2"
-#   value_template: "{{ value.replace('%', '').replace(',', '.') | float }}"
-#   unit_of_measurement: "%"
-#   scan_interval: 3600 #Every day
+- platform: scrape
+  name: referteindexc
+  resource: https://www.spaargids.be/sparen/referte-index-c.html?years=4
+  select: "#main > div.callout-print > div.row.row-nomargin.margin-bottom-1rem > div:nth-of-type(1) > div > h2"
+  value_template: "{{ value.replace('%', '').replace(',', '.') | float }}"
+  unit_of_measurement: "%"
+  scan_interval: 3600 #Every day
 - platform: mqtt
   state_topic: "powerswitch/chicken/temperature/0"
   name: "Kippen buiten temperatuur"
