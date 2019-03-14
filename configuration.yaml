@@ -108,13 +108,13 @@ google_assistant:
 #   client_secret: !secret homeconnect_clientsecret
 
 nest:
-  client_id: !secret nest_client_id
-  client_secret: !secret nest_client_secret
-  sensors:
-    monitored_conditions:
-      - 'humidity'
-      - 'operation_mode'
-      - 'temperature'
+  client_id: 667684cb-7baf-4fe7-a6e7-5188b6a50ff9
+  client_secret: 25oHS1O9B0X7O44Mo2AqlRnub
+  # sensors:
+  #   monitored_conditions:
+  #     - 'humidity'
+  #     - 'operation_mode'
+  #     - 'temperature'
 
 cast: !include config/cast.yaml
 mqtt: !include config/mqtt.yaml
