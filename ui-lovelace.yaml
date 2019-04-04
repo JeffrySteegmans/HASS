@@ -32,6 +32,19 @@ views:
           - light.tuinhuis_binnen
           - light.tuinhuis_tuin
           - light.tuinhuis_werkbank
+      - type: sensor
+        entity: sensor.stroom
+        name: Huidig algemeen verbruik
+        icon: mdi:flash
+        graph: line
+        unit: W
+        detail: 2
+        hours_to_show: 4
+      - type: sensor
+        entity: sensor.total_daily_energy
+        name: Daily energy
+        icon: mdi:counter
+        hours_to_show: 4
       - type: custom:bignumber-card
         title: Referte index C
         entity: sensor.referteindexc
@@ -58,6 +71,19 @@ views:
         line_color_above: '#ff0000'
         labels: true
         entity: sensor.tuinhuis_temperatuur_buiten
+      - type: custom:mini-graph-card
+        name: Gang
+        icon: mdi:thermometer
+        unit: °C
+        detail: 2
+        hours_to_show: 24
+        line_color: '#167f01'
+        line_value_below: 15
+        line_color_below: '#0000ff'
+        line_value_above: 25
+        line_color_above: '#ff0000'
+        labels: true
+        entity: sensor.temperature_bureau
       - type: custom:mini-graph-card
         name: Temperatuur living
         icon: mdi:thermometer
@@ -162,6 +188,23 @@ views:
         detail: 2
         hours_to_show: 24
         entity: sensor.bol_living_watt
+      - type: sensor
+        entity: sensor.stroom
+        name: Huidig algemeen verbruik
+        icon: mdi:flash
+        graph: line
+        unit: W
+        detail: 2
+        hours_to_show: 4
+      - type: sensor
+        entity: sensor.total_daily_energy
+        name: Daily energy
+        icon: mdi:counter
+        hours_to_show: 4
+      - type: entities
+        title: Interne led
+        entities:
+          - switch.switch_test
   - title: Weer
     icon: mdi:weather-partlycloudy
     id: weer
