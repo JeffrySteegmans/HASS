@@ -68,6 +68,19 @@ views:
           - value: 6.2
             style: 'var(--label-badge-red)'
       - type: custom:mini-graph-card
+        name: Serre
+        icon: mdi:thermometer
+        unit: °C
+        detail: 2
+        hours_to_show: 24
+        line_color: '#167f01'
+        line_value_below: 0
+        line_color_below: '#0000ff'
+        line_value_above: 40
+        line_color_above: '#ff0000'
+        labels: true
+        entity: sensor.temperatuur_serre_dallas
+      - type: custom:mini-graph-card
         name: Tuinhuis
         icon: mdi:thermometer
         unit: °C
