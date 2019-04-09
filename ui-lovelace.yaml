@@ -322,7 +322,8 @@ views:
         title: NodeMCU
         show_header_toggle: false
         entities:
-          - binary_sensor.nodemcu_serre
+          - binary_sensor.serre_status
+          - binary_sensor.energy_meter_status_2
           - binary_sensor.nodemcu_tv_verlichting
           - binary_sensor.nodemcu_kippen
           - binary_sensor.nodemcu_tuinhuis

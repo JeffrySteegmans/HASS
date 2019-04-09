@@ -2,7 +2,7 @@
 - id: '1533553411857'
   alias: Bericht bij verbreken NodeMCU Serre
   trigger:
-  - entity_id: binary_sensor.nodemcu_serre
+  - entity_id: binary_sensor.serre_status
     from: 'on'
     platform: state
     to: 'off'
@@ -15,7 +15,7 @@
 - id: '1533553548849'
   alias: Bericht bij verbinden NodeMCU Serre
   trigger:
-  - entity_id: binary_sensor.nodemcu_serre
+  - entity_id: binary_sensor.serre_status
     from: 'off'
     platform: state
     to: 'on'
@@ -29,14 +29,14 @@
   alias: Meer dan 45°C in de serre
   trigger:
   - above: '45'
-    entity_id: sensor.serre_temp
+    entity_id: sensor.temperatuur_serre
     platform: numeric_state
   condition:
   - condition: state
     entity_id: input_boolean.notify_serre_temp
     state: 'off'
   - condition: numeric_state
-    entity_id: sensor.serre_temp
+    entity_id: sensor.temperatuur_serre
     below: '85'
   action:
   - data:
@@ -47,24 +47,24 @@
       entity_id: input_boolean.notify_serre_temp
     service: input_boolean.turn_on
 # Waarschuwing bij een grondvochtigheid van minder dan 50%
-- id: '1533553759096'
-  alias: Waarschuwing bij een grondvochtigheid van minder dan 50%
-  trigger:
-  - below: '50'
-    entity_id: sensor.serre_soil
-    platform: numeric_state
-  condition:
-  - condition: state
-    entity_id: input_boolean.notify_serre_soil
-    state: 'off'
-  action:
-  - data:
-      message: De grondvochtigheid is lager dan 50%
-    service: notify.ios_iphone_jeffry
-  - alias: ''
-    data:
-      entity_id: input_boolean.notify_serre_soil
-    service: input_boolean.turn_on
+# - id: '1533553759096'
+#   alias: Waarschuwing bij een grondvochtigheid van minder dan 50%
+#   trigger:
+#   - below: '50'
+#     entity_id: sensor.serre_soil
+#     platform: numeric_state
+#   condition:
+#   - condition: state
+#     entity_id: input_boolean.notify_serre_soil
+#     state: 'off'
+#   action:
+#   - data:
+#       message: De grondvochtigheid is lager dan 50%
+#     service: notify.ios_iphone_jeffry
+#   - alias: ''
+#     data:
+#       entity_id: input_boolean.notify_serre_soil
+#     service: input_boolean.turn_on
 # Automatisch serre input booleans op off zetten
 - id: '1533643226682'
   alias: Automatisch serre input booleans op off zetten
@@ -512,3 +512,29 @@
   - service: notify.ios_iphone_jeffry
     data:
       message: '{{ states("sensor.darksky") }}'
+# Bericht bij verbinden NodeMCU Energy meter
+- id: '2000000000017'
+  alias: Waarschuwing bij verbinden NodeMCU Energy meter
+  trigger:
+  - entity_id: binary_sensor.energy_meter_status_2
+    from: "off"
+    platform: state
+    to: "on"
+  condition: []
+  action:
+  - data:
+      message: NodeMCU Energy meter verbonden
+    service: notify.ios_iphone_jeffry
+# Bericht bij verbinden verloren NodeMCU Energy meter
+- id: '2000000000018'
+  alias: Waarschuwing bij NodeMCU Energy meter verbroken
+  trigger:
+  - entity_id: binary_sensor.energy_meter_status_2
+    from: "on"
+    platform: state
+    to: "off"
+  condition: []
+  action:
+  - data:
+      message: NodeMCU Energy meter verbroken
+    service: notify.ios_iphone_jeffry
