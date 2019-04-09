@@ -33,7 +33,7 @@ views:
           - light.tuinhuis_tuin
           - light.tuinhuis_werkbank
       - type: sensor
-        entity: sensor.stroom
+        entity: sensor.stroom_2
         name: Huidig algemeen verbruik
         icon: mdi:flash
         graph: line
@@ -41,9 +41,18 @@ views:
         detail: 2
         hours_to_show: 4
       - type: sensor
-        entity: sensor.total_daily_energy
+        entity: sensor.total_daily_energy_2
         name: Daily energy
         icon: mdi:counter
+        graph: line
+        detail: 2
+        hours_to_show: 4
+      - type: sensor
+        entity: sensor.water
+        name: Water flow
+        icon: mdi:counter
+        graph: line
+        detail: 2
         hours_to_show: 4
       - type: custom:bignumber-card
         title: Referte index C
@@ -139,7 +148,7 @@ views:
       - type: glance
         title: Serre
         entities:
-          - sensor.temperatuur_serre
+          - sensor.temperatuur_serre_dallas
           - sensor.serre_humidity_dht11
           - sensor.serre_temperature_dht11
       - type: glance
@@ -202,7 +211,7 @@ views:
         hours_to_show: 24
         entity: sensor.bol_living_watt
       - type: sensor
-        entity: sensor.stroom
+        entity: sensor.stroom_2
         name: Huidig algemeen verbruik
         icon: mdi:flash
         graph: line
@@ -210,14 +219,34 @@ views:
         detail: 2
         hours_to_show: 4
       - type: sensor
-        entity: sensor.total_daily_energy
+        entity: sensor.total_daily_energy_2
         name: Daily energy
         icon: mdi:counter
+        graph: line
+        detail: 2
         hours_to_show: 4
+      - type: sensor
+        entity: sensor.water
+        name: Water flow
+        icon: mdi:counter
+        graph: line
+        detail: 2
+        hours_to_show: 4
+      - type: glance
+        title: WiFi signal
+        entities:
+          - sensor.wifi_signal_sensor
+          - sensor.wifi_signal_sensor_2
       - type: entities
         title: Interne led
+        show_header_toggle: false
         entities:
-          - switch.switch_test
+          - switch.switch_test_2
+      - type: entity-button
+        entity: switch.switch_test_2
+        name: "interne led"
+        tap_action:
+          action: toggle
   - title: Weer
     icon: mdi:weather-partlycloudy
     id: weer
