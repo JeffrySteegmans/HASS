@@ -109,7 +109,7 @@ views:
         line_value_above: 25
         line_color_above: '#ff0000'
         labels: true
-        entity: sensor.bureau
+        entity: sensor.temperatuur_bureau
       - type: custom:mini-graph-card
         name: Kippen water
         icon: mdi:thermometer
@@ -123,12 +123,25 @@ views:
         line_color_above: '#ff0000'
         labels: true
         entity: sensor.kippen_water_temperatuur
+      - type: custom:mini-graph-card
+        name: Serre
+        icon: mdi:thermometer
+        unit: °C
+        detail: 2
+        hours_to_show: 24
+        line_color: '#167f01'
+        line_value_below: 0
+        line_color_below: '#0000ff'
+        line_value_above: 40
+        line_color_above: '#ff0000'
+        labels: true
+        entity: sensor.temperatuur_serre
       - type: glance
         title: Serre
         entities:
-          - sensor.serre_temp
-          - sensor.serre_humidity
-          - sensor.serre_soil
+          - sensor.temperatuur_serre
+          - sensor.serre_humidity_dht11
+          - sensor.serre_temperature_dht11
       - type: glance
         title: Buienradar
         columns: 2
