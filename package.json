@@ -1,0 +1,27 @@
+{
+  "name": "hass",
+  "version": "1.0.0",
+  "description": "Home assistant configuration files",
+  "main": "index.js",
+  "dependencies": {
+    "gulp-util": "^3.0.8",
+    "minimist": "^1.2.0",
+    "vinyl-ftp": "^0.6.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeffrySteegmans/HASS.git"
+  },
+  "author": "Jeffry steegmans",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JeffrySteegmans/HASS/issues"
+  },
+  "homepage": "https://github.com/JeffrySteegmans/HASS#readme"
+}

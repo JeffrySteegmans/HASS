@@ -50,3 +50,7 @@ dlib_unknown_faces
 .pc-session
 .homeconnect-token-cache
 .homekit.state
+
+# gulp
+package-lock.json
+node_modules
