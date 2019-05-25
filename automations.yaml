@@ -132,9 +132,6 @@
       entity_id: light.tv_living
     service: light.turn_on
   - data:
-      entity_id: light.tuinhuis_buiten
-    service: light.turn_on
-  - data:
       entity_id: switch.bol_living
     service: switch.turn_on
   - data:
@@ -161,6 +158,9 @@
       entity_id: switch.bol_living
     service: switch.turn_off
   - data:
+      entity_id: switch.verlichting_voortuin
+    service: switch.turn_off
+  - data:
       message: Verlichting uitgeschakeld om middernacht
     service: notify.ios_iphone_jeffry
 # Verlichting aan 's morgens'
@@ -185,6 +185,9 @@
       entity_id: switch.bol_living
     service: switch.turn_on
   - data:
+      entity_id: switch.verlichting_voortuin
+    service: switch.turn_on
+  - data:
       message: Verlichting aangeschakeld 's morgens
     service: notify.ios_iphone_jeffry
 # Verlichting uit 's morgens
@@ -199,12 +202,14 @@
     entity_id: group.lights
     state: 'on'
   action:
-  - alias: ''
-    data:
+  - data:
       entity_id: group.lights
     service: light.turn_off
   - data:
       entity_id: switch.bol_living
+    service: switch.turn_off
+  - data:
+      entity_id: switch.verlichting_voortuin
     service: switch.turn_off
   - data:
       message: Verlichting uitgeschakeld 's morgens
@@ -543,4 +548,22 @@
   action:
   - data:
       message: NodeMCU Energy meter verbroken
+    service: notify.ios_iphone_jeffry
+# buitenverlichting aan bij valavond
+- id: '2000000000019'
+  alias: buitenverlichting aan bij valavond
+  trigger:
+  - event: sunset
+    offset: -00:30:00
+    platform: sun
+  condition: []
+  action:
+  - data:
+      entity_id: light.tuinhuis_buiten
+    service: light.turn_on
+  - data:
+      entity_id: switch.verlichting_voortuin
+    service: switch.turn_on
+  - data:
+      message: buitenverlichting is aan
     service: notify.ios_iphone_jeffry
