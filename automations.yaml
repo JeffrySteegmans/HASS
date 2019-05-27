@@ -155,11 +155,11 @@
       entity_id: group.lights
     service: light.turn_off
   - data:
-      entity_id: switch.bol_living
-    service: switch.turn_off
-  - data:
       entity_id: light.verlichting_voortuin
-    service: switch.turn_off
+    service: light.turn_off
+  - data:
+      entity_id: switch.bol_living
+    service: light.turn_off
   - data:
       message: Verlichting uitgeschakeld om middernacht
     service: notify.ios_iphone_jeffry
@@ -182,11 +182,11 @@
       entity_id: light.tuinhuis_buiten
     service: light.turn_on
   - data:
-      entity_id: switch.bol_living
-    service: switch.turn_on
-  - data:
       entity_id: light.verlichting_voortuin
-    service: switch.turn_on
+    service: light.turn_on
+  - data:
+      entity_id: switch.bol_living
+    service: light.turn_on
   - data:
       message: Verlichting aangeschakeld 's morgens
     service: notify.ios_iphone_jeffry
@@ -206,11 +206,11 @@
       entity_id: group.lights
     service: light.turn_off
   - data:
-      entity_id: switch.bol_living
-    service: switch.turn_off
-  - data:
       entity_id: light.verlichting_voortuin
-    service: switch.turn_off
+    service: light.turn_off
+  - data:
+      entity_id: switch.bol_living
+    service: light.turn_off
   - data:
       message: Verlichting uitgeschakeld 's morgens
     service: notify.ios_iphone_jeffry
