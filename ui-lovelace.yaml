@@ -26,7 +26,7 @@ views:
         title: verlichting
         entities:
           - light.tv_living
-          - switch.verlichting_voortuin
+          - light.verlichting_voortuin
           - light.tuinhuis_buiten
           - light.kippen
           - light.tuinhuis_binnen
