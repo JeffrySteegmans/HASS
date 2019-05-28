@@ -328,7 +328,7 @@
   - entity_id: device_tracker.iphone_van_katja
     platform: state
     from: Kevin
-  condition:
+  condition: []
   action:
   - data:
       message: vertrokken
@@ -507,7 +507,7 @@
   - entity_id: device_tracker.iphone_van_katja
     platform: state
     to: Kerakris
-  condition:
+  condition: []
   action:
   - data:
       message: aangekomen
@@ -518,7 +518,7 @@
   trigger:
   - at: 07:00
     platform: time
-  condition:
+  condition: []
   action:
   - service: notify.ios_iphone_jeffry
     data:
