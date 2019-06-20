@@ -42,8 +42,7 @@
   - data:
       message: Het is warmer dan 45°C
     service: notify.ios_iphone_jeffry
-  - alias: ''
-    data:
+  - data:
       entity_id: input_boolean.notify_serre_temp
     service: input_boolean.turn_on
 # Waarschuwing bij een grondvochtigheid van minder dan 50%
