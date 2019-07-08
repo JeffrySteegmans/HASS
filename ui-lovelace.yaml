@@ -92,7 +92,7 @@ views:
         line_value_above: 30
         line_color_above: '#ff0000'
         labels: true
-        entity: sensor.temperatuur_zwembad
+        entity: sensor.temperatuur_zwembad_2
       - type: custom:mini-graph-card
         name: Tuinhuis
         icon: mdi:thermometer
