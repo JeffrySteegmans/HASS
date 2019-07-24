@@ -29,14 +29,14 @@
   alias: Meer dan 45°C in de serre
   trigger:
   - above: '45'
-    entity_id: sensor.temperatuur_serre
+    entity_id: sensor.temperatuur_serre_dallas
     platform: numeric_state
   condition:
   - condition: state
     entity_id: input_boolean.notify_serre_temp
     state: 'off'
   - condition: numeric_state
-    entity_id: sensor.temperatuur_serre
+    entity_id: sensor.temperatuur_serre_dallas
     below: '85'
   action:
   - data:
