@@ -283,13 +283,43 @@
   - data:
       message: Verlichting wordt achter 10 minuut uitgeschakeld
     service: notify.ios_iphone_jeffry
-  - delay: 00:10:00
+  # blink light 2 times
   - data:
       entity_id: light.tv_living
     service: light.turn_off
+  - delay: 00:00:01
   - data:
-      entity_id: switch.bol_living
-    service: switch.turn_off
+      entity_id: light.tv_living
+    service: light.turn_on
+  - delay: 00:00:01
+  - data:
+      entity_id: light.tv_living
+    service: light.turn_off
+  - delay: 00:00:01
+  - data:
+      entity_id: light.tv_living
+    service: light.turn_on
+  - delay: 00:09:00
+  # blink light 2 times for last minute
+  - data:
+      entity_id: light.tv_living
+    service: light.turn_off
+  - delay: 00:00:01
+  - data:
+      entity_id: light.tv_living
+    service: light.turn_on
+  - delay: 00:00:01
+  - data:
+      entity_id: light.tv_living
+    service: light.turn_off
+  - delay: 00:00:01
+  - data:
+      entity_id: light.tv_living
+    service: light.turn_on
+  - delay: 00:01:00
+  - data:
+      entity_id: light.tv_living
+    service: light.turn_off
   - data:
       message: Verlichting uitgeschakeld omdat het na 22h00 is en de tv gaat uit
     service: notify.ios_iphone_jeffry
