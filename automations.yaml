@@ -130,9 +130,9 @@
   - data:
       entity_id: light.tv_living
     service: light.turn_on
-  - data:
-      entity_id: switch.bol_living
-    service: switch.turn_on
+  # - data:
+  #     entity_id: switch.bol_living
+  #   service: switch.turn_on
   - data:
       message: Verlichting is aan
     service: notify.ios_iphone_jeffry
