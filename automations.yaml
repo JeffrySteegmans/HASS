@@ -122,17 +122,14 @@
   - event: sunset
     offset: -00:30:00
     platform: sun
-  condition: []
-  # - condition: state
-  #   entity_id: group.all_devices
-  #   state: home
+  condition:
+  - condition: state
+    entity_id: group.all_devices
+    state: home
   action:
   - data:
       entity_id: light.tv_living
     service: light.turn_on
-  # - data:
-  #     entity_id: switch.bol_living
-  #   service: switch.turn_on
   - data:
       message: Verlichting is aan
     service: notify.ios_iphone_jeffry
