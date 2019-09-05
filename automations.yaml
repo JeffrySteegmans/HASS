@@ -128,7 +128,7 @@
     state: home
   action:
   - data:
-      entity_id: light.tv_living
+      entity_id: light.tv_verlichting
     service: light.turn_on
   - data:
       message: Verlichting is aan
@@ -172,16 +172,13 @@
     value_template: '{{ state.attributes.elevation }}'
   action:
   - data:
-      entity_id: light.tv_living
+      entity_id: light.tv_verlichting
     service: light.turn_on
   - data:
-      entity_id: light.tuinhuis_buiten
+      entity_id: light.tuinhuis_sfeer
     service: light.turn_on
   - data:
       entity_id: light.verlichting_voortuin
-    service: light.turn_on
-  - data:
-      entity_id: switch.bol_living
     service: light.turn_on
   - data:
       message: Verlichting aangeschakeld 's morgens
@@ -203,9 +200,6 @@
     service: light.turn_off
   - data:
       entity_id: light.verlichting_voortuin
-    service: light.turn_off
-  - data:
-      entity_id: switch.bol_living
     service: light.turn_off
   - data:
       message: Verlichting uitgeschakeld 's morgens
@@ -282,40 +276,46 @@
     service: notify.ios_iphone_jeffry
   # blink light 2 times
   - data:
-      entity_id: light.tv_living
+      entity_id: light.tv_verlichting
     service: light.turn_off
-  - delay: 00:00:01
+  - delay:
+      milliseconds: 200
   - data:
-      entity_id: light.tv_living
+      entity_id: light.tv_verlichting
     service: light.turn_on
-  - delay: 00:00:01
+  - delay:
+      milliseconds: 200
   - data:
-      entity_id: light.tv_living
+      entity_id: light.tv_verlichting
     service: light.turn_off
-  - delay: 00:00:01
+  - delay:
+      milliseconds: 200
   - data:
-      entity_id: light.tv_living
+      entity_id: light.tv_verlichting
     service: light.turn_on
   - delay: 00:09:00
   # blink light 2 times for last minute
   - data:
-      entity_id: light.tv_living
+      entity_id: light.tv_verlichting
     service: light.turn_off
-  - delay: 00:00:01
+  - delay:
+      milliseconds: 200
   - data:
-      entity_id: light.tv_living
+      entity_id: light.tv_verlichting
     service: light.turn_on
-  - delay: 00:00:01
+  - delay:
+      milliseconds: 200
   - data:
-      entity_id: light.tv_living
+      entity_id: light.tv_verlichting
     service: light.turn_off
-  - delay: 00:00:01
+  - delay:
+      milliseconds: 200
   - data:
-      entity_id: light.tv_living
+      entity_id: light.tv_verlichting
     service: light.turn_on
   - delay: 00:01:00
   - data:
-      entity_id: light.tv_living
+      entity_id: light.tv_verlichting
     service: light.turn_off
   - data:
       message: Verlichting uitgeschakeld omdat het na 22h00 is en de tv gaat uit
@@ -332,18 +332,15 @@
     after_offset: -00:30:00
     condition: sun
   - condition: state
-    entity_id: light.tv_living
+    entity_id: light.tv_verlichting
     state: 'off'
   action:
   - data:
-      entity_id: light.tv_living
+      entity_id: light.tv_verlichting
     service: light.turn_on
   - data:
-      entity_id: light.tuinhuis_buiten
+      entity_id: light.tuinhuis_sfeer
     service: light.turn_on
-  - data:
-      entity_id: switch.bol_living
-    service: switch.turn_on
   - data:
       message: Verlichting aangeschakeld omdat iemand na zonsondergang thuis komt
     service: notify.ios_iphone_jeffry
@@ -370,55 +367,55 @@
     data_template:
       message: Referte index C is aangepast naar {{ states("sensor.referteindexc")}}%
 # Buitenlicht tuinhuis aan indien iemand verbonden met AP tuinhuis
-- id: '2000000000004'
-  alias: Buitenlicht tuinhuis aan indien iemand verbonden met AP tuinhuis
-  trigger:
-  - platform: template
-    value_template: '{{ is_state_attr(''device_tracker.galaxys8_pierre'', ''ap_mac'',
-      ''80:2a:a8:59:e0:2e'') }}'
-  - platform: template
-    value_template: '{{ is_state_attr(''device_tracker.iphone_van_katja'', ''ap_mac'',
-      ''80:2a:a8:59:e0:2e'') }}'
-  - platform: template
-    value_template: '{{ is_state_attr(''device_tracker.iphone_jeffry'', ''ap_mac'',
-      ''80:2a:a8:59:e0:2e'') }}'
-  condition:
-  - below: '3.5'
-    condition: numeric_state
-    entity_id: sun.sun
-    value_template: '{{ state.attributes.elevation }}'
-  action:
-  - data:
-      entity_id: light.tuinhuis_tuin
-    service: light.turn_on
-  - data:
-      message: Verlichting tuinhuis aan omdat iemand verbonden is met de AP tuinhuis
-    service: notify.ios_iphone_jeffry
+# - id: '2000000000004'
+#   alias: Buitenlicht tuinhuis aan indien iemand verbonden met AP tuinhuis
+#   trigger:
+#   - platform: template
+#     value_template: '{{ is_state_attr(''device_tracker.galaxys8_pierre'', ''ap_mac'',
+#       ''80:2a:a8:59:e0:2e'') }}'
+#   - platform: template
+#     value_template: '{{ is_state_attr(''device_tracker.iphone_van_katja'', ''ap_mac'',
+#       ''80:2a:a8:59:e0:2e'') }}'
+#   - platform: template
+#     value_template: '{{ is_state_attr(''device_tracker.iphone_jeffry'', ''ap_mac'',
+#       ''80:2a:a8:59:e0:2e'') }}'
+#   condition:
+#   - below: '3.5'
+#     condition: numeric_state
+#     entity_id: sun.sun
+#     value_template: '{{ state.attributes.elevation }}'
+#   action:
+#   - data:
+#       entity_id: light.tuinhuis_tuin
+#     service: light.turn_on
+#   - data:
+#       message: Verlichting tuinhuis aan omdat iemand verbonden is met de AP tuinhuis
+#     service: notify.ios_iphone_jeffry
 # Buitenlicht tuinhuis uit indien iemand verbroken met AP tuinhuis
-- id: '2000000000005'
-  alias: Buitenlicht tuinhuis uit indien iemand verbroken met AP tuinhuis
-  trigger:
-  - platform: template
-    value_template: '{{ not is_state_attr(''device_tracker.galaxys8_pierre'', ''ap_mac'',
-      ''80:2a:a8:59:e0:2e'') }}'
-  - platform: template
-    value_template: '{{ not is_state_attr(''device_tracker.iphone_van_katja'', ''ap_mac'',
-      ''80:2a:a8:59:e0:2e'') }}'
-  - platform: template
-    value_template: '{{ not is_state_attr(''device_tracker.iphone_jeffry'', ''ap_mac'',
-      ''80:2a:a8:59:e0:2e'') }}'
-  condition:
-  - below: '3.5'
-    condition: numeric_state
-    entity_id: sun.sun
-    value_template: '{{ state.attributes.elevation }}'
-  action:
-  - data:
-      entity_id: light.tuinhuis_tuin
-    service: light.turn_off
-  - data:
-      message: Verlichting tuinhuis uit omdat iemand verbroken is met de AP tuinhuis
-    service: notify.ios_iphone_jeffry
+# - id: '2000000000005'
+#   alias: Buitenlicht tuinhuis uit indien iemand verbroken met AP tuinhuis
+#   trigger:
+#   - platform: template
+#     value_template: '{{ not is_state_attr(''device_tracker.galaxys8_pierre'', ''ap_mac'',
+#       ''80:2a:a8:59:e0:2e'') }}'
+#   - platform: template
+#     value_template: '{{ not is_state_attr(''device_tracker.iphone_van_katja'', ''ap_mac'',
+#       ''80:2a:a8:59:e0:2e'') }}'
+#   - platform: template
+#     value_template: '{{ not is_state_attr(''device_tracker.iphone_jeffry'', ''ap_mac'',
+#       ''80:2a:a8:59:e0:2e'') }}'
+#   condition:
+#   - below: '3.5'
+#     condition: numeric_state
+#     entity_id: sun.sun
+#     value_template: '{{ state.attributes.elevation }}'
+#   action:
+#   - data:
+#       entity_id: light.tuinhuis_tuin
+#     service: light.turn_off
+#   - data:
+#       message: Verlichting tuinhuis uit omdat iemand verbroken is met de AP tuinhuis
+#     service: notify.ios_iphone_jeffry
 # Waarschuwing indien water van de kippen onder 0.5°C gaat
 - id: '2000000000006'
   alias: Waarschuwing indien water van de kippen onder 0.5 graden gaat
@@ -467,62 +464,62 @@
       message: NodeMCU Kippen verbroken
     service: notify.ios_iphone_jeffry
 # Bericht bij verbinding verbroken NodeMCU Living_bol
-- id: '2000000000010'
-  alias: Bericht bij verbinding verbroken NodeMCU Living_bol
-  trigger:
-  - entity_id: binary_sensor.nodemcu_living_bol
-    from: online
-    platform: state
-    to: offline
-  action:
-  - data:
-      message: NodeMCU Living bol verbroken
-    service: notify.ios_iphone_jeffry
+# - id: '2000000000010'
+#   alias: Bericht bij verbinding verbroken NodeMCU Living_bol
+#   trigger:
+#   - entity_id: binary_sensor.nodemcu_living_bol
+#     from: online
+#     platform: state
+#     to: offline
+#   action:
+#   - data:
+#       message: NodeMCU Living bol verbroken
+#     service: notify.ios_iphone_jeffry
 # Bericht bij verbinden NodeMCU Living_bol
-- id: '2000000000011'
-  alias: Waarschuwing bij verbinden NodeMCU Living_bol
-  trigger:
-  - entity_id: binary_sensor.nodemcu_living_bol
-    from: offline
-    platform: state
-    to: online
-  action:
-  - data:
-      message: NodeMCU Living bol verbonden
-    service: notify.ios_iphone_jeffry
+# - id: '2000000000011'
+#   alias: Waarschuwing bij verbinden NodeMCU Living_bol
+#   trigger:
+#   - entity_id: binary_sensor.nodemcu_living_bol
+#     from: offline
+#     platform: state
+#     to: online
+#   action:
+#   - data:
+#       message: NodeMCU Living bol verbonden
+#     service: notify.ios_iphone_jeffry
 # Katja verbroken met AP tuinhuis
-- id: '20000000000012'
-  alias: Bericht Katja verbroken met AP tuinhuis
-  trigger:
-  - platform: template
-    value_template: '{{ not is_state_attr(''device_tracker.iphone_van_katja'', ''ap_mac'',
-      ''80:2a:a8:59:e0:2e'') }}'
-  action:
-  - data:
-      message: Verlichting tuinhuis uit omdat Katja verbroken is met de AP tuinhuis
-    service: notify.ios_iphone_jeffry
-# Jeffry verbroken met AP tuinhuis
-- id: '20000000000013'
-  alias: Bericht Jeffry verbroken met AP tuinhuis
-  trigger:
-  - platform: template
-    value_template: '{{ not is_state_attr(''device_tracker.iphone_jeffry'', ''ap_mac'',
-      ''80:2a:a8:59:e0:2e'') }}'
-  action:
-  - data:
-      message: Verlichting tuinhuis uit omdat Jeffry verbroken is met de AP tuinhuis
-    service: notify.ios_iphone_jeffry
-# Pierre verbroken met AP tuinhuis
-- id: '20000000000014'
-  alias: Bericht Pierre verbroken met AP tuinhuis
-  trigger:
-  - platform: template
-    value_template: '{{ not is_state_attr(''device_tracker.galaxys8_pierre'', ''ap_mac'',
-      ''80:2a:a8:59:e0:2e'') }}'
-  action:
-  - data:
-      message: Verlichting tuinhuis uit omdat pierre verbroken is met de AP tuinhuis
-    service: notify.ios_iphone_jeffry
+# - id: '20000000000012'
+#   alias: Bericht Katja verbroken met AP tuinhuis
+#   trigger:
+#   - platform: template
+#     value_template: '{{ not is_state_attr(''device_tracker.iphone_van_katja'', ''ap_mac'',
+#       ''80:2a:a8:59:e0:2e'') }}'
+#   action:
+#   - data:
+#       message: Verlichting tuinhuis uit omdat Katja verbroken is met de AP tuinhuis
+#     service: notify.ios_iphone_jeffry
+# # Jeffry verbroken met AP tuinhuis
+# - id: '20000000000013'
+#   alias: Bericht Jeffry verbroken met AP tuinhuis
+#   trigger:
+#   - platform: template
+#     value_template: '{{ not is_state_attr(''device_tracker.iphone_jeffry'', ''ap_mac'',
+#       ''80:2a:a8:59:e0:2e'') }}'
+#   action:
+#   - data:
+#       message: Verlichting tuinhuis uit omdat Jeffry verbroken is met de AP tuinhuis
+#     service: notify.ios_iphone_jeffry
+# # Pierre verbroken met AP tuinhuis
+# - id: '20000000000014'
+#   alias: Bericht Pierre verbroken met AP tuinhuis
+#   trigger:
+#   - platform: template
+#     value_template: '{{ not is_state_attr(''device_tracker.galaxys8_pierre'', ''ap_mac'',
+#       ''80:2a:a8:59:e0:2e'') }}'
+#   action:
+#   - data:
+#       message: Verlichting tuinhuis uit omdat pierre verbroken is met de AP tuinhuis
+#     service: notify.ios_iphone_jeffry
 # bericht bij aankomst
 - id: '2000000000015'
   alias: bericht bij aankomst
@@ -585,7 +582,7 @@
   condition: []
   action:
   - data:
-      entity_id: light.tuinhuis_buiten
+      entity_id: light.tuinhuis_sfeer
     service: light.turn_on
   - data:
       entity_id: light.verlichting_voortuin

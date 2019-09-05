@@ -130,16 +130,16 @@
   name: "Kippen water temperatuur"
   unit_of_measurement: "°C"
   value_template: "{{ value | round(1) }}"
-- platform: mqtt
-  state_topic: "powerswitch/shed/temperature/0"
-  name: "Tuinhuis temperatuur binnen"
-  unit_of_measurement: "°C"
-  value_template: "{{ value | round(1) }}"
-- platform: mqtt
-  state_topic: "powerswitch/shed/temperature/1"
-  name: "Tuinhuis temperatuur buiten"
-  unit_of_measurement: "°C"
-  value_template: "{{ value | round(1) }}"
+# - platform: mqtt
+#   state_topic: "powerswitch/shed/temperature/0"
+#   name: "Tuinhuis temperatuur binnen"
+#   unit_of_measurement: "°C"
+#   value_template: "{{ value | round(1) }}"
+# - platform: mqtt
+#   state_topic: "powerswitch/shed/temperature/1"
+#   name: "Tuinhuis temperatuur buiten"
+#   unit_of_measurement: "°C"
+#   value_template: "{{ value | round(1) }}"
 - platform: mqtt
   state_topic: "powerswitch/livingbol/temperature/0"
   name: "Living temperatuur"

@@ -25,13 +25,13 @@ views:
       - type: entities
         title: verlichting
         entities:
-          - light.tv_living
+          - light.tv_verlichting
           - light.verlichting_voortuin
-          - light.tuinhuis_buiten
+          - light.tuinhuis_sfeer
+          - light.tuinhuis_tl
+          - light.tuinhuis_verstraler
+          - light.tuinhuis_werkbank_2
           - light.kippen
-          - light.tuinhuis_binnen
-          - light.tuinhuis_tuin
-          - light.tuinhuis_werkbank
       - type: sensor
         entity: sensor.stroom_2
         name: Huidig algemeen verbruik
@@ -105,7 +105,7 @@ views:
         line_value_above: 30
         line_color_above: '#ff0000'
         labels: true
-        entity: sensor.tuinhuis_temperatuur_buiten
+        entity: sensor.temperature_binnen
       - type: custom:mini-graph-card
         name: Gang
         icon: mdi:thermometer
