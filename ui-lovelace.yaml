@@ -31,7 +31,7 @@ views:
           - light.tuinhuis_tl
           - light.tuinhuis_verstraler
           - light.tuinhuis_werkbank_2
-          - light.kippen
+          - light.licht_kippen
       - type: sensor
         entity: sensor.stroom_2
         name: Huidig algemeen verbruik
@@ -80,19 +80,19 @@ views:
         line_color_above: '#ff0000'
         labels: true
         entity: sensor.temperatuur_serre_dallas
-      - type: custom:mini-graph-card
-        name: Zwembad
-        icon: mdi:thermometer
-        unit: °C
-        detail: 2
-        hours_to_show: 24
-        line_color: '#167f01'
-        line_value_below: 25
-        line_color_below: '#0000ff'
-        line_value_above: 30
-        line_color_above: '#ff0000'
-        labels: true
-        entity: sensor.temperatuur_zwembad_2
+      # - type: custom:mini-graph-card
+      #   name: Zwembad
+      #   icon: mdi:thermometer
+      #   unit: °C
+      #   detail: 2
+      #   hours_to_show: 24
+      #   line_color: '#167f01'
+      #   line_value_below: 25
+      #   line_color_below: '#0000ff'
+      #   line_value_above: 30
+      #   line_color_above: '#ff0000'
+      #   labels: true
+      #   entity: sensor.temperatuur_zwembad_2
       - type: custom:mini-graph-card
         name: Tuinhuis
         icon: mdi:thermometer
@@ -119,19 +119,19 @@ views:
         line_color_above: '#ff0000'
         labels: true
         entity: sensor.temperature_bureau
-      - type: custom:mini-graph-card
-        name: Temperatuur living
-        icon: mdi:thermometer
-        unit: °C
-        detail: 2
-        hours_to_show: 24
-        line_color: '#167f01'
-        line_value_below: 20
-        line_color_below: '#0000ff'
-        line_value_above: 25
-        line_color_above: '#ff0000'
-        labels: true
-        entity: sensor.temperature_living_bol
+      # - type: custom:mini-graph-card
+      #   name: Temperatuur living
+      #   icon: mdi:thermometer
+      #   unit: °C
+      #   detail: 2
+      #   hours_to_show: 24
+      #   line_color: '#167f01'
+      #   line_value_below: 20
+      #   line_color_below: '#0000ff'
+      #   line_value_above: 25
+      #   line_color_above: '#ff0000'
+      #   labels: true
+      #   entity: sensor.temperature_living_bol
       - type: custom:mini-graph-card
         name: Bureau
         icon: mdi:thermometer
@@ -157,7 +157,7 @@ views:
         line_value_above: 30
         line_color_above: '#ff0000'
         labels: true
-        entity: sensor.kippen_water_temperatuur
+        entity: sensor.temperatuur_water
       - type: custom:mini-graph-card
         name: Serre
         icon: mdi:thermometer

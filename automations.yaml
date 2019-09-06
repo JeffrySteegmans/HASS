@@ -141,20 +141,14 @@
     platform: time
   condition:
   - condition: state
-    entity_id: group.lights
+    entity_id: group.all_lights
     state: 'on'
   - condition: state
     entity_id: media_player.tv_living
     state: 'off'
   action:
   - data:
-      entity_id: group.lights
-    service: light.turn_off
-  - data:
-      entity_id: light.verlichting_voortuin
-    service: light.turn_off
-  - data:
-      entity_id: switch.bol_living
+      entity_id: group.all_lights
     service: light.turn_off
   - data:
       message: Verlichting uitgeschakeld om middernacht
@@ -192,14 +186,11 @@
     platform: sun
   condition:
   - condition: state
-    entity_id: group.lights
+    entity_id: group.all_lights
     state: 'on'
   action:
   - data:
-      entity_id: group.lights
-    service: light.turn_off
-  - data:
-      entity_id: light.verlichting_voortuin
+      entity_id: group.all_lights
     service: light.turn_off
   - data:
       message: Verlichting uitgeschakeld 's morgens
@@ -421,48 +412,48 @@
   alias: Waarschuwing indien water van de kippen onder 0.5 graden gaat
   trigger:
   - platform: numeric_state
-    entity_id: sensor.kippen_water_temperatuur
+    entity_id: sensor.temperatuur_water
     below: '0.5'
   action:
   - data:
       message: Temperatuur van het water van de kippen is beneden 0.5°C
     service: notify.ios_iphone_jeffry
 # Bericht wanneer er een update is
-- id: '2000000000007'
-  alias: 'Bericht wanneer er een update is'
-  trigger:
-    platform: state
-    entity_id: updater.updater
-  action:
-    service: notify.notify
-    data:
-      message: 'Er is een update voor Home-assistant beschikbaar.'
+# - id: '2000000000007'
+#   alias: 'Bericht wanneer er een update is'
+#   trigger:
+#     platform: state
+#     entity_id: updater.updater
+#   action:
+#     service: notify.notify
+#     data:
+#       message: 'Er is een update voor Home-assistant beschikbaar.'
 # Bericht bij verbinden NodeMCU Kippen
-- id: '2000000000008'
-  alias: Waarschuwing bij verbinden NodeMCU Kippen
-  trigger:
-  - entity_id: binary_sensor.nodemcu_kippen
-    from: offline
-    platform: state
-    to: online
-  condition: []
-  action:
-  - data:
-      message: NodeMCU Kippen verbonden
-    service: notify.ios_iphone_jeffry
+# - id: '2000000000008'
+#   alias: Waarschuwing bij verbinden NodeMCU Kippen
+#   trigger:
+#   - entity_id: binary_sensor.nodemcu_kippen
+#     from: offline
+#     platform: state
+#     to: online
+#   condition: []
+#   action:
+#   - data:
+#       message: NodeMCU Kippen verbonden
+#     service: notify.ios_iphone_jeffry
 # Bericht bij verbinden verloren NodeMCU Tuinhuis
-- id: '2000000000009'
-  alias: Waarschuwing bij NodeMCU Kippen verbroken
-  trigger:
-  - entity_id: binary_sensor.nodemcu_Kippen
-    from: online
-    platform: state
-    to: offline
-  condition: []
-  action:
-  - data:
-      message: NodeMCU Kippen verbroken
-    service: notify.ios_iphone_jeffry
+# - id: '2000000000009'
+#   alias: Waarschuwing bij NodeMCU Kippen verbroken
+#   trigger:
+#   - entity_id: binary_sensor.nodemcu_Kippen
+#     from: online
+#     platform: state
+#     to: offline
+#   condition: []
+#   action:
+#   - data:
+#       message: NodeMCU Kippen verbroken
+#     service: notify.ios_iphone_jeffry
 # Bericht bij verbinding verbroken NodeMCU Living_bol
 # - id: '2000000000010'
 #   alias: Bericht bij verbinding verbroken NodeMCU Living_bol
