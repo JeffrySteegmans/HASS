@@ -159,6 +159,19 @@ views:
         labels: true
         entity: sensor.temperatuur_water
       - type: custom:mini-graph-card
+        name: Kippen buitenlucht
+        icon: mdi:thermometer
+        unit: °C
+        detail: 2
+        hours_to_show: 24
+        line_color: '#167f01'
+        line_value_below: 0
+        line_color_below: '#0000ff'
+        line_value_above: 30
+        line_color_above: '#ff0000'
+        labels: true
+        entity: sensor.temperatuur_lucht
+      - type: custom:mini-graph-card
         name: Serre
         icon: mdi:thermometer
         unit: °C
