@@ -269,18 +269,17 @@
   - data:
       entity_id: light.tv_verlichting
     service: light.turn_off
-  - delay:
-      milliseconds: 200
+  - delay: 00:00:01
   - data:
       entity_id: light.tv_verlichting
     service: light.turn_on
   - delay:
-      milliseconds: 200
+      milliseconds: 00:00:01
   - data:
       entity_id: light.tv_verlichting
     service: light.turn_off
   - delay:
-      milliseconds: 200
+      milliseconds: 00:00:01
   - data:
       entity_id: light.tv_verlichting
     service: light.turn_on
@@ -290,17 +289,17 @@
       entity_id: light.tv_verlichting
     service: light.turn_off
   - delay:
-      milliseconds: 200
+      milliseconds: 00:00:01
   - data:
       entity_id: light.tv_verlichting
     service: light.turn_on
   - delay:
-      milliseconds: 200
+      milliseconds: 00:00:01
   - data:
       entity_id: light.tv_verlichting
     service: light.turn_off
   - delay:
-      milliseconds: 200
+      milliseconds: 00:00:01
   - data:
       entity_id: light.tv_verlichting
     service: light.turn_on
