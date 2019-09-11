@@ -1,0 +1,12 @@
+garage_poort_pierre:
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: "poort/garage/cmd"
+        payload: 'toggle'
+oprit_poort_pierre:
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: "poort/oprit/cmd"
+        payload: 'toggle'

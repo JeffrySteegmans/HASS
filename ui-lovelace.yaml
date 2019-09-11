@@ -227,6 +227,24 @@ views:
       #     - switch.vaatwasser_program_auto3
       #     - switch.vaatwasser_program_eco50
       #     - switch.vaatwasser_program_quick45
+      - type: entity-button
+        name: Garage poort Pierre
+        hold_action:
+          action: call-service
+          service: script.turn_on
+          service_data:
+            entity_id: script.garage_poort_pierre
+        entity: script.garage_poort_pierre
+        icon: mdi:garage
+      - type: entity-button
+        name: Poort Pierre
+        hold_action:
+          action: call-service
+          service: script.turn_on
+          service_data:
+            entity_id: script.oprit_poort_pierre
+        entity: script.oprit_poort_pierre
+        icon: mdi:garage
   - title: Media players
     icon: mdi:television
     id: mediaplayers
