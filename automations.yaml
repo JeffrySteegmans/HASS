@@ -31,20 +31,11 @@
   - above: '45'
     entity_id: sensor.temperatuur_serre_dallas
     platform: numeric_state
-  condition:
-  - condition: state
-    entity_id: input_boolean.notify_serre_temp
-    state: 'off'
-  - condition: numeric_state
-    entity_id: sensor.temperatuur_serre_dallas
-    below: '85'
+  condition: []
   action:
   - data:
-      message: Het is warmer dan 45°C
+      message: Het is warmer dan 45°C in de serre
     service: notify.ios_iphone_jeffry
-  - data:
-      entity_id: input_boolean.notify_serre_temp
-    service: input_boolean.turn_on
 # Waarschuwing bij een grondvochtigheid van minder dan 50%
 # - id: '1533553759096'
 #   alias: Waarschuwing bij een grondvochtigheid van minder dan 50%
@@ -579,4 +570,16 @@
     service: light.turn_on
   - data:
       message: buitenverlichting is aan
+    service: notify.ios_iphone_jeffry
+# Minder dan 5°C in de serre
+- id: '2000000000020'
+  alias: Minder dan 5°C in de serre
+  trigger:
+  - below: '5'
+    entity_id: sensor.temperatuur_serre_dallas
+    platform: numeric_state
+  condition: []
+  action:
+  - data:
+      message: Het is kouder dan 5°C in de serre
     service: notify.ios_iphone_jeffry
