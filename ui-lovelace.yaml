@@ -25,7 +25,12 @@ views:
       - type: entities
         title: verlichting
         entities:
-          - light.tv_verlichting
+          # Spot
+          - light.12002005840d8e6ce9a3
+          # Bol
+          - light.60847532600194d59487
+          # TV
+          - light.60847532c44f339644a2
           - light.verlichting_voortuin
           - light.tuinhuis_sfeer
           - light.tuinhuis_tl

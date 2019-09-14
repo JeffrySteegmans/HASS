@@ -116,6 +116,11 @@ nest:
   #     - 'operation_mode'
   #     - 'temperature'
 
+tuya:
+  username: !secret tuya__username
+  password: !secret tuya__password
+  country_code: 32
+
 cast: !include config/cast.yaml
 mqtt: !include config/mqtt.yaml
 input_boolean: !include config/input_boolean.yaml
