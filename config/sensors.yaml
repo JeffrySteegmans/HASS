@@ -1,3 +1,13 @@
+- platform: statistics
+  name: total_water_statistics
+  entity_id: sensor.water
+  max_age:
+    hours: 24
+- platform: integration
+  source: sensor.water
+  name: total_water
+  round: 0
+  unit: "L"
 - platform: buienradar
   #name: !secret buienradar_name
   latitude: !secret buienradar_latitude

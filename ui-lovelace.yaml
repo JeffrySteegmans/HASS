@@ -59,6 +59,11 @@ views:
         graph: line
         detail: 2
         hours_to_show: 4
+      - type: sensor
+        entity: sensor.total_water
+        name: Daily water
+        icon: mdi:counter
+        graph: none
       - type: custom:bignumber-card
         title: Referte index C
         entity: sensor.referteindexc
