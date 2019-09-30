@@ -239,45 +239,7 @@
   - data:
       message: Verlichting wordt achter 10 minuut uitgeschakeld
     service: notify.ios_iphone_jeffry
-  # blink light 2 times
-  - data:
-      entity_id: light.60847532c44f339644a2
-    service: light.turn_off
-  - delay: 00:00:01
-  - data:
-      entity_id: light.60847532c44f339644a2
-    service: light.turn_on
-  - delay:
-      milliseconds: 00:00:01
-  - data:
-      entity_id: light.60847532c44f339644a2
-    service: light.turn_off
-  - delay:
-      milliseconds: 00:00:01
-  - data:
-      entity_id: light.60847532c44f339644a2
-    service: light.turn_on
-  - delay: 00:09:00
-  # blink light 2 times for last minute
-  - data:
-      entity_id: light.60847532c44f339644a2
-    service: light.turn_off
-  - delay:
-      milliseconds: 00:00:01
-  - data:
-      entity_id: light.60847532c44f339644a2
-    service: light.turn_on
-  - delay:
-      milliseconds: 00:00:01
-  - data:
-      entity_id: light.60847532c44f339644a2
-    service: light.turn_off
-  - delay:
-      milliseconds: 00:00:01
-  - data:
-      entity_id: light.60847532c44f339644a2
-    service: light.turn_on
-  - delay: 00:01:00
+  - delay: 00:10:00
   - data:
       entity_id: light.60847532c44f339644a2
     service: light.turn_off
