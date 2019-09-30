@@ -479,31 +479,31 @@
     data:
       message: '{{ states("sensor.darksky") }}'
 # Bericht bij verbinden NodeMCU Energy meter
-- id: '2000000000017'
-  alias: Waarschuwing bij verbinden NodeMCU Energy meter
-  trigger:
-  - entity_id: binary_sensor.energy_meter_status_2
-    from: "off"
-    platform: state
-    to: "on"
-  condition: []
-  action:
-  - data:
-      message: NodeMCU Energy meter verbonden
-    service: notify.ios_iphone_jeffry
+# - id: '2000000000017'
+#   alias: Waarschuwing bij verbinden NodeMCU Energy meter
+#   trigger:
+#   - entity_id: binary_sensor.energy_meter_status_2
+#     from: "off"
+#     platform: state
+#     to: "on"
+#   condition: []
+#   action:
+#   - data:
+#       message: NodeMCU Energy meter verbonden
+#     service: notify.ios_iphone_jeffry
 # Bericht bij verbinden verloren NodeMCU Energy meter
-- id: '2000000000018'
-  alias: Waarschuwing bij NodeMCU Energy meter verbroken
-  trigger:
-  - entity_id: binary_sensor.energy_meter_status_2
-    from: "on"
-    platform: state
-    to: "off"
-  condition: []
-  action:
-  - data:
-      message: NodeMCU Energy meter verbroken
-    service: notify.ios_iphone_jeffry
+# - id: '2000000000018'
+#   alias: Waarschuwing bij NodeMCU Energy meter verbroken
+#   trigger:
+#   - entity_id: binary_sensor.energy_meter_status_2
+#     from: "on"
+#     platform: state
+#     to: "off"
+#   condition: []
+#   action:
+#   - data:
+#       message: NodeMCU Energy meter verbroken
+#     service: notify.ios_iphone_jeffry
 # buitenverlichting aan bij valavond
 - id: '2000000000019'
   alias: buitenverlichting aan bij valavond
