@@ -60,8 +60,15 @@ views:
         detail: 2
         hours_to_show: 4
       - type: sensor
-        entity: sensor.total_water
+        entity: sensor.total_daily_water_2
         name: Daily water
+        icon: mdi:counter
+        graph: line
+        detail: 2
+        hours_to_show: 4
+      - type: sensor
+        entity: sensor.total_water
+        name: Total water
         icon: mdi:counter
         graph: none
       - type: custom:bignumber-card

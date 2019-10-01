@@ -1,13 +1,13 @@
-- platform: statistics
-  name: total_water_statistics
-  entity_id: sensor.water
-  max_age:
-    hours: 24
-- platform: integration
-  source: sensor.water
-  name: total_water
-  round: 0
-  unit: "L"
+- platform: mqtt
+  state_topic: "nodemcu_energie/sensor/total_daily_water/state"
+  name: "Total daily water"
+  unit_of_measurement: "L"
+  value_template: "{{ value | round(1) }}"
+- platform: mqtt
+  state_topic: "nodemcu_energie/sensor/total_water/state"
+  name: "Total water"
+  unit_of_measurement: "L"
+  value_template: "{{ value | round(1) }}"
 - platform: buienradar
   #name: !secret buienradar_name
   latitude: !secret buienradar_latitude
