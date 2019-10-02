@@ -70,7 +70,9 @@ views:
         entity: sensor.total_water
         name: Total water
         icon: mdi:counter
-        graph: none
+        graph: line
+        detail: 2
+        hours_to_show: 4
       - type: custom:bignumber-card
         title: Referte index C
         entity: sensor.referteindexc
