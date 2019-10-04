@@ -244,6 +244,12 @@
       entity_id: light.60847532c44f339644a2
     service: light.turn_off
   - data:
+      entity_id: light.60847532600194d59487
+    service: light.turn_off
+  - data:
+      entity_id: light.12002005840d8e6ce9a3
+    service: light.turn_off
+  - data:
       message: Verlichting uitgeschakeld omdat het na 22h00 is en de tv gaat uit
     service: notify.ios_iphone_jeffry
 # Verlichting aan indien iemand thuis komt na zonsondergang
@@ -257,9 +263,6 @@
   - after: sunset
     after_offset: -00:30:00
     condition: sun
-  - condition: state
-    entity_id: light.60847532c44f339644a2
-    state: 'off'
   action:
   - data:
       entity_id: light.60847532c44f339644a2
