@@ -73,6 +73,13 @@ views:
         graph: line
         detail: 2
         hours_to_show: 4
+      - type: sensor
+        entity: sensor.gas
+        name: Gas flow
+        icon: mdi:counter
+        graph: line
+        detail: 2
+        hours_to_show: 4
       - type: custom:bignumber-card
         title: Referte index C
         entity: sensor.referteindexc
