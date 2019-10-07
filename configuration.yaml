@@ -138,4 +138,5 @@ light: !include config/light.yaml
 
 group: !include groups.yaml
 automation: !include automations.yaml
+#automation: !include_dir_merge_list configuration/automations/
 script: !include scripts.yaml
