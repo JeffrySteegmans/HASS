@@ -1,3 +1,13 @@
+- platform: travisci
+  api_key: !secret travisci__apikey
+  branch: master
+  repository: HASS
+- platform: template
+  sensors:
+    hass_finished_at:
+      value_template: "{{ as_timestamp(states.sensor.jeffrysteegmans_hass_last_build_finished_at.state) | timestamp_custom('%d/%m/%y %H:%M ') }}"
+    hass_started_at:
+      value_template: "{{ as_timestamp(states.sensor.jeffrysteegmans_hass_last_build_started_at.state) | timestamp_custom('%d/%m/%y %H:%M ') }}"
 - platform: mqtt
   state_topic: "nodemcu_energie/sensor/total_daily_water/state"
   name: "Total daily water"

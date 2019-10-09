@@ -271,6 +271,22 @@ views:
             entity_id: script.oprit_poort_pierre
         entity: script.oprit_poort_pierre
         icon: mdi:garage
+      - type: entities
+        title: HASS build status
+        show_header_toggle: false
+        entities:
+          - entity: sensor.hass_started_at
+            name: Started at
+          - entity: sensor.hass_finished_at
+            name: Finished at
+          - entity: sensor.jeffrysteegmans_hass_last_build_duration
+            name: Build duration
+          - entity: sensor.jeffrysteegmans_hass_last_build_id
+            name: Build ID
+          - entity: sensor.jeffrysteegmans_hass_last_build_state
+            name: Build state
+          - entity: sensor.jeffrysteegmans_hass_state
+            name: State
   - title: Media players
     icon: mdi:television
     id: mediaplayers
