@@ -121,6 +121,13 @@ tuya:
   password: !secret tuya__password
   country_code: 32
 
+# audiconnect:
+#   username: !secret audiconnect__username
+#   password: !secret audiconnect__password
+#   scan_interval:
+#       minutes: 2
+
+#audiconnect: !include config/audiconnect.yaml
 cast: !include config/cast.yaml
 mqtt: !include config/mqtt.yaml
 input_boolean: !include config/input_boolean.yaml

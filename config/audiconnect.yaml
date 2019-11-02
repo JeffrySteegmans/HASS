@@ -1,0 +1,6 @@
+username: !secret audiconnect__username
+password: !secret audiconnect__password
+scan_interval:
+  minutes: 2
+name:
+  wauzzzf31l1016805: 'Audi Q3'

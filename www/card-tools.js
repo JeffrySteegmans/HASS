@@ -9,30 +9,45 @@ class {
     }
   }
 
+  static deprecationWarning() {
+    if(window.cardTools_deprecationWarning) return;
+    console.warn("One or more of your lovelace plugins are using the functions cardTools.litElement(), cardTools.litHtml() or cardTools.hass(). Those are replaced with better alternatives and will be removed a some point in the future.")
+    console.warn("If you are a plugin developer, make sure you are using the new functions (see documentation).");
+    console.warn("If you are a plugin user, feel free to ignore this warning (or poke the developer of your plugins - not me though, I already know about this).")
+    console.warn("Best regards / thomasloven - " + (document.currentScript && document.currentScript.src));
+  window.cardTools_deprecationWarning = true;
+  }
+
   static get LitElement() {
-    return Object.getPrototypeOf(customElements.get('home-assistant-main'));
+    if(customElements.get('home-assistant-main'))
+      return Object.getPrototypeOf(customElements.get('home-assistant-main'));
+    return Object.getPrototypeOf(customElements.get('hui-view'));
   }
   static litElement() { // Backwards compatibility - deprecated
+    this.deprecationWarning();
     return this.LitElement;
   }
 
   static get LitHtml() {
-    return this.litElement().prototype.html;
+    return this.LitElement.prototype.html;
   }
   static litHtml() { // Backwards compatibility - deprecated
+    this.deprecationWarning();
     return this.LitHtml;
   }
 
   static get LitCSS() {
-    return this.litElement().prototype.css;
+    return this.LitElement.prototype.css;
   }
 
   static get hass() {
     var hass = function() { // Backwards compatibility - deprecated
+      this.deprecationWarning();
       return hass;
     }
     for (var k in document.querySelector('home-assistant').hass)
       hass[k] = document.querySelector('home-assistant').hass[k];
+    hass.original = document.querySelector('home-assistant').hass;
     return hass;
   }
 
@@ -51,7 +66,7 @@ class {
       root = root && root.querySelector("home-assistant-main");
       root = root && root.shadowRoot;
       root = root && root.querySelector("app-drawer-layout partial-panel-resolver");
-      root = root && root.shadowRoot;
+      root = root && root.shadowRoot || root;
       root = root && root.querySelector("ha-panel-lovelace");
       root = root && root.shadowRoot;
       root = root && root.querySelector("hui-root");
@@ -68,7 +83,7 @@ class {
     root = root && root.querySelector("home-assistant-main");
     root = root && root.shadowRoot;
     root = root && root.querySelector("app-drawer-layout partial-panel-resolver");
-    root = root && root.shadowRoot;
+    root = root && root.shadowRoot || root;
     root = root && root.querySelector("ha-panel-lovelace")
     root = root && root.shadowRoot;
     root = root && root.querySelector("hui-root")
@@ -163,6 +178,7 @@ class {
       light: "toggle",
       media_player: "media-player",
       lock: "lock",
+      remote: "toggle",
       scene: "scene",
       script: "script",
       sensor: "sensor",
@@ -170,6 +186,7 @@ class {
       switch: "toggle",
       vacuum: "toggle",
       water_heater: "climate",
+      input_datetime: "input-datetime",
     };
 
     if(!config || typeof config !== "object" || (!config.entity && !config.type)) {
@@ -287,7 +304,7 @@ class {
       const lhs = this.parseTemplateString(str[1]);
       const rhs = this.parseTemplateString(str[3]);
       var expr = ''
-      if(!parseFloat(lhs))
+      if(parseFloat(lhs) != lhs)
         expr = `"${lhs}" ${str[2]} "${rhs}"`;
       else
         expr = `${parseFloat(lhs)} ${str[2]} ${parseFloat(rhs)}`
@@ -403,7 +420,7 @@ class {
 });
 
 // Global definition of cardTools
-var cardTools = customElements.get('card-tools');
+window.cardTools = customElements.get('card-tools');
 
 console.info(`%cCARD-TOOLS IS INSTALLED
 %cDeviceID: ${customElements.get('card-tools').deviceID}`,
