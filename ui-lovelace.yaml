@@ -31,6 +31,12 @@ views:
           - light.60847532600194d59487
           # TV
           - light.60847532c44f339644a2
+          # Achter buiten
+          - light.60847532c44f33964cbd
+          # Sfeer platen
+          - switch.60053804840d8e6bb20c
+          # Kerstboom
+          - switch.60053804600194cba113
           - light.verlichting_voortuin
           - light.tuinhuis_sfeer
           - light.tuinhuis_tl

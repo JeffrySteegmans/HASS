@@ -128,6 +128,12 @@
       entity_id: light.12002005840d8e6ce9a3 # Spot
     service: light.turn_on
   - data:
+      entity_id: switch.60053804840d8e6bb20c # Sfeer platen
+    service: switch.turn_on
+  - data:
+      entity_id: switch.60053804600194cba113 # Kerstboom
+    service: switch.turn_on
+  - data:
       message: Verlichting is aan
     service: notify.ios_iphone_jeffry
 # Alle verlichting uitschakelen om 00:00 indien TV ook uit
@@ -147,6 +153,12 @@
   - data:
       entity_id: group.all_lights
     service: light.turn_off
+  - data:
+      entity_id: switch.60053804840d8e6bb20c # Sfeer platen
+    service: switch.turn_off
+  - data:
+      entity_id: switch.60053804600194cba113 # Kerstboom
+    service: switch.turn_off
   - data:
       message: Verlichting uitgeschakeld om middernacht
     service: notify.ios_iphone_jeffry
@@ -172,6 +184,15 @@
       entity_id: light.12002005840d8e6ce9a3 # Spot
     service: light.turn_on
   - data:
+      entity_id: light.60847532c44f33964cbd # Achter buiten
+    service: light.turn_on
+  - data:
+      entity_id: switch.60053804840d8e6bb20c # Sfeer platen
+    service: switch.turn_on
+  - data:
+      entity_id: switch.60053804600194cba113 # Kerstboom
+    service: switch.turn_on
+  - data:
       entity_id: light.tuinhuis_sfeer
     service: light.turn_on
   - data:
@@ -195,6 +216,12 @@
   - data:
       entity_id: group.all_lights
     service: light.turn_off
+  - data:
+      entity_id: switch.60053804840d8e6bb20c # Sfeer platen
+    service: switch.turn_off
+  - data:
+      entity_id: switch.60053804600194cba113 # Kerstboom
+    service: switch.turn_off
   - data:
       message: Verlichting uitgeschakeld 's morgens
     service: notify.ios_iphone_jeffry
@@ -250,6 +277,15 @@
       entity_id: light.12002005840d8e6ce9a3
     service: light.turn_off
   - data:
+      entity_id: light.60847532c44f33964cbd # Achter buiten
+    service: light.turn_off
+  - data:
+      entity_id: switch.60053804840d8e6bb20c # Sfeer platen
+    service: switch.turn_off
+  - data:
+      entity_id: switch.60053804600194cba113 # Kerstboom
+    service: switch.turn_off
+  - data:
       message: Verlichting uitgeschakeld omdat het na 22h00 is en de tv gaat uit
     service: notify.ios_iphone_jeffry
 # Verlichting aan indien iemand thuis komt na zonsondergang
@@ -273,6 +309,15 @@
   - data:
       entity_id: light.12002005840d8e6ce9a3
     service: light.turn_on
+  - data:
+      entity_id: light.60847532c44f33964cbd # Achter buiten
+    service: light.turn_on
+  - data:
+      entity_id: switch.60053804840d8e6bb20c # Sfeer platen
+    service: switch.turn_on
+  - data:
+      entity_id: switch.60053804600194cba113 # Kerstboom
+    service: switch.turn_on
   - data:
       entity_id: light.tuinhuis_sfeer
     service: light.turn_on
@@ -522,6 +567,9 @@
   - data:
       entity_id: light.verlichting_voortuin
     service: light.turn_on
+  - data:
+      entity_id: switch.60053804840d8e6bb20c # Sfeer platen
+    service: switch.turn_on
   - data:
       message: buitenverlichting is aan
     service: notify.ios_iphone_jeffry
